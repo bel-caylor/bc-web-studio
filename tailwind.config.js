@@ -1,5 +1,9 @@
 module.exports = {
-  content: ["./src/**/*.{njk,html,js}"],
+  content: [
+    "./src/**/*.njk",
+    "./src/**/*.html",
+    "./src/**/*.js",
+  ],
   theme: {
     extend: {
       colors: {

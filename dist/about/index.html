@@ -1,35 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" class="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About</title>
   <link href="/style.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-  <!-- Your Alpine carousel component -->
-  <script>
-    function carousel({ images = [], interval = 3000 }) {
-      return {
-        images,
-        current: 0,
-        timer: null,
-        start() {
-          this.stop(); // ensure no double timers
-          this.timer = setInterval(() => {
-            this.current = (this.current + 1) % this.images.length;
-          }, interval);
-        },
-        stop() {
-          clearInterval(this.timer);
-        }
-      }
-    }
-    document.addEventListener('alpine:init', () => {
-      Alpine.data('carousel', carousel);
-    });
-  </script>
-
 </head>
+
 <body class="min-h-screen flex flex-col">
   <header class="p-4 bg-primary text-white">
   <nav class="max-w-5xl mx-auto flex justify-between">
@@ -52,5 +30,10 @@
   &copy; 2025 MyProfile. All rights reserved.
 </footer>
 
+
+  <script src="/js/main.js"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 </body>
+
 </html>

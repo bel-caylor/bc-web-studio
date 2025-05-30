@@ -48,7 +48,11 @@
         <div class="bg-white shadow rounded p-4 max-w-4xl mx-auto">
             <div class="flex justify-between align-bottom">
                 <h2 class="mb-4 font-bold text-3xl py-3" x-text="project.title"></h2>
-                <p class="text-sm text-gray-500 mb-2" x-text="project.endDate"></p>
+                <p class="text-sm text-gray-500 mb-2"
+                    x-text="new Date(project.endDate)
+                        .toLocaleString('en-US', { month: 'long', year: '2-digit' })"
+                    ></p>
+
             </div>
 
             <!-- Carousel always as array, with dynamic interval -->
@@ -62,8 +66,13 @@
                   interval: project.interval ?? 3000
                 })"
                 x-init="start()"
-                @mouseenter="stop()"
+                @mouseenter="stop()" 
                 @mouseleave="start()"
+                @focusin="stop()" 
+                @focusout="start()"
+                tabindex="0"
+                aria-roledescription="carousel"
+                aria-label="Project screenshots"
                 class="relative w-full overflow-hidden border border-gray-300 shadow-lg rounded-2xl"
                 style="aspect-ratio: 13 / 9;"
             >
@@ -98,22 +107,38 @@
                     </template>
                 </div>
                 </template>
+                <!-- Dot navigation -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <template x-for="(src, i) in images" :key="i">
+                    <button
+                        @click="current = i"
+                        :class="{
+                        'w-3 h-3 rounded-full bg-white': true,
+                        'opacity-50': current !== i,
+                        'opacity-100': current === i
+                        }"
+                        :aria-label="`Go to slide ${i + 1}`"
+                    ></button>
+                    </template>
+                </div>
             </div>
 
-          <h3 class="text-lg font-semibold">Problem</h3>
-          <p class="mb-4" x-text="project.problem"></p>
+            <div>
+                <h3 class="text-lg font-semibold">Problem</h3>
+                <p class="mb-4" x-text="project.problem"></p>
 
-          <h3 class="text-lg font-semibold">Solution</h3>
-          <p class="mb-4" x-text="project.solution"></p>
+                <h3 class="text-lg font-semibold">Solution</h3>
+                <p class="mb-4" x-text="project.solution"></p>
 
-          <a
-            x-show="project.url"
-            :href="project.url"
-            target="_blank"
-            class="inline-block mt-2 text-blue-600 underline"
-          >
-            Visit project
-          </a>
+                <a
+                    x-show="project.url"
+                    :href="project.url"
+                    target="_blank"
+                    class="inline-block mt-2 text-blue-600 underline"
+                >
+                    Visit project
+                </a>
+            </div>
 
           <div class="mt-4">
             <h4 class="font-medium">Tools used:</h4>
@@ -144,27 +169,3 @@
     </template>
   </div>
 </div>
-
-<!-- Alpine.js -->
-<script src="//unpkg.com/alpinejs" defer></script>
-<script>
-  function carousel({ images = [], interval = 3000 }) {
-    return {
-      images,
-      current: 0,
-      timer: null,
-      start() {
-        this.stop();
-        this.timer = setInterval(() => {
-          this.current = (this.current + 1) % this.images.length;
-        }, interval);
-      },
-      stop() {
-        clearInterval(this.timer);
-      }
-    }
-  }
-  document.addEventListener('alpine:init', () => {
-    Alpine.data('carousel', carousel);
-  });
-</script>
