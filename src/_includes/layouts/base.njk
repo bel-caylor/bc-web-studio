@@ -6,6 +6,29 @@
   <title>{{ title }}</title>
   <link href="/style.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <!-- Your Alpine carousel component -->
+  <script>
+    function carousel({ images = [], interval = 3000 }) {
+      return {
+        images,
+        current: 0,
+        timer: null,
+        start() {
+          this.stop(); // ensure no double timers
+          this.timer = setInterval(() => {
+            this.current = (this.current + 1) % this.images.length;
+          }, interval);
+        },
+        stop() {
+          clearInterval(this.timer);
+        }
+      }
+    }
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('carousel', carousel);
+    });
+  </script>
+
 </head>
 <body class="min-h-screen flex flex-col">
   {% include "components/header.njk" %}

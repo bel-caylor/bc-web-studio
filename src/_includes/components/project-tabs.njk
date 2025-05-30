@@ -1,0 +1,170 @@
+<!-- Dump your arrays into JSON for Alpine -->
+<script id="projects-data" type="application/json">
+  {{ projects | dump | safe }}
+</script>
+<script id="tools-data" type="application/json">
+  {{ tools | dump | safe }}
+</script>
+
+<div
+  x-data="{
+    active: 1,
+    projects: JSON.parse(document.getElementById('projects-data').textContent),
+    tools:    JSON.parse(document.getElementById('tools-data').textContent)
+  }"
+  class="flex flex-col md:flex-row"
+>
+
+  <!-- TAB HEADERS -->
+  <div
+    class="tab-headers flex flex-wrap border-b md:flex-col md:border-b-0 
+               overflow-x-auto md:overflow-visible w-full md:w-1/4"
+  >
+    <template x-for="(project, idx) in projects" :key="idx">
+      <button
+        @click="active = idx + 1"
+        :class="{
+            'tab-button px-4 py-4 m-2 md:min-h-[100px] bg-white border-b-4 md:border-b-0 md:border-r-4': true,
+            'border-accent': active === idx+1,
+            'border-transparent': active !== idx+1,
+            'hover:text-primary-medium': true,
+            'focus:outline-none': true
+        }"
+      >
+        <img
+          :src="project.logo"
+          :alt="project.title + ' logo'"
+          class="mr-2 inline object-cover"
+        />
+        <span x-text="!project.logoHasName ? project.title : ''"></span>
+      </button>
+    </template>
+  </div>
+
+  <!-- TAB CONTENTS -->
+  <div class="tab-contents mt-4 md:mt-0 md:ml-4 w-full md:w-3/4">
+    <template x-for="(project, idx) in projects" :key="idx">
+      <div x-show="active === idx + 1" x-transition class="tab-content">
+        <div class="bg-white shadow rounded p-4 max-w-4xl mx-auto">
+            <div class="flex justify-between align-bottom">
+                <h2 class="mb-4 font-bold text-3xl py-3" x-text="project.title"></h2>
+                <p class="text-sm text-gray-500 mb-2" x-text="project.endDate"></p>
+            </div>
+
+            <!-- Carousel always as array, with dynamic interval -->
+            <div
+                x-data="carousel({
+                  images: Array.isArray(project.screenshots)
+                            ? project.screenshots
+                            : project.screenshots
+                              ? [ project.screenshots ]
+                              : [],
+                  interval: project.interval ?? 3000
+                })"
+                x-init="start()"
+                @mouseenter="stop()"
+                @mouseleave="start()"
+                class="relative w-full overflow-hidden border border-gray-300 shadow-lg rounded-2xl"
+                style="aspect-ratio: 13 / 9;"
+            >
+                <template x-for="(src, i) in images" :key="i">
+                <div
+                    x-show="current === i"
+                    class="absolute inset-0"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="translate-x-full"
+                    x-transition:enter-end="translate-x-0"
+                    x-transition:leave="transition ease-in duration-500"
+                    x-transition:leave-start="translate-x-0"
+                    x-transition:leave-end="-translate-x-full"
+                >
+                    <template x-if="src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')">
+                      <video
+                          :src="src"
+                          class="w-full h-full object-cover"
+                          autoplay
+                          muted
+                          loop
+                          playsinline
+                      ></video>
+                    </template>
+
+                    <template x-if="!(src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm'))">
+                      <img
+                          :src="src"
+                          class="w-full h-full object-cover"
+                          alt=""
+                      />
+                    </template>
+                </div>
+                </template>
+            </div>
+
+          <h3 class="text-lg font-semibold">Problem</h3>
+          <p class="mb-4" x-text="project.problem"></p>
+
+          <h3 class="text-lg font-semibold">Solution</h3>
+          <p class="mb-4" x-text="project.solution"></p>
+
+          <a
+            x-show="project.url"
+            :href="project.url"
+            target="_blank"
+            class="inline-block mt-2 text-blue-600 underline"
+          >
+            Visit project
+          </a>
+
+          <div class="mt-4">
+            <h4 class="font-medium">Tools used:</h4>
+            <ul class="flex flex-wrap gap-2 mt-2">
+              <template x-for="toolId in project.tools" :key="toolId">
+                <li class="flex items-center gap-1 text-sm bg-gray-100 px-2 py-1 rounded">
+                  <img
+                    :src="(() => {
+                      const t = tools.find(x => x.id === toolId);
+                      return t ? t.icon : '';
+                    })()"
+                    :alt="(() => {
+                      const t = tools.find(x => x.id === toolId);
+                      return t ? t.name : '';
+                    })()"
+                    class="w-4 h-4"
+                  />
+                  <span x-text="(() => {
+                    const t = tools.find(x => x.id === toolId);
+                    return t ? t.name : '';
+                  })()"></span>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
+
+<!-- Alpine.js -->
+<script src="//unpkg.com/alpinejs" defer></script>
+<script>
+  function carousel({ images = [], interval = 3000 }) {
+    return {
+      images,
+      current: 0,
+      timer: null,
+      start() {
+        this.stop();
+        this.timer = setInterval(() => {
+          this.current = (this.current + 1) % this.images.length;
+        }, interval);
+      },
+      stop() {
+        clearInterval(this.timer);
+      }
+    }
+  }
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('carousel', carousel);
+  });
+</script>

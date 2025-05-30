@@ -1,0 +1,112 @@
+[
+  {
+    "title": "HopeIsReal.org",
+    "url": "https://hopeisreal.org/",
+    "logo": "https://hopeisreal.org/wp-content/uploads/2023/03/hope-church-logo.svg",
+    "logoHasName": false,
+    "problem": "HopeIsReal needed a modern website that conveyed their mission, encouraged donations, and was easy to update internally.",
+    "solution": "Designed and developed a full WordPress site with ACF blocks, custom buttons in React, and performance/accessibility optimizations.",
+    "tools": [
+      "wordpress",
+      "acf",
+      "react",
+      "tailwindcss",
+      "accessibility",
+      "googleanalytics",
+      "gtm"
+    ],
+    "screenshots": "/assets/screenshots/hopeisreal.png",
+    "endDate": "2023-06",
+    "type": [
+      "design",
+      "develop",
+      "maintain"
+    ]
+  },
+  {
+    "title": "Perc.org",
+    "url": "https://perc.org/",
+    "logo": "https://perc.org/wp-content/uploads/2023/03/perc-logo.svg",
+    "logoHasName": false,
+    "problem": "Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.",
+    "solution": "Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.",
+    "tools": [
+      "wordpress",
+      "kadence",
+      "alpinejs",
+      "restapi",
+      "php"
+    ],
+    "screenshots": "/assets/screenshots/perc.png",
+    "endDate": "2022-12",
+    "type": [
+      "design",
+      "develop"
+    ]
+  },
+  {
+    "title": "BuffaloCorpStore.com",
+    "url": "https://www.buffalocorpstore.com/",
+    "logo": "/img/logos/buffalo corp.png",
+    "logoHasName": true,
+    "problem": "BuffaloCorp needed a better e-commerce experience, particularly around navigation and product search.",
+    "solution": "Redesigned the storefront with a jQuery-powered mega menu and custom Gutenberg blocks for a better product discovery flow.",
+    "tools": [
+      "wordpress",
+      "jquery",
+      "woocommerce",
+      "php"
+    ],
+    "screenshots": "/assets/screenshots/buffalocorpstore.png",
+    "endDate": "2022-06",
+    "type": [
+      "design",
+      "develop",
+      "maintain"
+    ]
+  },
+  {
+    "title": "New2SATX.com",
+    "url": "https://new2satx.com/",
+    "logo": "https://new2satx.com/wp-content/uploads/2024/01/New2SATX-Logo-Horizontal-300x96.png",
+    "logoHasName": true,
+    "problem": "A new business needed guidance and execution on building their first digital presence.",
+    "solution": "Guided them through site structure and layout, implemented SEO and analytics setup using Google tools.",
+    "tools": [
+      "wordpress",
+      "seo",
+      "googleanalytics",
+      "gtm"
+    ],
+    "screenshots": "/img/screenshots/New2SATX-home.mp4",
+    "endDate": "2022-11",
+    "type": [
+      "design",
+      "develop",
+      "maintain"
+    ]
+  },
+  {
+    "title": "Ascent",
+    "url": "https://www.ascentcorp.com/",
+    "logo": "/img/logos/ascent.png",
+    "logoHasName": true,
+    "problem": "The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.",
+    "solution": "Led implementation of their first FSE theme, integrating Tailwind and reusable components with custom jQuery enhancements.",
+    "tools": [
+      "wordpress",
+      "tailwindcss",
+      "jquery"
+    ],
+    "interval": 5000,
+    "screenshots": [
+      "/img/screenshots/ascentcorp1.png",
+      "/img/screenshots/ascentcorp2.png"
+    ],
+    "endDate": "2021-06",
+    "type": [
+      "develop",
+      "maintain"
+    ]
+  }
+]
