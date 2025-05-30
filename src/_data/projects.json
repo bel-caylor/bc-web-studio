@@ -1,6 +1,6 @@
 [
   {
-    "title": "HopeIsReal.org",
+    "title": "Hope Church",
     "url": "https://hopeisreal.org/",
     "logo": "https://hopeisreal.org/wp-content/uploads/2023/03/hope-church-logo.svg",
     "logoHasName": false,
@@ -27,7 +27,7 @@
     ]
   },
   {
-    "title": "Perc.org",
+    "title": "Perc",
     "url": "https://perc.org/",
     "logo": "https://perc.org/wp-content/uploads/2023/03/perc-logo.svg",
     "logoHasName": false,
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "title": "BuffaloCorpStore.com",
+    "title": "Buffalo Store",
     "url": "https://www.buffalocorpstore.com/",
     "logo": "/img/logos/buffalo corp.png",
     "logoHasName": true,
@@ -69,7 +69,7 @@
     ]
   },
   {
-    "title": "New2SATX.com",
+    "title": "New2SATX",
     "url": "https://new2satx.com/",
     "logo": "https://new2satx.com/wp-content/uploads/2024/01/New2SATX-Logo-Horizontal-300x96.png",
     "logoHasName": true,

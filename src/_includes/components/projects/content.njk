@@ -1,7 +1,7 @@
 <div class="tab-contents mt-4 md:mt-0 md:ml-4 w-full md:w-3/4">
     <template x-for="(project, idx) in projects" :key="idx">
     <div x-show="active === idx + 1" x-transition class="tab-content">
-        <div class="bg-white shadow rounded p-4 max-w-4xl mx-auto">
+        <div class="bg-white shadow rounded p-8 max-w-4xl mx-auto">
             <div class="flex justify-between align-bottom">
                 <h2 class="mb-4 font-bold text-3xl py-3" x-text="project.title"></h2>
                 <p class="text-xl text-gray-500 my-4"
