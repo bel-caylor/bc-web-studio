@@ -6,11 +6,16 @@ module.exports = function(eleventyConfig) {
     arr.find(item => item[attr] === value)
   );
 
-  eleventyConfig.addPassthroughCopy({ "./src/style.css": "style.css" });
   eleventyConfig.addWatchTarget("src/style.css");
   eleventyConfig.addPassthroughCopy({ "src/img/logos": "img/logos" });
   eleventyConfig.addPassthroughCopy({ "src/img/screenshots": "img/screenshots" });
   eleventyConfig.addPassthroughCopy("src/js");
+
+  eleventyConfig.addWatchTarget("dist/style.css");
+  eleventyConfig.setBrowserSyncConfig({
+    open: true,
+    files: ["dist/style.css"], 
+  });
 
   return {
     dir: {

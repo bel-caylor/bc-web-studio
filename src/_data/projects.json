@@ -15,7 +15,10 @@
       "googleanalytics",
       "gtm"
     ],
-    "screenshots": "/assets/screenshots/hopeisreal.png",
+    "screenshots": [
+      "/img/screenshots/ascentcorp1.png",
+      "/img/screenshots/ascentcorp2.png"
+    ],
     "endDate": "2023-06",
     "type": [
       "design",

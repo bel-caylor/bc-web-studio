@@ -1,8 +1,7 @@
 module.exports = {
   content: [
-    "./src/**/*.njk",
-    "./src/**/*.html",
-    "./src/**/*.js",
+    "./src/**/*.{html,njk,js}",
+    "./src/_includes/**/*.{html,njk,js}"
   ],
   theme: {
     extend: {
