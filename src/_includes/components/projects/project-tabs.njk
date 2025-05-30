@@ -1,0 +1,41 @@
+<!-- Dump your arrays into JSON for Alpine -->
+<script id="projects-data" type="application/json">
+  {{ projects | dump | safe }}
+</script>
+<script id="tools-data" type="application/json">
+  {{ tools | dump | safe }}
+</script>
+
+<div
+    x-data="{
+    active: 1,
+    filter: 'all',
+    projects: JSON.parse(document.getElementById('projects-data').textContent),
+    tools: JSON.parse(document.getElementById('tools-data').textContent),
+    get filteredProjects() {
+        if (this.filter === 'all') return this.projects;
+        return this.projects.filter(project => project.type.includes(this.filter));
+    }
+    }"
+>
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-4xl font-bold">Projects</h2>
+        <div class="select-wrapper">
+            <select x-model="filter" class="select">
+                <option value="all">All Types</option>
+                <option value="design">Design</option>
+                <option value="develop">Develop</option>
+                <option value="maintain">Maintain</option>
+            </select>
+        </div>
+    </div>
+    <div class="flex flex-col md:flex-row">
+        <!-- TAB HEADERS -->
+        {% include "components/projects/tabs.njk" %}
+
+        <!-- TAB CONTENTS -->
+        {% include "components/projects/content.njk" %}
+
+    </div>
+
+</div>

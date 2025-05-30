@@ -1,0 +1,18 @@
+<div class="tab-headers">
+  <template x-for="(project, idx) in filteredProjects" :key="idx">
+    <button
+      @click="active = idx + 1"
+      :class="[
+        'tab-button',
+        active === idx + 1 ? 'tab-button-active' : 'tab-button-inactive'
+      ]"
+    >
+      <img
+        :src="project.logo"
+        :alt="project.title + ' logo'"
+        class="tab-logo"
+      />
+      <span x-text="!project.logoHasName ? project.title : ''"></span>
+    </button>
+  </template>
+</div>
