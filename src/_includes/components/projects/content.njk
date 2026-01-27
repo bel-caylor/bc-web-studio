@@ -46,6 +46,7 @@
                             muted
                             loop
                             playsinline
+                            :aria-label="`${project.title} demo video`"
                     ></video>
                     </template>
 
@@ -54,7 +55,7 @@
                         :src="src"
                         loading="lazy"
                         class="w-full h-full object-cover"
-                        alt=""
+                        :alt="`${project.title} screenshot ${i + 1}`"
                     />
                     </template>
                 </div>

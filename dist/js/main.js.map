@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/js/main.js"],
+  "sourcesContent": ["document.addEventListener(\"alpine:init\", () => {\r\n  console.log(\"[main.js] alpine:init\");\r\n  Alpine.data('projectCarousel', (project) => ({\r\n    images: Array.isArray(project.screenshots)\r\n              ? project.screenshots\r\n              : project.screenshots\r\n                ? [project.screenshots]\r\n                : [],\r\n    interval: project.interval ?? 3000,\r\n    current: 0,\r\n    timer: null,\r\n    init() {\r\n      this.start();\r\n    },\r\n    start() {\r\n      this.stop();\r\n      this.timer = setInterval(() => {\r\n        this.current = (this.current + 1) % this.images.length;\r\n      }, this.interval);\r\n    },\r\n    stop() {\r\n      clearInterval(this.timer);\r\n    },\r\n    goTo(i) {\r\n      this.current = i;\r\n    }\r\n  }));\r\n});\r\n"],
+  "mappings": ";AAAA,SAAS,iBAAiB,eAAe,MAAM;AAC7C,UAAQ,IAAI,uBAAuB;AACnC,SAAO,KAAK,mBAAmB,CAAC,YAAS;AAF3C;AAE+C;AAAA,MAC3C,QAAQ,MAAM,QAAQ,QAAQ,WAAW,IAC7B,QAAQ,cACR,QAAQ,cACN,CAAC,QAAQ,WAAW,IACpB,CAAC;AAAA,MACf,WAAU,aAAQ,aAAR,YAAoB;AAAA,MAC9B,SAAS;AAAA,MACT,OAAO;AAAA,MACP,OAAO;AACL,aAAK,MAAM;AAAA,MACb;AAAA,MACA,QAAQ;AACN,aAAK,KAAK;AACV,aAAK,QAAQ,YAAY,MAAM;AAC7B,eAAK,WAAW,KAAK,UAAU,KAAK,KAAK,OAAO;AAAA,QAClD,GAAG,KAAK,QAAQ;AAAA,MAClB;AAAA,MACA,OAAO;AACL,sBAAc,KAAK,KAAK;AAAA,MAC1B;AAAA,MACA,KAAK,GAAG;AACN,aAAK,UAAU;AAAA,MACjB;AAAA,IACF;AAAA,GAAE;AACJ,CAAC;",
+  "names": []
+}

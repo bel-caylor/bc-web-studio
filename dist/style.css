@@ -104,13 +104,9 @@
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
-}
-
-/*
+}/*
 ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
-*/
-
-/*
+*//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
@@ -427,7 +423,6 @@ menu {
 /*
 Reset default styling for dialogs.
 */
-
 dialog {
   padding: 0;
 }
@@ -468,7 +463,6 @@ button,
 /*
 Make sure disabled buttons don't get the pointer cursor.
 */
-
 :disabled {
   cursor: default;
 }
@@ -502,7 +496,6 @@ video {
 }
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
-
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
@@ -569,7 +562,7 @@ video {
 
 .tab-button:hover {
   --tw-text-opacity: 1;
-  color: rgb(59 88 112 / var(--tw-text-opacity, 1));
+  color: rgb(44 62 106 / var(--tw-text-opacity, 1));
 }
 
 .tab-button:focus {
@@ -588,7 +581,7 @@ video {
 
 .tab-button-active {
   --tw-border-opacity: 1;
-  border-color: rgb(184 50 39 / var(--tw-border-opacity, 1));
+  border-color: rgb(176 48 42 / var(--tw-border-opacity, 1));
 }
 
 .tab-button-inactive {
@@ -622,10 +615,6 @@ video {
   left: 50%;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -641,16 +630,16 @@ video {
   margin-bottom: 2rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
 
 .mb-8 {
   margin-bottom: 2rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
 }
 
 .mt-2 {
@@ -663,10 +652,6 @@ video {
 
 .inline-block {
   display: inline-block;
-}
-
-.inline {
-  display: inline;
 }
 
 .flex {
@@ -689,10 +674,6 @@ video {
   height: 100%;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
 .min-h-screen {
   min-height: 100vh;
 }
@@ -707,14 +688,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-1\/4 {
-  width: 25%;
-}
-
-.w-6 {
-  width: 1.5rem;
 }
 
 .max-w-4xl {
@@ -832,14 +805,6 @@ video {
   border-bottom-width: 1px;
 }
 
-.border-b-4 {
-  border-bottom-width: 4px;
-}
-
-.border-r-4 {
-  border-right-width: 4px;
-}
-
 .border-b-2 {
   border-bottom-width: 2px;
 }
@@ -850,7 +815,7 @@ video {
 
 .border-accent {
   --tw-border-opacity: 1;
-  border-color: rgb(184 50 39 / var(--tw-border-opacity, 1));
+  border-color: rgb(176 48 42 / var(--tw-border-opacity, 1));
 }
 
 .border-gray-300 {
@@ -864,7 +829,7 @@ video {
 
 .bg-accent {
   --tw-bg-opacity: 1;
-  background-color: rgb(184 50 39 / var(--tw-bg-opacity, 1));
+  background-color: rgb(176 48 42 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gray-100 {
@@ -874,7 +839,7 @@ video {
 
 .bg-primary {
   --tw-bg-opacity: 1;
-  background-color: rgb(26 37 95 / var(--tw-bg-opacity, 1));
+  background-color: rgb(15 27 61 / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
@@ -895,30 +860,21 @@ video {
   background-position: center;
 }
 
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .p-4 {
   padding: 1rem;
 }
 
-.p-6 {
-  padding: 1.5rem;
-}
-
 .p-8 {
   padding: 2rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
 }
 
 .px-2 {
@@ -946,6 +902,11 @@ video {
   padding-bottom: 4rem;
 }
 
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -954,20 +915,6 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.text-left {
-  text-align: left;
 }
 
 .text-center {
@@ -1017,12 +964,12 @@ video {
 
 .text-accent {
   --tw-text-opacity: 1;
-  color: rgb(184 50 39 / var(--tw-text-opacity, 1));
+  color: rgb(176 48 42 / var(--tw-text-opacity, 1));
 }
 
 .text-background-lightest {
   --tw-text-opacity: 1;
-  color: rgb(248 249 249 / var(--tw-text-opacity, 1));
+  color: rgb(251 252 254 / var(--tw-text-opacity, 1));
 }
 
 .text-blue-600 {
@@ -1035,9 +982,9 @@ video {
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
 }
 
-.text-primary-medium {
+.text-gray-600 {
   --tw-text-opacity: 1;
-  color: rgb(59 88 112 / var(--tw-text-opacity, 1));
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
 }
 
 .text-white {
@@ -1058,11 +1005,6 @@ video {
 .text-zinc-900 {
   --tw-text-opacity: 1;
   color: rgb(24 24 27 / var(--tw-text-opacity, 1));
-}
-
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
 }
 
 .underline {
@@ -1093,11 +1035,6 @@ video {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.outline-none {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }
 
 .filter {
@@ -1168,21 +1105,11 @@ video {
 
 .hover\:bg-accent-dark:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(193 39 72 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:text-primary-medium:hover {
-  --tw-text-opacity: 1;
-  color: rgb(59 88 112 / var(--tw-text-opacity, 1));
+  background-color: rgb(126 31 28 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:underline:hover {
   text-decoration-line: underline;
-}
-
-.focus\:outline-none:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }
 
 @media (min-width: 768px) {
@@ -1203,36 +1130,12 @@ video {
     display: none;
   }
 
-  .md\:min-h-\[100px\] {
-    min-height: 100px;
-  }
-
-  .md\:w-1\/4 {
-    width: 25%;
-  }
-
   .md\:w-3\/4 {
     width: 75%;
   }
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:flex-col {
-    flex-direction: column;
-  }
-
-  .md\:overflow-visible {
-    overflow: visible;
-  }
-
-  .md\:border-b-0 {
-    border-bottom-width: 0px;
-  }
-
-  .md\:border-r-4 {
-    border-right-width: 4px;
   }
 
   .md\:text-5xl {

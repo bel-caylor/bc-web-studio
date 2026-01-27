@@ -28,6 +28,7 @@
             <img
                 :src="project.logo"
                 :alt="project.title + ' logo'"
+                loading="lazy"
                 class="tab-logo"
             />
             <span x-text="!project.logoHasName ? project.title : ''"></span>
