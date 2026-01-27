@@ -1,3 +1,66 @@
+@layer base {
+  :root {
+    --code-bg-image: url('/img/hero-bg.png');
+  }
+
+  body {
+    @apply font-sans text-zinc-900;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+  }
+
+  code,
+  kbd,
+  pre {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .code-bg {
+    @apply text-white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .code-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(135deg, rgba(10, 15, 40, 0.9), rgba(6, 18, 52, 0.75)), var(--code-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transform: scale(1.05);
+  }
+
+  .code-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .eyebrow {
+    @apply font-mono uppercase text-xs font-bold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .eyebrow--wide {
+    letter-spacing: 0.3em;
+  }
+
+  .eyebrow--compact {
+    letter-spacing: 0.1em;
+  }
+}
+
 @layer components {
     .select-wrapper {
       @apply bg-white pr-3 border rounded focus-within:ring-2 focus-within:ring-blue-500;

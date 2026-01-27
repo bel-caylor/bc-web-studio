@@ -1,14 +1,71 @@
 ---
 layout: layouts/base.njk
-title: Home
+title: Web engineering for agencies and growing businesses
 ---
-<section class="text-center py-20">
-  <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
-  <p class="text-lg text-zinc-600 dark:text-zinc-300">Welcome to my personal profile site powered by Eleventy, Tailwind CSS, and Alpine.js!</p>
+<section class="code-bg text-center py-20">
+  <div class="max-w-3xl mx-auto px-4">
+    <p class="eyebrow eyebrow--wide text-white/70 mb-6">Web Engineer</p>
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ title }}</h1>
+    <p class="text-lg text-white/85">
+      I partner with agencies and small businesses <br class="hidden md:block"> to design, build, and maintain fast, accessible, production-ready websites <br class="hidden md:block"> — from custom WordPress builds to modern front-end integrations.
+    </p>
+    <div class="mt-8 flex flex-col md:flex-row gap-4 justify-center">
+      <a href="/for-agencies/" class="inline-flex items-center justify-center rounded-full bg-accent text-white font-heading text-sm uppercase tracking-[0.2em] px-8 py-3 shadow-lg hover:-translate-y-0.5 transition">
+        For Agencies
+      </a>
+      <a href="/for-small-businesses/" class="inline-flex items-center justify-center rounded-full bg-accent/80 text-white font-heading text-sm uppercase tracking-[0.2em] px-8 py-3 shadow-lg hover:bg-accent transition">
+        For Small Businesses
+      </a>
+    </div>
+  </div>
 </section>
 
 <section class="py-16 bg-zinc-100 dark:bg-zinc-900">
   <div class="xl:container mx-auto px-4">
-    {% include "components/projects/project-tabs.njk" %}
+    <div class="max-w-3xl mx-auto mb-10 text-center">
+      <p class="eyebrow eyebrow--wide text-electric-dark">Site Map</p>
+      <h2 class="text-3xl font-bold mt-3 mb-4">Ways to work together</h2>
+      <p class="text-zinc-600 dark:text-zinc-300">
+        Explore tailored engagement paths for agencies, hiring teams, and small business owners.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      <a href="/for-agencies/" class="block rounded-2xl border border-white/40 bg-white/80 p-6 shadow-lg hover:-translate-y-1 transition">
+        <p class="eyebrow eyebrow--compact text-electric-dark mb-2">Partner track</p>
+        <h3 class="text-2xl font-bold mb-3">For Agencies</h3>
+        <p class="text-zinc-600">
+          I integrate seamlessly with existing teams to ship high-quality WordPress and front-end work on schedule.
+        </p>
+        <span class="inline-flex items-center mt-4 font-heading text-electric">Agency partnerships →</span>
+      </a>
+
+      <a href="/for-small-businesses/" class="block rounded-2xl border border-white/40 bg-white/80 p-6 shadow-lg hover:-translate-y-1 transition">
+        <p class="eyebrow eyebrow--compact text-electric-dark mb-2">Advisory</p>
+        <h3 class="text-2xl font-bold mb-3">For Small Businesses</h3>
+        <p class="text-zinc-600">
+          Strategy, design, and development support for founders who want a site that actually works for their business.
+        </p>
+        <span class="inline-flex items-center mt-4 font-heading text-electric">Small business solutions →</span>
+      </a>
+
+      <a href="/case-studies/" class="block rounded-2xl border border-white/40 bg-white/80 p-6 shadow-lg hover:-translate-y-1 transition">
+        <p class="eyebrow eyebrow--compact text-electric-dark mb-2">Work</p>
+        <h3 class="text-2xl font-bold mb-3">Case Studies</h3>
+        <p class="text-zinc-600">
+          Deep dives into shipped projects, highlighting goals, process, and measurable outcomes.
+        </p>
+        <span class="inline-flex items-center mt-4 font-heading text-electric">View case studies →</span>
+      </a>
+
+      <a href="/about/" class="block rounded-2xl border border-white/40 bg-white/80 p-6 shadow-lg hover:-translate-y-1 transition">
+        <p class="eyebrow eyebrow--compact text-electric-dark mb-2">Profile</p>
+        <h3 class="text-2xl font-bold mb-3">About</h3>
+        <p class="text-zinc-600">
+          Learn about my background, guiding principles, and the tools I bring to modern teams.
+        </p>
+        <span class="inline-flex items-center mt-4 font-heading text-electric">Meet me →</span>
+      </a>
+    </div>
   </div>
 </section>

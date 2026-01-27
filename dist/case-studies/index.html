@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies</title>
+  <link href="/style.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex flex-col">
+  <header class="code-bg">
+  <div class="p-4">
+    <nav class="max-w-5xl mx-auto flex justify-between items-center text-white">
+      <a href="/" class="font-heading font-bold text-xl">BC Web Studio</a>
+      <div class="flex flex-wrap gap-4 text-sm font-heading font-medium tracking-wide">
+        <a href="/" class="hover:underline">Home</a>
+        <a href="/for-agencies/" class="hover:underline">For Agencies</a>
+        <a href="/for-small-businesses/" class="hover:underline">For Small Businesses</a>
+        <a href="/case-studies/" class="hover:underline">Case Studies</a>
+        <a href="/about/" class="hover:underline">About</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <main class="flex-grow">
+    <section class="code-bg text-center py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="eyebrow eyebrow--wide text-white/70">Work</p>
+    <h1 class="text-4xl md:text-5xl font-bold mt-3 mb-4">Case Studies & Project Deep Dives</h1>
+    <p class="text-white/85 text-lg">
+      Every engagement blends research, component-driven design, and tight feedback loops.
+      Browse a curated set of launches that highlight strategy, process, and measurable wins.
+    </p>
+  </div>
+</section>
+
+<section class="py-16 bg-zinc-100 dark:bg-zinc-900">
+  <div class="xl:container mx-auto px-4">
+    <div
+    x-data='{
+      active: 1,
+      filter: "all",
+      projects: [{"title":"Hope Church","url":"https://hopeisreal.org/","logo":"https://hopeisreal.org/wp-content/uploads/2023/03/hope-church-logo.svg","logoHasName":false,"problem":"HopeIsReal needed a modern website that conveyed their mission, encouraged donations, and was easy to update internally.","solution":"Designed and developed a full WordPress site with ACF blocks, custom buttons in React, and performance/accessibility optimizations.","tools":["wordpress","acf","react","tailwindcss","accessibility","googleanalytics","gtm"],"screenshots":["/img/screenshots/ascentcorp1.png","/img/screenshots/ascentcorp2.png"],"endDate":"2023-06","type":["design","develop","maintain"]},{"title":"Perc","url":"https://perc.org/","logo":"https://perc.org/wp-content/uploads/2023/03/perc-logo.svg","logoHasName":false,"problem":"Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.","solution":"Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.","tools":["wordpress","kadence","alpinejs","restapi","php"],"screenshots":"/assets/screenshots/perc.png","endDate":"2022-12","type":["design","develop"]},{"title":"Buffalo Store","url":"https://www.buffalocorpstore.com/","logo":"/img/logos/buffalo corp.png","logoHasName":true,"problem":"BuffaloCorp needed a better e-commerce experience, particularly around navigation and product search.","solution":"Redesigned the storefront with a jQuery-powered mega menu and custom Gutenberg blocks for a better product discovery flow.","tools":["wordpress","jquery","woocommerce","php"],"screenshots":"/assets/screenshots/buffalocorpstore.png","endDate":"2022-06","type":["design","develop","maintain"]},{"title":"New2SATX","url":"https://new2satx.com/","logo":"https://new2satx.com/wp-content/uploads/2024/01/New2SATX-Logo-Horizontal-300x96.png","logoHasName":true,"problem":"A new business needed guidance and execution on building their first digital presence.","solution":"Guided them through site structure and layout, implemented SEO and analytics setup using Google tools.","tools":["wordpress","seo","googleanalytics","gtm"],"screenshots":"/img/screenshots/New2SATX-home.mp4","endDate":"2022-11","type":["design","develop","maintain"]},{"title":"Ascent","url":"https://www.ascentcorp.com/","logo":"/img/logos/ascent.png","logoHasName":true,"problem":"The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.","solution":"Led implementation of their first FSE theme, integrating Tailwind and reusable components with custom jQuery enhancements.","tools":["wordpress","tailwindcss","jquery"],"interval":5000,"screenshots":["/img/screenshots/ascentcorp1.png","/img/screenshots/ascentcorp2.png"],"endDate":"2021-06","type":["develop","maintain"]}],
+      tools: [{"id":"javascript","name":"JavaScript","category":"Languages & Syntax","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"},{"id":"php","name":"PHP","category":"Languages & Syntax","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"},{"id":"html","name":"HTML5","category":"Languages & Syntax","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"},{"id":"css","name":"CSS3","category":"Languages & Syntax","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"},{"id":"sass","name":"Sass","category":"Languages & Syntax","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"},{"id":"yaml","name":"YAML","category":"Languages & Syntax","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yaml/yaml-original.svg"},{"id":"wordpress","name":"WordPress","category":"CMS & Site Builders","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"},{"id":"acf","name":"Advanced Custom Fields","category":"CMS & Site Builders","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"},{"id":"kadence","name":"Kadence","category":"CMS & Site Builders","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"},{"id":"woocommerce","name":"WooCommerce","category":"CMS & Site Builders","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg"},{"id":"buddypress","name":"BuddyPress","category":"CMS & Site Builders","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"},{"id":"gravityforms","name":"Gravity Forms","category":"CMS & Site Builders","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"},{"id":"theeventscalendar","name":"The Events Calendar","category":"CMS & Site Builders","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"},{"id":"alpinejs","name":"Alpine.js","category":"Frameworks & Libraries","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/alpinejs/alpinejs-original.svg"},{"id":"jquery","name":"jQuery","category":"Frameworks & Libraries","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg"},{"id":"react","name":"React","category":"Frameworks & Libraries","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"},{"id":"vuejs","name":"Vue.js","category":"Frameworks & Libraries","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"},{"id":"tailwindcss","name":"Tailwind CSS","category":"Frameworks & Libraries","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"},{"id":"git","name":"Git","category":"Tooling & DevOps","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"},{"id":"github","name":"GitHub","category":"Tooling & DevOps","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"},{"id":"bitbucket","name":"Bitbucket","category":"Tooling & DevOps","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg"},{"id":"gulp","name":"Gulp","category":"Tooling & DevOps","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gulp/gulp-plain.svg"},{"id":"webpack","name":"Webpack","category":"Tooling & DevOps","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg"},{"id":"npm","name":"npm","category":"Tooling & DevOps","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"},{"id":"ssh","name":"SSH","category":"Tooling & DevOps","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"},{"id":"sftp","name":"SFTP","category":"Tooling & DevOps","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/filezilla/filezilla-plain.svg"},{"id":"mysql","name":"MySQL","category":"Data & API Work","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"},{"id":"nodejs","name":"Node.js","category":"Languages & Syntax","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"},{"id":"python","name":"Python","category":"Languages & Syntax","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"},{"id":"restapi","name":"REST API","category":"Data & API Work","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/api/api-original.svg"},{"id":"zoho","name":"Zoho API","category":"Data & API Work","icon":"https://www.zoho.com/favicon.ico"},{"id":"hubspot","name":"HubSpot API","category":"Data & API Work","icon":"https://cdn.worldvectorlogo.com/logos/hubspot.svg"},{"id":"plaid","name":"Plaid API","category":"Data & API Work","icon":"https://cdn.worldvectorlogo.com/logos/plaid-2.svg"},{"id":"googleanalytics","name":"Google Analytics","category":"Marketing & Measurement","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"},{"id":"gtm","name":"Google Tag Manager","category":"Marketing & Measurement","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"},{"id":"accessibility","name":"Accessibility","category":"Marketing & Measurement","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/accessibility/accessibility-original.svg"},{"id":"chatgpt","name":"ChatGPT","category":"AI & Automation","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg"},{"id":"figma","name":"Figma","category":"Design & UX Tools","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"},{"id":"trello","name":"Trello","category":"PM & Communication","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg"},{"id":"jira","name":"Jira","category":"PM & Communication","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"},{"id":"slack","name":"Slack","category":"PM & Communication","icon":"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg"}],
+      get filteredProjects() {
+        if (this.filter === "all") return this.projects;
+        return this.projects.filter(project => project.type.includes(this.filter));
+      }
+    }'
+>
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-4xl font-bold">Projects</h2>
+        <div class="select-wrapper">
+            <label for="filter-select" class="text-sm font-medium mb-1">Filter by type:</label>
+            <select x-model="filter" class="select">
+                <option value="all">All Types</option>
+                <option value="design">Design</option>
+                <option value="develop">Develop</option>
+                <option value="maintain">Maintain</option>
+            </select>
+        </div>
+    </div>
+    <div class="flex flex-col md:flex-row">
+        <!-- TAB HEADERS -->
+        <div class="tab-headers">
+    <!-- Mobile: scrollable titles only -->
+    <div class="flex md:hidden overflow-x-auto border-b space-x-2 p-2">
+        <template x-for="(project, idx) in filteredProjects" :key="idx">
+        <button
+            @click="active = idx + 1"
+            :class="{
+            'text-sm whitespace-nowrap px-4 py-2 rounded-t border-b-2': true,
+            'border-accent text-accent font-semibold': active === idx+1,
+            'border-transparent text-gray-600': active !== idx+1
+            }"
+        >
+            <span x-text="project.title"></span>
+        </button>
+        </template>
+    </div>
+
+    <!-- Desktop: logo + title list -->
+    <div class="hidden md:flex flex-col border-r space-y-2 p-2">
+        <template x-for="(project, idx) in filteredProjects" :key="idx">
+            <button
+            @click="active = idx + 1"
+            :class="[
+                'tab-button',
+                active === idx + 1 ? 'tab-button-active' : 'tab-button-inactive'
+            ]"
+            >
+            <img
+                :src="project.logo"
+                :alt="project.title + ' logo'"
+                loading="lazy"
+                class="tab-logo"
+            />
+            <span x-text="!project.logoHasName ? project.title : ''"></span>
+            </button>
+        </template>
+    </div>
+</div>
+
+
+        <!-- TAB CONTENTS -->
+        <div class="tab-contents mt-4 md:mt-0 md:ml-4 w-full md:w-3/4">
+    <template x-for="(project, idx) in projects" :key="idx">
+    <div x-show="active === idx + 1" x-transition class="tab-content">
+        <div class="bg-white shadow rounded p-8 max-w-4xl mx-auto">
+            <div class="flex justify-between align-bottom">
+                <h2 class="mb-4 font-bold text-3xl py-3" x-text="project.title"></h2>
+                <p class="text-xl text-gray-500 my-4"
+                    x-text="new Date(project.endDate)
+                        .toLocaleString('en-US', { month: 'long', year: '2-digit' })"
+                    ></p>
+
+            </div>
+
+            <!-- Carousel always as array, with dynamic interval -->
+            <div
+            x-data="projectCarousel(project)"
+            x-init="init()"
+            @mouseenter="stop()"
+            @mouseleave="start()"
+            @focusin="stop()"
+            @focusout="start()"
+            tabindex="0"
+            aria-roledescription="carousel"
+            aria-label="Project screenshots"
+            class="relative w-full overflow-hidden border border-gray-300 shadow-lg rounded-2xl"
+            style="aspect-ratio: 13 / 9;"
+            >
+                <template x-for="(src, i) in images" :key="i">
+                <div
+                    x-show="current === i"
+                    class="absolute inset-0"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="translate-x-full"
+                    x-transition:enter-end="translate-x-0"
+                    x-transition:leave="transition ease-in duration-500"
+                    x-transition:leave-start="translate-x-0"
+                    x-transition:leave-end="-translate-x-full"
+                >
+                    <template x-if="src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')">
+                    <video
+                            :src="src"
+                            preload="none"
+                            poster="/img/screenshots/video-poster.png"
+                            class="w-full h-full object-cover"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            :aria-label="`${project.title} demo video`"
+                    ></video>
+                    </template>
+
+                    <template x-if="!(src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm'))">
+                    <img
+                        :src="src"
+                        loading="lazy"
+                        class="w-full h-full object-cover"
+                        :alt="`${project.title} screenshot ${i + 1}`"
+                    />
+                    </template>
+                </div>
+                </template>
+                <!-- Dot navigation -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <template x-for="(src, i) in images" :key="i">
+                    <button
+                        @click="current = i"
+                        :class="{
+                        'w-3 h-3 rounded-full bg-white': true,
+                        'opacity-50': current !== i,
+                        'opacity-100': current === i
+                        }"
+                        :aria-label="`Go to slide ${i + 1}`"
+                    ></button>
+                    </template>
+                </div>
+            </div>
+
+            <div class="my-8">
+                <h3 class="text-lg font-semibold">Problem</h3>
+                <p class="mb-4" x-text="project.problem"></p>
+
+                <h3 class="text-lg font-semibold">Solution</h3>
+                <p class="mb-4" x-text="project.solution"></p>
+
+                <a
+                    x-show="project.url"
+                    :href="project.url"
+                    target="_blank"
+                    class="inline-block mt-2 text-blue-600 underline"
+                >
+                    Visit project
+                </a>
+            </div>
+
+            <div class="mt-4">
+    <h4 class="font-medium">Tools used:</h4>
+    <ul class="flex flex-wrap gap-2 mt-2">
+    <template x-for="toolId in project.tools" :key="toolId">
+        <li class="flex items-center gap-1 text-sm bg-gray-100 px-2 py-1 rounded">
+        <img
+            :src="(() => {
+            const t = tools.find(x => x.id === toolId);
+            return t ? t.icon : '';
+            })()"
+            :alt="(() => {
+            const t = tools.find(x => x.id === toolId);
+            return t ? t.name : '';
+            })()"
+            loading="lazy"
+            class="w-4 h-4"
+        />
+        <span x-text="(() => {
+            const t = tools.find(x => x.id === toolId);
+            return t ? t.name : '';
+        })()"></span>
+        </li>
+    </template>
+    </ul>
+</div>
+
+        </div>
+    </div>
+    </template>
+</div>
+
+
+    </div>
+
+</div>
+
+  </div>
+</section>
+
+  </main>
+  <footer class="p-4 text-center text-sm text-zinc-500 dark:text-zinc-400">
+  &copy; 2026 MyProfile. All rights reserved.
+</footer>
+
+
+  <script src="/js/main.js"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+</body>
+
+</html>
