@@ -23,9 +23,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addWatchTarget("src/js");
   eleventyConfig.addWatchTarget("src/style.css");
-  eleventyConfig.addPassthroughCopy({ "src/img/logos": "img/logos" });
-  eleventyConfig.addPassthroughCopy({ "src/img/screenshots": "img/screenshots" });
-  eleventyConfig.addPassthroughCopy({ "src/img/hero-bg.png": "img/hero-bg.png" });
+  eleventyConfig.addPassthroughCopy({ "src/img": "img" });
 
   eleventyConfig.addWatchTarget("dist/style.css");
   eleventyConfig.addWatchTarget("dist/js");
