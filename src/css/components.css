@@ -11,6 +11,7 @@
     background-position: top;
     @apply font-sans text-zinc-900;
   }
+
   /* body::before {
     content: "";
     position: absolute;
@@ -30,6 +31,10 @@
     @apply font-heading;
   }
 
+  p:not(:first-of-type) { 
+    @apply mb-4
+  }
+
   code,
   kbd,
   pre {
@@ -45,13 +50,9 @@
     z-index: 1;
   }
 
-  .code-bg > * {
+  .code-bg>* {
     position: relative;
     z-index: 1;
-  }
-
-  .code-bg .eyebrow {
-    @apply text-white/70 text-base mb-1;
   }
 
   .code-bg h1 {
@@ -87,15 +88,13 @@
 
   .hero-cta {
     --hero-cta-arrow-depth: 2rem;
-    @apply  md:min-w-[300px] inline-flex items-center justify-center font-heading text-sm uppercase tracking-[0.2em] text-white shadow-lg transition transform hover:translate-x-2 px-8 py-3;
+    @apply md:min-w-[300px] inline-flex items-center justify-center font-heading text-sm uppercase tracking-[0.2em] text-white shadow-lg transition transform hover:translate-x-2 px-8 py-3;
     border-radius: 0;
-    clip-path: polygon(
-      0 0,
-      calc(100% - var(--hero-cta-arrow-depth)) 0,
-      100% 50%,
-      calc(100% - var(--hero-cta-arrow-depth)) 100%,
-      0 100%
-    );
+    clip-path: polygon(0 0,
+        calc(100% - var(--hero-cta-arrow-depth)) 0,
+        100% 50%,
+        calc(100% - var(--hero-cta-arrow-depth)) 100%,
+        0 100%);
     padding-right: calc(2rem + var(--hero-cta-arrow-depth) * 0.35);
   }
 
@@ -107,58 +106,70 @@
     @apply bg-accent/80 hover:bg-accent;
   }
 
+  .case-card {
+    --card-arrow-depth: 4rem;
+    border-radius: 0;
+    clip-path: polygon(0 0,
+    calc(100% - var(--card-arrow-depth)) 0,
+    100% 50%,
+    calc(100% - var(--card-arrow-depth)) 100%,
+    0 100%);
+    @apply pr-32 transition-transform duration-300 ease-out;
+  }
+
   .info-card {
     --info-card-tilt: 4rem;
     --info-card-border-color: rgba(15, 27, 61, 0.075);
-    @apply block bg-white/80 -mb-12 p-8 py-14 transition hover:translate-x-2;
     border: 1px solid var(--info-card-border-color);
     border-radius: 0;
     clip-path: polygon(0 var(--info-card-tilt), 100% 0, 100% calc(100% - var(--info-card-tilt)), 0 100%);
+    @apply h-full flex flex-col gap-2 justify-start;
+    @apply bg-white/80 -mb-12 p-8 py-16 transition hover:translate-x-2;
   }
-  .info-card > .eyebrow,
-  .info-card > h3 {
+
+  .info-card--stacked {
+    margin-bottom: 0;
+  }
+
+  .info-card>.eyebrow,
+  .info-card>h3 {
     @apply block text-right;
   }
-  .eyebrow > h2,
-  .eyebrow > h3 {
+
+  .eyebrow + h2,
+  .eyebrow + h3 {
     @apply mt-0 mb-4;
   }
-}
 
-@layer components {
-    .select-wrapper {
-      @apply bg-white pr-3 border rounded focus-within:ring-2 focus-within:ring-blue-500;
-    }
-  
-    .select {
-      @apply px-3 py-2 text-sm w-full focus:outline-none;
-    }
+  .select-wrapper {
+    @apply bg-white pr-3 border rounded focus-within:ring-2 focus-within:ring-blue-500;
+  }
 
-    .tab {
-        @apply text-sm px-4 py-2 border-b-2 md:border-l-2 border-transparent hover:text-accent focus:outline-none;
-      }
-    
-    .tab-headers {
-    @apply flex flex-wrap border-b md:flex-col md:border-b-0 
-            overflow-x-auto md:overflow-visible w-full md:w-1/4;
-    }
+  .select {
+    @apply px-3 py-2 text-sm w-full focus:outline-none;
+  }
 
-    .tab-button {
-    @apply px-4 py-4 m-2 md:min-h-[100px] bg-white 
-            border-b-4 md:border-b-0 md:border-r-4 
-            hover:text-primary-medium focus:outline-none;
-    }
+  .tab {
+    @apply text-sm px-4 py-2 border-b-2 md:border-l-2 border-transparent hover:text-accent focus:outline-none;
+  }
 
-    .tab-button-active {
+  .tab-headers {
+    @apply flex flex-wrap border-b md:flex-col md:border-b-0 overflow-x-auto md:overflow-visible w-full md:w-1/4;
+  }
+
+  .tab-button {
+    @apply px-4 py-4 m-2 md:min-h-[100px] bg-white border-b-4 md:border-b-0 md:border-r-4 hover:text-primary-medium focus:outline-none;
+  }
+
+  .tab-button-active {
     @apply border-accent;
-    }
+  }
 
-    .tab-button-inactive {
+  .tab-button-inactive {
     @apply border-transparent;
-    }
+  }
 
-    .tab-logo {
+  .tab-logo {
     @apply mr-2 inline object-cover;
-    }
+  }
 }
-  
