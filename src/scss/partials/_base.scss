@@ -44,4 +44,8 @@
   pre {
     @apply font-mono;
   }
+
+  [x-cloak] {
+    display: none !important;
+  }
 }

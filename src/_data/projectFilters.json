@@ -52,6 +52,14 @@
       {
         "id": "ongoing-support",
         "label": "Ongoing Support"
+      },
+      {
+        "id": "data-integrations",
+        "label": "Data Integrations"
+      },
+      {
+        "id": "content-migration",
+        "label": "Content Migration"
       }
     ],
     "width": "63%"

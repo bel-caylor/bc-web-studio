@@ -5,20 +5,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Case Studies</title>
+  <link rel="icon" type="image/svg+xml" href="/img/logos/favicon.svg">
   <link href="/style.css" rel="stylesheet">
 </head>
 
 <body class="min-h-screen flex flex-col">
-  <header class="">
+  
+<header class="" x-data="{ mobileNavOpen: false }">
   <div class="p-4">
-    <nav class="site-nav max-w-5xl mx-auto flex justify-between items-center">
-      <a href="/" class="font-heading font-bold text-xl">BC Web Studio</a>
-      <div class="flex flex-wrap gap-4 text-sm font-heading font-medium tracking-wide">
-        <a href="/" class="hover:underline">Home</a>
+    <nav class="site-nav max-w-5xl mx-auto flex justify-between items-center gap-4">
+      <a href="/" class="font-bold text-xl"><span class="text-accent !font-mono">&lt;</span>BC<span class="text-accent">&gt;</span> <span class="font-heading">Web Studio</span></a>
+      <div class="hidden md:flex flex-wrap gap-4 text-sm font-heading font-medium tracking-wide">
+        
         <a href="/for-agencies/" class="hover:underline">For Agencies</a>
+        
         <a href="/for-businesses/" class="hover:underline">For Businesses</a>
+        
         <a href="/case-studies/" class="hover:underline">Case Studies</a>
+        
         <a href="/about/" class="hover:underline">About</a>
+        
+      </div>
+      <div class="md:hidden relative flex-1 flex justify-end">
+        <button class="filter-toggle max-w-[220px]" type="button" @click="mobileNavOpen = !mobileNavOpen"
+          :aria-expanded="mobileNavOpen ? 'true' : 'false'" aria-controls="mobile-nav-panel">
+          <div class="filter-toggle__labels">
+            <p class="sr-only eyebrow eyebrow--compact">Menu</p>
+            <p class="sr-only filter-toggle__summary" x-text="mobileNavOpen ? 'Close navigation' : 'Open navigation'"></p>
+          </div>
+          <div class="filter-toggle__meta">
+            <span class="filter-toggle__icon" :class="{ 'filter-toggle__icon--open': mobileNavOpen }">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </div>
+        </button>
+        <div id="mobile-nav-panel" class="projects-filter-dropdown mobile-nav-dropdown w-auto" x-show="mobileNavOpen"
+          x-transition:enter="ease-out duration-200" x-transition:enter-start="-translate-x-4 opacity-0"
+          x-transition:enter-end="translate-x-0 opacity-100" x-transition:leave="ease-in duration-150"
+          x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="-translate-x-4 opacity-0"
+          x-cloak @keydown.escape.window="mobileNavOpen = false" @click.outside="mobileNavOpen = false">
+          <div class="projects-filter-dropdown__panel space-y-6">
+            <div class="flex flex-col gap-2">
+              
+              <a href="/for-agencies/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">For Agencies</a>
+              
+              <a href="/for-businesses/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">For Businesses</a>
+              
+              <a href="/case-studies/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">Case Studies</a>
+              
+              <a href="/about/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">About</a>
+              
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
   </div>
@@ -27,8 +69,8 @@
   <main class="flex-grow">
     <div
   x-data='projectExplorer({
-    projects: [{"slug":"hope-church","title":"Hope Church","url":"https://hopeisreal.org/","logo":"/img/logos/hope-church-logo.webp","logoHasName":false,"problem":"HopeIsReal needed a modern website that conveyed their mission, encouraged donations, and was easy to update internally.","solution":"Designed and developed a full WordPress site with ACF blocks, custom buttons in React, and performance/accessibility optimizations.","summary":"Modern WordPress rebuild with ACF blocks and React-driven CTAs so HopeIsReal can inspire donors and keep content fresh.","tools":["wordpress","acf","react","tailwindcss","accessibility","googleanalytics","gtm"],"screenshots":["/img/screenshots/ascentcorp1.png","/img/screenshots/ascentcorp2.png"],"endDate":"2023-06","clientType":["business","nonprofit"],"scope":["full-website-build","performance-accessibility","ongoing-support"],"platform":["wordpress"]},{"slug":"perc","title":"Perc","url":"https://perc.org/","logo":"/img/logos/perc-logo.svg","logoHasName":false,"problem":"Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.","solution":"Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.","summary":"Reimagined Perc.org with a structured Gutenberg experience and Alpine-powered filters that make research browsing effortless.","tools":["wordpress","kadence","alpinejs","restapi","php"],"screenshots":"/assets/screenshots/perc.png","endDate":"2022-12","clientType":["agency","nonprofit"],"scope":["build-from-design","redesign-rebuild","custom-development"],"platform":["wordpress","headless-api"]},{"slug":"buffalo-store","title":"Buffalo Store","url":"https://www.buffalocorpstore.com/","logo":"/img/logos/buffalo corp.png","logoHasName":true,"problem":"BuffaloCorp needed a better e-commerce experience, particularly around navigation and product search.","solution":"Redesigned the storefront with a jQuery-powered mega menu and custom Gutenberg blocks for a better product discovery flow.","summary":"Commerce-focused redesign with jQuery mega navigation and custom Gutenberg blocks so shoppers can find the right tools faster.","tools":["wordpress","jquery","woocommerce","php"],"screenshots":"/assets/screenshots/buffalocorpstore.png","endDate":"2022-06","clientType":["agency","ecommerce","business"],"scope":["site-redesign","build-from-design","ongoing-support"],"platform":["woocommerce","wordpress"]},{"slug":"new2satx","title":"New2SATX","url":"https://new2satx.com/","logo":"https://new2satx.com/wp-content/uploads/2024/01/New2SATX-Logo-Horizontal-300x96.png","logoHasName":true,"problem":"A new business needed guidance and execution on building their first digital presence.","solution":"Guided them through site structure and layout, implemented SEO and analytics setup using Google tools.","summary":"Launched the brand’s first site with guided IA, SEO, and analytics so the new business starts strong online.","tools":["wordpress","seo","googleanalytics","gtm"],"screenshots":"/img/screenshots/New2SATX-home.mp4","endDate":"2022-11","clientType":["business"],"scope":["full-website-build","ongoing-support"],"platform":["wordpress"]},{"slug":"ascent","title":"Ascent","url":"https://www.ascentcorp.com/","logo":"/img/logos/ascent.png","logoHasName":true,"problem":"The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.","solution":"Led implementation of their first FSE theme, integrating Tailwind and reusable components with custom jQuery enhancements.","summary":"Built their inaugural FSE + Tailwind theme with reusable components and jQuery polish to accelerate future experiments.","tools":["wordpress","tailwindcss","jquery"],"interval":5000,"screenshots":["/img/screenshots/ascentcorp1.png","/img/screenshots/ascentcorp2.png"],"endDate":"2021-06","clientType":["agency"],"scope":["build-from-design","site-redesign","custom-development"],"platform":["wordpress"]},{"slug":"bc-web-studio","title":"BC Web Studio","url":null,"logo":null,"logoHasName":false,"problem":"BC Web Studio needed a home for its own services that separated agency partnerships from business consulting while showcasing vetted case studies, service frameworks, and operating principles in one place.","solution":"Designed and developed an Eleventy marketing site with JSON-driven case studies, Alpine.js filtering, and dedicated \"For Agencies\" and \"For Businesses\" landing pages. Built a Tailwind/PostCSS component system, reusable info cards, and media carousels powered by structured project data so updates stay fast and consistent.","summary":"Created BC Web Studio’s Eleventy marketing hub with Alpine filtering and data-driven case studies tailored to agencies and businesses.","tools":["eleventy","tailwindcss","alpinejs","nodejs"],"endDate":"2026-01","clientType":["business","agency"],"scope":["full-website-build","custom-development","ongoing-support"],"platform":["eleventy"]},{"slug":"flystl","title":"St. Louis Lambert International Airport","url":"https://www.flystl.com/","logo":"/img/logos/stl-logo.webp","logoHasName":false,"problem":"Lambert Airport’s public site hadn’t kept pace with traveler expectations: flight status, TSA, parking, and concessions data lived in disconnected systems, navigation was confusing, and the previous theme couldn’t meet the stricter accessibility and multilingual requirements.","solution":"Partnered with Kestrel and Dovetail to rebuild FlySTL with a WordPress theme. Wired Kadence + ACF blocks for every layout and layered Alpine.js components that talk to flight, TSA, and parking APIs. Built flight-status and search modules that hydrate from the airport feed and parking cards that query SuperParkingLot in real time. Hardened navigation with accessible mega menus, header tab panels, ReciteMe + Google Translate helpers, and skip-link/keyboard patterns. Implemented custom post types so the airport team can manage updates without engineers.","summary":"Led FlySTL’s API-connected, accessible WordPress rebuild with live travel data widgets and Kadence/ACF layouts that keep passengers informed.","tools":["wordpress","tailwindcss","acf","kadence","alpinejs","restapi","php","gravityforms","accessibility"],"screenshots":null,"endDate":"2025-12","clientType":["agency","business"],"scope":["full-website-build","redesign-rebuild","custom-development","data-integrations","content-migration","performance-accessibility"],"platform":["wordpress"]},{"slug":"holland","title":"Holland Construction Services","url":"https://www.hollandcs.com/","logo":"https://www.hollandcs.com/wp-content/uploads/2024/07/holland-40th-logos-01-300x100.png","logoHasName":false,"problem":"Holland’s legacy marketing site looked outdated, scattered work by sector, and lacked the filtering and CMS flexibility needed for the Kestrel + Dovetail team to tell the whole story without developer help.","solution":"Partnered with Kestrel and Dovetail to translate their Figma redesign into a Kadence-powered WordPress build. Delivered bespoke Gutenberg blocks, CPTs, and a filter/tab system that lets sales and marketing surface projects, services, and regions with just a few clicks.","summary":"Joint agency rebuild with Kestrel and Dovetail that turned the Holland site into a Kadence + custom-block experience with CPT-driven filters and tabbed storytelling.","tools":["wordpress","kadence","acf","alpinejs","php","figma"],"screenshots":null,"endDate":"2025-01","clientType":["agency","business"],"scope":["redesign-rebuild","build-from-design","custom-development","full-website-build"],"platform":["wordpress"]}],
-    filters: [{"id":"clientType","label":"Client Type","field":"clientType","placement":"hero","options":[{"id":"agency","label":"Agency"},{"id":"business","label":"Business"},{"id":"nonprofit","label":"Nonprofit"},{"id":"ecommerce","label":"E-commerce"}]},{"id":"scope","label":"Scope","field":"scope","placement":"panel","options":[{"id":"build-from-design","label":"Build from Design"},{"id":"full-website-build","label":"Full Website Build"},{"id":"site-redesign","label":"Site Redesign"},{"id":"performance-accessibility","label":"Performance & Accessibility"},{"id":"custom-development","label":"Custom Development"},{"id":"ongoing-support","label":"Ongoing Support"}],"width":"63%"},{"id":"platform","label":"Platform","field":"platform","placement":"panel","options":[{"id":"wordpress","label":"WordPress"},{"id":"headless-api","label":"Headless / API"},{"id":"eleventy","label":"Eleventy"},{"id":"woocommerce","label":"WooCommerce"}],"width":"32%"}]
+    projects: [{"slug":"hope-church","title":"Hope Church","url":"https://hopeisreal.org/","logo":"/img/logos/hope-church-logo.webp","logoHasName":false,"problem":"HopeIsReal needed a modern website that conveyed their mission, encouraged donations, and was easy to update internally.","solution":"Designed and developed a full WordPress site with ACF blocks, custom buttons in React, and performance/accessibility optimizations.","summary":"Modern WordPress rebuild with ACF blocks and React-driven CTAs so HopeIsReal can inspire donors and keep content fresh.","tools":["wordpress","acf","react","tailwindcss","accessibility","googleanalytics","gtm"],"screenshots":["/img/screenshots/ascentcorp1.png","/img/screenshots/ascentcorp2.png"],"endDate":"2023-06","clientType":["business","nonprofit"],"scope":["full-website-build","performance-accessibility","ongoing-support"],"platform":["wordpress"]},{"slug":"perc","title":"Perc","url":"https://perc.org/","logo":"/img/logos/perc-logo.svg","logoHasName":false,"problem":"Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.","solution":"Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.","summary":"Reimagined Perc.org with a structured Gutenberg experience and Alpine-powered filters that make research browsing effortless.","tools":["wordpress","kadence","alpinejs","restapi","php"],"screenshots":"/assets/screenshots/perc.png","endDate":"2022-12","clientType":["agency","nonprofit"],"scope":["build-from-design","custom-development"],"platform":["wordpress","headless-api"]},{"slug":"buffalo-store","title":"Buffalo Store","url":"https://www.buffalocorpstore.com/","logo":"/img/logos/buffalo corp.png","logoHasName":true,"problem":"BuffaloCorp needed a better e-commerce experience, particularly around navigation and product search.","solution":"Redesigned the storefront with a jQuery-powered mega menu and custom Gutenberg blocks for a better product discovery flow.","summary":"Commerce-focused redesign with jQuery mega navigation and custom Gutenberg blocks so shoppers can find the right tools faster.","tools":["wordpress","jquery","woocommerce","php"],"screenshots":"/assets/screenshots/buffalocorpstore.png","endDate":"2022-06","clientType":["agency","ecommerce","business"],"scope":["site-redesign","build-from-design","ongoing-support"],"platform":["woocommerce","wordpress"]},{"slug":"new2satx","title":"New2SATX","url":"https://new2satx.com/","logo":"https://new2satx.com/wp-content/uploads/2024/01/New2SATX-Logo-Horizontal-300x96.png","logoHasName":true,"problem":"A new business needed guidance and execution on building their first digital presence.","solution":"Guided them through site structure and layout, implemented SEO and analytics setup using Google tools.","summary":"Launched the brand’s first site with guided IA, SEO, and analytics so the new business starts strong online.","tools":["wordpress","seo","googleanalytics","gtm"],"screenshots":"/img/screenshots/New2SATX-home.mp4","endDate":"2022-11","clientType":["business"],"scope":["full-website-build","ongoing-support"],"platform":["wordpress"]},{"slug":"ascent","title":"Ascent","url":"https://www.ascentcorp.com/","logo":"/img/logos/ascent.png","logoHasName":true,"problem":"The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.","solution":"Led implementation of their first FSE theme, integrating Tailwind and reusable components with custom jQuery enhancements.","summary":"Built their inaugural FSE + Tailwind theme with reusable components and jQuery polish to accelerate future experiments.","tools":["wordpress","tailwindcss","jquery"],"interval":5000,"screenshots":["/img/screenshots/ascentcorp1.png","/img/screenshots/ascentcorp2.png"],"endDate":"2021-06","clientType":["agency"],"scope":["build-from-design","site-redesign","custom-development"],"platform":["wordpress"]},{"slug":"bc-web-studio","title":"BC Web Studio","url":null,"logo":null,"logoHasName":false,"problem":"BC Web Studio needed a home for its own services that separated agency partnerships from business consulting while showcasing vetted case studies, service frameworks, and operating principles in one place.","solution":"Designed and developed an Eleventy marketing site with JSON-driven case studies, Alpine.js filtering, and dedicated \"For Agencies\" and \"For Businesses\" landing pages. Built a Tailwind/PostCSS component system, reusable info cards, and media carousels powered by structured project data so updates stay fast and consistent.","summary":"Created BC Web Studio’s Eleventy marketing hub with Alpine filtering and data-driven case studies tailored to agencies and businesses.","tools":["eleventy","tailwindcss","alpinejs","nodejs","codex"],"endDate":"2026-02","clientType":["business","agency"],"scope":["full-website-build","custom-development","ongoing-support"],"platform":["eleventy"]},{"slug":"flystl","title":"St. Louis Lambert International Airport","url":"https://www.flystl.com/","logo":"/img/logos/stl-logo.webp","logoHasName":false,"problem":"Lambert Airport’s public site hadn’t kept pace with traveler expectations: flight status, TSA, parking, and concessions data lived in disconnected systems, navigation was confusing, and the previous theme couldn’t meet the stricter accessibility and multilingual requirements.","solution":"Partnered with Kestrel and Dovetail to rebuild FlySTL with a WordPress theme. Wired Kadence + ACF blocks for every layout and layered Alpine.js components that talk to flight, TSA, and parking APIs. Built flight-status and search modules that hydrate from the airport feed and parking cards that query SuperParkingLot in real time. Hardened navigation with accessible mega menus, header tab panels, ReciteMe + Google Translate helpers, and skip-link/keyboard patterns. Implemented custom post types so the airport team can manage updates without engineers.","summary":"Led FlySTL’s API-connected, accessible WordPress rebuild with live travel data widgets and Kadence/ACF layouts that keep passengers informed.","tools":["wordpress","tailwindcss","acf","kadence","alpinejs","restapi","php","gravityforms","accessibility"],"screenshots":null,"endDate":"2025-12","clientType":["agency","business"],"scope":["full-website-build","custom-development","data-integrations","content-migration","performance-accessibility"],"platform":["wordpress"]},{"slug":"holland","title":"Holland","url":"https://www.hollandcs.com/","logo":"https://www.hollandcs.com/wp-content/uploads/2024/07/holland-40th-logos-01-300x100.png","logoHasName":false,"problem":"Holland’s legacy marketing site looked outdated, scattered work by sector, and lacked the filtering and CMS flexibility needed for the Kestrel + Dovetail team to tell the whole story without developer help.","solution":"Partnered with Kestrel and Dovetail to translate their Figma redesign into a Kadence-powered WordPress build. Delivered bespoke Gutenberg blocks, CPTs, and a filter/tab system that lets sales and marketing surface projects, services, and regions with just a few clicks.","summary":"Joint agency rebuild with Kestrel and Dovetail that turned the Holland site into a Kadence + custom-block experience with CPT-driven filters and tabbed storytelling.","tools":["wordpress","kadence","acf","alpinejs","php","figma"],"screenshots":null,"endDate":"2025-01","clientType":["agency","business"],"scope":["redesign-rebuild","build-from-design","custom-development","full-website-build"],"platform":["wordpress"]}],
+    filters: [{"id":"clientType","label":"Client Type","field":"clientType","placement":"hero","options":[{"id":"agency","label":"Agency"},{"id":"business","label":"Business"},{"id":"nonprofit","label":"Nonprofit"},{"id":"ecommerce","label":"E-commerce"}]},{"id":"scope","label":"Scope","field":"scope","placement":"panel","options":[{"id":"build-from-design","label":"Build from Design"},{"id":"full-website-build","label":"Full Website Build"},{"id":"site-redesign","label":"Site Redesign"},{"id":"performance-accessibility","label":"Performance & Accessibility"},{"id":"custom-development","label":"Custom Development"},{"id":"ongoing-support","label":"Ongoing Support"},{"id":"data-integrations","label":"Data Integrations"},{"id":"content-migration","label":"Content Migration"}],"width":"63%"},{"id":"platform","label":"Platform","field":"platform","placement":"panel","options":[{"id":"wordpress","label":"WordPress"},{"id":"headless-api","label":"Headless / API"},{"id":"eleventy","label":"Eleventy"},{"id":"woocommerce","label":"WooCommerce"}],"width":"32%"}]
   })'
   x-init="init()"
 >
@@ -70,51 +112,83 @@
     </div>
   </section>
 
-  <section id="case-study-library" class="pt-16 pb-28 surface-section relative section-arrow">
+  <section id="case-study-library" class="pt-24 pb-28 surface-section relative section-arrow">
     <div class="xl:container mx-auto px-4">
 
       <div class="space-y-10">
-  <div class="projects-filter-toolbar">
-    <div class="projects-filter-toolbar__header justify-start gap-8">
-      <div>
-        <h2 class="text-lg">Filter Case Studies</h2>
-      </div>
-      <button class="filter-action" type="button" @click="resetAll" x-show="hasActiveFilters()">
-        Reset all
-      </button>
-    </div>
-    <div class="projects-filter-toolbar__grid !mt-2">
-      <template x-for="filter in panelFilters" :key="filter.id">
-        <div class="filter-chip-group p-4" :style="filter.width ? `--filter-width: ${filter.width}` : null"
-          :data-fixed="filter.width ? 'true' : null">
-          <div class="filter-chip-group__header">
-            <div>
-              <p class="filter-chip-group__label" x-text="filter.label"></p>
-            </div>
-            <button class="filter-action filter-action--small" type="button" @click="clear(filter.id)"
-              x-show="hasSelection(filter.id)">
-              Clear
-            </button>
-          </div>
-          <div class="filter-chip-row">
-            <template x-for="option in filter.options" :key="option.id">
-              <button class="filter-chip" type="button" @click="toggle(filter.id, option.id)" :class="{
-                  'filter-chip--active': isActive(filter.id, option.id),
-                  'filter-chip--disabled': !optionHasResults(filter.id, option.id)
-                }" :disabled="!optionHasResults(filter.id, option.id)" x-text="option.label"></button>
-            </template>
-          </div>
-        </div>
-      </template>
-    </div>
-  </div>
+
 
   <div class="case-results-header pb-4">
-    <span class="case-results-count">
-      <span x-text="filteredProjects.length"></span> case studies
-    </span>
-    <span class="case-results-summary ml-2"
-      x-text="hasActiveFilters() ? activeFilterSummary() : 'Showing the full library.'"></span>
+    <div>
+      <span class="case-results-count">
+        <span x-text="filteredProjects.length"></span> case studies
+      </span>
+      <span class="case-results-summary ml-2"
+        x-text="hasActiveFilters() ? activeFilterSummary() : 'Showing the full library.'"></span>
+    </div>
+    <div class="projects-filter-toolbar">
+      <div class="projects-filter-toolbar__sticky">
+        <div class="projects-filter-toolbar__anchor">
+          <div class="projects-filter-toolbar__controls">
+            <button class="filter-toggle" type="button" @click="toggleFilterMenu()"
+              :aria-expanded="filterMenuOpen ? 'true' : 'false'" aria-controls="projects-filter-panel">
+              <div class="filter-toggle__labels">
+                <p class="eyebrow eyebrow--compact">Filter Case Studies</p>
+                <p class="filter-toggle__summary" x-text="panelSummary()"></p>
+              </div>
+              <div class="filter-toggle__meta">
+
+                <span class="filter-toggle__icon" :class="{'filter-toggle__icon--open': filterMenuOpen}">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+            </button>
+            <div>
+              <span class="filter-toggle__count" x-show="panelActiveCount() > 0" x-text="panelActiveCount()"></span>
+              <button class="filter-action" type="button" @click="resetAll" x-show="hasActiveFilters()">
+                Reset all
+            </div>
+            </button>
+          </div>
+
+          <div id="projects-filter-panel" class="projects-filter-dropdown" x-show="filterMenuOpen"
+            x-transition:enter="ease-out duration-200" x-transition:enter-start="-translate-x-4 opacity-0"
+            x-transition:enter-end="translate-x-0 opacity-100" x-transition:leave="ease-in duration-150"
+            x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="-translate-x-4 opacity-0"
+            x-cloak @keydown.escape.stop="closeFilterMenu()" @click.outside="closeFilterMenu()">
+            <div class="projects-filter-dropdown__panel">
+              <div class="projects-filter-toolbar__grid !mt-0">
+                <template x-for="filter in panelFilters" :key="filter.id">
+                  <div class="filter-chip-group p-4">
+                    <div class="filter-chip-group__header">
+                      <div>
+                        <p class="filter-chip-group__label" x-text="filter.label"></p>
+                      </div>
+                      <button class="filter-action filter-action--small" type="button" @click="clear(filter.id)"
+                        x-show="hasSelection(filter.id)">
+                        Clear
+                      </button>
+                    </div>
+                    <div class="filter-chip-row">
+                      <template x-for="option in filter.options" :key="option.id">
+                        <button class="filter-chip" type="button" @click="toggle(filter.id, option.id)" :class="{
+                          'filter-chip--active': isActive(filter.id, option.id),
+                          'filter-chip--disabled': !optionHasResults(filter.id, option.id)
+                        }" :disabled="!optionHasResults(filter.id, option.id)" x-text="option.label"></button>
+                      </template>
+                    </div>
+                  </div>
+                </template>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="grid gap-x-8 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 !mt-0">
@@ -122,8 +196,7 @@
       <a class="case-info-card" :href="`/case-studies/${project.slug}/`">
         <div class="case-info-card__head">
           <div>
-            <p class="eyebrow eyebrow--compact mb-1"
-              x-text="primaryClientType(project) || 'Case Study'"></p>
+            <p class="eyebrow eyebrow--compact mb-1" x-text="primaryClientType(project) || 'Case Study'"></p>
             <h3 class="case-info-card__title" x-text="project.title"></h3>
             <p class="case-info-card__date" x-text="formatDate(project.endDate)"></p>
           </div>
@@ -152,7 +225,6 @@
     <p class="text-sm text-body-muted">Try clearing a filter or choose a different combination.</p>
   </div>
 </div>
-
     </div>
   </section>
 </div>

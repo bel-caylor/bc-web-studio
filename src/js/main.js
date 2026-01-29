@@ -53,6 +53,7 @@ document.addEventListener("alpine:init", () => {
       panelFilters: [],
       heroFilters: [],
       selections: {},
+      filterMenuOpen: false,
       init() {
         this.panelFilters = this.allFilters.filter(f => f.placement !== "hero");
         this.heroFilters = this.allFilters.filter(f => f.placement === "hero");
@@ -60,6 +61,12 @@ document.addEventListener("alpine:init", () => {
           this.selections[filter.id] = 'all';
         });
         this.applyQueryParams();
+      },
+      toggleFilterMenu() {
+        this.filterMenuOpen = !this.filterMenuOpen;
+      },
+      closeFilterMenu() {
+        this.filterMenuOpen = false;
       },
       toggle(filterId, optionId) {
         this.selections[filterId] =
@@ -124,6 +131,24 @@ document.addEventListener("alpine:init", () => {
           }
         });
         return parts.join(', ');
+      },
+      panelSummary() {
+        const parts = this.panelFilters
+          .map(filter => {
+            const selection = this.selections[filter.id];
+            if (selection && selection !== 'all') {
+              return `${filter.label}: ${this.optionLabel(filter.id, selection)}`;
+            }
+            return null;
+          })
+          .filter(Boolean);
+        return parts.length ? parts.join(' | ') : 'Scope + Platform available';
+      },
+      panelActiveCount() {
+        return this.panelFilters.reduce((count, filter) => {
+          const selection = this.selections[filter.id];
+          return selection && selection !== 'all' ? count + 1 : count;
+        }, 0);
       },
       get filteredProjects() {
         return this.projects

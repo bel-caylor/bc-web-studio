@@ -31,6 +31,18 @@
   }
 
   .eyebrow {
+    &::before {
+      content: "<";
+      display: inline-block;
+      margin-right: 0.2rem;
+    }
+
+    &::after {
+      content: ">";
+      display: inline-block;
+      margin-left: 0.1rem;
+    }
+
     @apply font-mono uppercase text-sm font-bold text-electric-dark;
     letter-spacing: 0.2em;
     text-transform: uppercase;

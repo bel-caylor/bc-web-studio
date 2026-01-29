@@ -59,7 +59,6 @@
     ],
     "scope": [
       "build-from-design",
-      "redesign-rebuild",
       "custom-development"
     ],
     "platform": [
@@ -172,9 +171,10 @@
       "eleventy",
       "tailwindcss",
       "alpinejs",
-      "nodejs"
+      "nodejs",
+      "codex"
     ],
-    "endDate": "2026-01",
+    "endDate": "2026-02",
     "clientType": [
       "business",
       "agency"
@@ -216,7 +216,6 @@
     ],
     "scope": [
       "full-website-build",
-      "redesign-rebuild",
       "custom-development",
       "data-integrations",
       "content-migration",
@@ -228,7 +227,7 @@
   },
   {
     "slug": "holland",
-    "title": "Holland Construction Services",
+    "title": "Holland",
     "url": "https://www.hollandcs.com/",
     "logo": "https://www.hollandcs.com/wp-content/uploads/2024/07/holland-40th-logos-01-300x100.png",
     "logoHasName": false,
@@ -258,5 +257,5 @@
     "platform": [
       "wordpress"
     ]
-  }  
+  }
 ]

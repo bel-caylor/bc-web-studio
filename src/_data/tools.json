@@ -175,6 +175,13 @@
     "url": "https://openai.com/chatgpt"
   },
   {
+    "id": "codex",
+    "name": "Codex",
+    "category": "AI & Automation",
+    "icon": "https://chatgpt.com/favicon.ico",
+    "url": "https://openai.com/blog/openai-codex"
+  },
+  {
     "id": "figma",
     "name": "Figma",
     "category": "Design & UX Tools",

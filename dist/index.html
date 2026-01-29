@@ -5,20 +5,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web engineering for agencies and growing businesses</title>
+  <link rel="icon" type="image/svg+xml" href="/img/logos/favicon.svg">
   <link href="/style.css" rel="stylesheet">
 </head>
 
 <body class="min-h-screen flex flex-col">
-  <header class="">
+  
+<header class="" x-data="{ mobileNavOpen: false }">
   <div class="p-4">
-    <nav class="site-nav max-w-5xl mx-auto flex justify-between items-center">
-      <a href="/" class="font-heading font-bold text-xl">BC Web Studio</a>
-      <div class="flex flex-wrap gap-4 text-sm font-heading font-medium tracking-wide">
-        <a href="/" class="hover:underline">Home</a>
+    <nav class="site-nav max-w-5xl mx-auto flex justify-between items-center gap-4">
+      <a href="/" class="font-bold text-xl"><span class="text-accent !font-mono">&lt;</span>BC<span class="text-accent">&gt;</span> <span class="font-heading">Web Studio</span></a>
+      <div class="hidden md:flex flex-wrap gap-4 text-sm font-heading font-medium tracking-wide">
+        
         <a href="/for-agencies/" class="hover:underline">For Agencies</a>
+        
         <a href="/for-businesses/" class="hover:underline">For Businesses</a>
+        
         <a href="/case-studies/" class="hover:underline">Case Studies</a>
+        
         <a href="/about/" class="hover:underline">About</a>
+        
+      </div>
+      <div class="md:hidden relative flex-1 flex justify-end">
+        <button class="filter-toggle max-w-[220px]" type="button" @click="mobileNavOpen = !mobileNavOpen"
+          :aria-expanded="mobileNavOpen ? 'true' : 'false'" aria-controls="mobile-nav-panel">
+          <div class="filter-toggle__labels">
+            <p class="sr-only eyebrow eyebrow--compact">Menu</p>
+            <p class="sr-only filter-toggle__summary" x-text="mobileNavOpen ? 'Close navigation' : 'Open navigation'"></p>
+          </div>
+          <div class="filter-toggle__meta">
+            <span class="filter-toggle__icon" :class="{ 'filter-toggle__icon--open': mobileNavOpen }">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </div>
+        </button>
+        <div id="mobile-nav-panel" class="projects-filter-dropdown mobile-nav-dropdown w-auto" x-show="mobileNavOpen"
+          x-transition:enter="ease-out duration-200" x-transition:enter-start="-translate-x-4 opacity-0"
+          x-transition:enter-end="translate-x-0 opacity-100" x-transition:leave="ease-in duration-150"
+          x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="-translate-x-4 opacity-0"
+          x-cloak @keydown.escape.window="mobileNavOpen = false" @click.outside="mobileNavOpen = false">
+          <div class="projects-filter-dropdown__panel space-y-6">
+            <div class="flex flex-col gap-2">
+              
+              <a href="/for-agencies/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">For Agencies</a>
+              
+              <a href="/for-businesses/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">For Businesses</a>
+              
+              <a href="/case-studies/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">Case Studies</a>
+              
+              <a href="/about/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">About</a>
+              
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
   </div>
@@ -28,7 +70,7 @@
     <section class="hero-bg text-center pt-20 pb-28 md:pb-28">
   <div class="max-w-3xl mx-auto px-4">
     <p class="eyebrow eyebrow--wide text-lg">Web Engineer</p>
-    <h1 class="mb-6">Web engineering for agencies and growing businesses</h1>
+    <h1 class="mb-6 font-heading">BC Web Studio</h1>
     <p>
       I partner with agencies and small businesses <br class="hidden md:block"> to design, build, and maintain fast, accessible, production-ready websites <br class="hidden md:block"> — from custom WordPress builds to modern front-end integrations.
     </p>
@@ -53,7 +95,7 @@
       </p>
     </div>
 
-    <div class="grid gap-2 md:gap-12 md:grid-cols-2 max-w-[900px] mx-auto">
+    <div class="grid md:gap-12 md:grid-cols-2 max-w-[900px] mx-auto">
       <a href="/for-agencies/" class="info-card pb-28">
         <p class="eyebrow eyebrow--compact">Partner track</p>
         <h3 class="text-2xl font-bold mb-3 text-right">For Agencies</h3>
@@ -72,7 +114,7 @@
         <span class="inline-flex items-center mt-0 font-heading text-brand-medium">Business solutions →</span>
       </a>
 
-      <a href="/case-studies/" class="info-card pb-40 -mt-10">
+      <a href="/case-studies/" class="info-card pb-40 md:-mt-10">
         <p class="eyebrow eyebrow--compact">Work</p>
         <h3 class="text-2xl font-bold mb-3 text-right">Case Studies</h3>
         <p class="text-body">
@@ -81,7 +123,7 @@
         <span class="inline-flex items-center mt-0 font-heading text-brand-medium">View case studies →</span>
       </a>
 
-      <a href="/about/" class="info-card pb-40 -mt-10">
+      <a href="/about/" class="info-card pb-40 md:-mt-10">
         <p class="eyebrow eyebrow--compact">Profile</p>
         <h3 class="text-2xl font-bold mb-3 text-right">About Belinda</h3>
         <p class="text-body">

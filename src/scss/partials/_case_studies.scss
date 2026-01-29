@@ -1,7 +1,7 @@
 @layer components {
   .case-results {
     &-header {
-      @apply flex flex-col md:flex-row md:items-center md:justify-start gap-4;
+      @apply flex flex-col md:flex-row md:items-center md:justify-between gap-4;
     }
 
     &-count {

@@ -1,45 +1,79 @@
 <div class="space-y-10">
-  <div class="projects-filter-toolbar">
-    <div class="projects-filter-toolbar__header justify-start gap-8">
-      <div>
-        <h2 class="text-lg">Filter Case Studies</h2>
-      </div>
-      <button class="filter-action" type="button" @click="resetAll" x-show="hasActiveFilters()">
-        Reset all
-      </button>
-    </div>
-    <div class="projects-filter-toolbar__grid !mt-2">
-      <template x-for="filter in panelFilters" :key="filter.id">
-        <div class="filter-chip-group p-4" :style="filter.width ? `--filter-width: ${filter.width}` : null"
-          :data-fixed="filter.width ? 'true' : null">
-          <div class="filter-chip-group__header">
-            <div>
-              <p class="filter-chip-group__label" x-text="filter.label"></p>
-            </div>
-            <button class="filter-action filter-action--small" type="button" @click="clear(filter.id)"
-              x-show="hasSelection(filter.id)">
-              Clear
-            </button>
-          </div>
-          <div class="filter-chip-row">
-            <template x-for="option in filter.options" :key="option.id">
-              <button class="filter-chip" type="button" @click="toggle(filter.id, option.id)" :class="{
-                  'filter-chip--active': isActive(filter.id, option.id),
-                  'filter-chip--disabled': !optionHasResults(filter.id, option.id)
-                }" :disabled="!optionHasResults(filter.id, option.id)" x-text="option.label"></button>
-            </template>
-          </div>
-        </div>
-      </template>
-    </div>
-  </div>
+
 
   <div class="case-results-header pb-4">
-    <span class="case-results-count">
-      <span x-text="filteredProjects.length"></span> case studies
-    </span>
-    <span class="case-results-summary ml-2"
-      x-text="hasActiveFilters() ? activeFilterSummary() : 'Showing the full library.'"></span>
+    <div>
+      <span class="case-results-count">
+        <span x-text="filteredProjects.length"></span> case studies
+      </span>
+      <span class="case-results-summary ml-2"
+        x-text="hasActiveFilters() ? activeFilterSummary() : 'Showing the full library.'"></span>
+    </div>
+    <div class="projects-filter-toolbar">
+      <div class="projects-filter-toolbar__sticky">
+        <div class="projects-filter-toolbar__anchor">
+          <div class="projects-filter-toolbar__controls">
+            <button class="filter-toggle" type="button" @click="toggleFilterMenu()"
+              :aria-expanded="filterMenuOpen ? 'true' : 'false'" aria-controls="projects-filter-panel">
+              <div class="filter-toggle__labels">
+                <p class="eyebrow eyebrow--compact">Filter Case Studies</p>
+                <p class="filter-toggle__summary" x-text="panelSummary()"></p>
+              </div>
+              <div class="filter-toggle__meta">
+
+                <span class="filter-toggle__icon" :class="{'filter-toggle__icon--open': filterMenuOpen}">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+            </button>
+            <div>
+              <span class="filter-toggle__count" x-show="panelActiveCount() > 0" x-text="panelActiveCount()"></span>
+              <button class="filter-action" type="button" @click="resetAll" x-show="hasActiveFilters()">
+                Reset all
+            </div>
+            </button>
+          </div>
+
+          <div id="projects-filter-panel" class="projects-filter-dropdown" x-show="filterMenuOpen"
+            x-transition:enter="ease-out duration-200" x-transition:enter-start="-translate-x-4 opacity-0"
+            x-transition:enter-end="translate-x-0 opacity-100" x-transition:leave="ease-in duration-150"
+            x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="-translate-x-4 opacity-0"
+            x-cloak @keydown.escape.stop="closeFilterMenu()" @click.outside="closeFilterMenu()">
+            <div class="projects-filter-dropdown__panel">
+              <div class="projects-filter-toolbar__grid !mt-0">
+                <template x-for="filter in panelFilters" :key="filter.id">
+                  <div class="filter-chip-group p-4">
+                    <div class="filter-chip-group__header">
+                      <div>
+                        <p class="filter-chip-group__label" x-text="filter.label"></p>
+                      </div>
+                      <button class="filter-action filter-action--small" type="button" @click="clear(filter.id)"
+                        x-show="hasSelection(filter.id)">
+                        Clear
+                      </button>
+                    </div>
+                    <div class="filter-chip-row">
+                      <template x-for="option in filter.options" :key="option.id">
+                        <button class="filter-chip" type="button" @click="toggle(filter.id, option.id)" :class="{
+                          'filter-chip--active': isActive(filter.id, option.id),
+                          'filter-chip--disabled': !optionHasResults(filter.id, option.id)
+                        }" :disabled="!optionHasResults(filter.id, option.id)" x-text="option.label"></button>
+                      </template>
+                    </div>
+                  </div>
+                </template>
+              </div>
+              {# <div class="projects-filter-dropdown__footer">
+                <button class="filter-toggle__apply" type="button" @click="closeFilterMenu()">View results</button>
+              </div> #}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="grid gap-x-8 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 !mt-0">
@@ -47,8 +81,7 @@
       <a class="case-info-card" :href="`/case-studies/${project.slug}/`">
         <div class="case-info-card__head">
           <div>
-            <p class="eyebrow eyebrow--compact mb-1"
-              x-text="primaryClientType(project) || 'Case Study'"></p>
+            <p class="eyebrow eyebrow--compact mb-1" x-text="primaryClientType(project) || 'Case Study'"></p>
             <h3 class="case-info-card__title" x-text="project.title"></h3>
             <p class="case-info-card__date" x-text="formatDate(project.endDate)"></p>
           </div>
