@@ -32,7 +32,7 @@
       <p class="eyebrow eyebrow--wide">Case Study</p>
       <h1 class="mt-4 mb-6">Ascent</h1>
       <p>
-        The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.
+        Built their inaugural FSE + Tailwind theme with reusable components and jQuery polish to accelerate future experiments.
       </p>
       
       
@@ -40,7 +40,7 @@
       
     </div>
     
-      <div class="surface-ghost rounded-2xl p-6 flex items-center justify-center flex-shrink-0 md:w-72">
+      <div class="rounded-2xl p-6 flex items-center justify-center flex-shrink-0 md:w-72">
         <img src="/img/logos/ascent.png" alt="Ascent logo" class="max-h-24 w-full object-contain">
       </div>
     
@@ -63,48 +63,75 @@
     </div>
     <div class="case-study-sidebar">
       <div>
-        <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Completed</p>
+        <p class="eyebrow eyebrow--compact">Completed</p>
         <p class="text-2xl font-semibold">May 2021</p>
       </div>
       
       
         <div>
-          <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Website</p>
+          <p class="eyebrow eyebrow--compact">Website</p>
           <a href="https://www.ascentcorp.com/" class="link-accent break-words" target="_blank" rel="noopener">https://www.ascentcorp.com/</a>
         </div>
       
       
-        <div>
-          <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Stack highlights</p>
-          <ul class="flex flex-wrap gap-3 mt-3">
+        <div class="mt-4">
+          <p class="eyebrow eyebrow--compact">Stack highlights</p>
+          <ul class="stack-highlight-list">
             
               
               
-                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
+                <li class="stack-highlight-item">
                   
-                    <img src="/img/logos/tool-wordpress.svg" alt="" class="w-5 h-5" loading="lazy">
+                    <a
+                      href="https://wordpress.org/"
+                      class="stack-highlight-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      
+                        <img src="https://s0.wp.com/i/favicon.ico" alt="" class="w-5 h-5" loading="lazy">
+                      
+                      <span>WordPress</span>
+                    </a>
                   
-                  <span>WordPress</span>
                 </li>
               
             
               
               
-                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
+                <li class="stack-highlight-item">
                   
-                    <img src="/img/logos/tool-tailwind.svg" alt="" class="w-5 h-5" loading="lazy">
+                    <a
+                      href="https://tailwindcss.com/"
+                      class="stack-highlight-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      
+                        <img src="https://tailwindcss.com/favicon.ico" alt="" class="w-5 h-5" loading="lazy">
+                      
+                      <span>Tailwind CSS</span>
+                    </a>
                   
-                  <span>Tailwind CSS</span>
                 </li>
               
             
               
               
-                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
+                <li class="stack-highlight-item">
                   
-                    <img src="/img/logos/tool-jquery.svg" alt="" class="w-5 h-5" loading="lazy">
+                    <a
+                      href="https://jquery.com/"
+                      class="stack-highlight-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="" class="w-5 h-5" loading="lazy">
+                      
+                      <span>jQuery</span>
+                    </a>
                   
-                  <span>jQuery</span>
                 </li>
               
             
@@ -123,7 +150,7 @@
       <h2 class="text-3xl font-bold mt-3">Screens & flows</h2>
     </div>
     <div
-      x-data="projectCarousel({"slug":"ascent","title":"Ascent","url":"https://www.ascentcorp.com/","logo":"/img/logos/ascent.png","logoHasName":true,"problem":"The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.","solution":"Led implementation of their first FSE theme, integrating Tailwind and reusable components with custom jQuery enhancements.","tools":["wordpress","tailwindcss","jquery"],"interval":5000,"screenshots":["/img/screenshots/ascentcorp1.png","/img/screenshots/ascentcorp2.png"],"endDate":"2021-06","clientType":["agency"],"scope":["build-from-design","site-redesign","custom-development"],"platform":["wordpress"]})"
+      x-data="projectCarousel({"slug":"ascent","title":"Ascent","url":"https://www.ascentcorp.com/","logo":"/img/logos/ascent.png","logoHasName":true,"problem":"The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.","solution":"Led implementation of their first FSE theme, integrating Tailwind and reusable components with custom jQuery enhancements.","summary":"Built their inaugural FSE + Tailwind theme with reusable components and jQuery polish to accelerate future experiments.","tools":["wordpress","tailwindcss","jquery"],"interval":5000,"screenshots":["/img/screenshots/ascentcorp1.png","/img/screenshots/ascentcorp2.png"],"endDate":"2021-06","clientType":["agency"],"scope":["build-from-design","site-redesign","custom-development"],"platform":["wordpress"]})"
       x-init="init()"
       @mouseenter="stop()"
       @mouseleave="start()"

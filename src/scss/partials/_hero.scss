@@ -17,6 +17,9 @@
     p:not(.eyebrow) {
       @apply text-white/85 text-lg;
     }
+    .eyebrow {
+      @apply text-electric-light text-xl;
+    }
   }
 
   .section-arrow {
@@ -28,7 +31,7 @@
   }
 
   .eyebrow {
-    @apply font-mono uppercase text-xs font-bold text-electric-dark;
+    @apply font-mono uppercase text-sm font-bold text-electric-dark;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     display: inline-block;

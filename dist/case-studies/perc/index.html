@@ -32,7 +32,7 @@
       <p class="eyebrow eyebrow--wide">Case Study</p>
       <h1 class="mt-4 mb-6">Perc</h1>
       <p>
-        Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.
+        Reimagined Perc.org with a structured Gutenberg experience and Alpine-powered filters that make research browsing effortless.
       </p>
       
       
@@ -40,7 +40,7 @@
       
     </div>
     
-      <div class="surface-ghost rounded-2xl p-6 flex items-center justify-center flex-shrink-0 md:w-72">
+      <div class="rounded-2xl p-6 flex items-center justify-center flex-shrink-0 md:w-72">
         <img src="/img/logos/perc-logo.svg" alt="Perc logo" class="max-h-24 w-full object-contain">
       </div>
     
@@ -63,68 +63,113 @@
     </div>
     <div class="case-study-sidebar">
       <div>
-        <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Completed</p>
+        <p class="eyebrow eyebrow--compact">Completed</p>
         <p class="text-2xl font-semibold">November 2022</p>
       </div>
       
       
         <div>
-          <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Website</p>
+          <p class="eyebrow eyebrow--compact">Website</p>
           <a href="https://perc.org/" class="link-accent break-words" target="_blank" rel="noopener">https://perc.org/</a>
         </div>
       
       
-        <div>
-          <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Stack highlights</p>
-          <ul class="flex flex-wrap gap-3 mt-3">
+        <div class="mt-4">
+          <p class="eyebrow eyebrow--compact">Stack highlights</p>
+          <ul class="stack-highlight-list">
             
               
               
-                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
+                <li class="stack-highlight-item">
                   
-                    <img src="/img/logos/tool-wordpress.svg" alt="" class="w-5 h-5" loading="lazy">
+                    <a
+                      href="https://wordpress.org/"
+                      class="stack-highlight-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      
+                        <img src="https://s0.wp.com/i/favicon.ico" alt="" class="w-5 h-5" loading="lazy">
+                      
+                      <span>WordPress</span>
+                    </a>
                   
-                  <span>WordPress</span>
                 </li>
               
             
               
               
-                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
+                <li class="stack-highlight-item">
                   
-                    <img src="/img/logos/tool-kadence.svg" alt="" class="w-5 h-5" loading="lazy">
+                    <a
+                      href="https://www.kadencewp.com/"
+                      class="stack-highlight-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      
+                        <img src="https://www.kadencewp.com/wp-content/uploads/2023/11/kadencewp-icon.png" alt="" class="w-5 h-5" loading="lazy">
+                      
+                      <span>Kadence</span>
+                    </a>
                   
-                  <span>Kadence</span>
                 </li>
               
             
               
               
-                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
+                <li class="stack-highlight-item">
                   
-                    <img src="/img/logos/tool-alpinejs.svg" alt="" class="w-5 h-5" loading="lazy">
+                    <a
+                      href="https://alpinejs.dev/"
+                      class="stack-highlight-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/alpinejs/alpinejs-original.svg" alt="" class="w-5 h-5" loading="lazy">
+                      
+                      <span>Alpine.js</span>
+                    </a>
                   
-                  <span>Alpine.js</span>
                 </li>
               
             
               
               
-                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
+                <li class="stack-highlight-item">
                   
-                    <img src="/img/logos/tool-restapi.svg" alt="" class="w-5 h-5" loading="lazy">
+                    <a
+                      href="https://restfulapi.net/"
+                      class="stack-highlight-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      
+                        <img src="https://www.vectorlogo.zone/logos/json/json-icon.svg" alt="" class="w-5 h-5" loading="lazy">
+                      
+                      <span>REST API</span>
+                    </a>
                   
-                  <span>REST API</span>
                 </li>
               
             
               
               
-                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
+                <li class="stack-highlight-item">
                   
-                    <img src="/img/logos/tool-php.svg" alt="" class="w-5 h-5" loading="lazy">
+                    <a
+                      href="https://www.php.net/"
+                      class="stack-highlight-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      
+                        <img src="https://www.php.net/favicon.ico" alt="" class="w-5 h-5" loading="lazy">
+                      
+                      <span>PHP</span>
+                    </a>
                   
-                  <span>PHP</span>
                 </li>
               
             
@@ -143,7 +188,7 @@
       <h2 class="text-3xl font-bold mt-3">Screens & flows</h2>
     </div>
     <div
-      x-data="projectCarousel({"slug":"perc","title":"Perc","url":"https://perc.org/","logo":"/img/logos/perc-logo.svg","logoHasName":false,"problem":"Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.","solution":"Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.","tools":["wordpress","kadence","alpinejs","restapi","php"],"screenshots":"/assets/screenshots/perc.png","endDate":"2022-12","clientType":["agency","nonprofit"],"scope":["build-from-design","redesign-rebuild","custom-development"],"platform":["wordpress","headless-api"]})"
+      x-data="projectCarousel({"slug":"perc","title":"Perc","url":"https://perc.org/","logo":"/img/logos/perc-logo.svg","logoHasName":false,"problem":"Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.","solution":"Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.","summary":"Reimagined Perc.org with a structured Gutenberg experience and Alpine-powered filters that make research browsing effortless.","tools":["wordpress","kadence","alpinejs","restapi","php"],"screenshots":"/assets/screenshots/perc.png","endDate":"2022-12","clientType":["agency","nonprofit"],"scope":["build-from-design","redesign-rebuild","custom-development"],"platform":["wordpress","headless-api"]})"
       x-init="init()"
       @mouseenter="stop()"
       @mouseleave="start()"

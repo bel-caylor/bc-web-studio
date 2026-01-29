@@ -46,12 +46,19 @@ document.addEventListener("alpine:init", () => {
     };
   });
   Alpine.data("projectExplorer", ({ projects, filters }) => {
+    const toDateValue = (value) => {
+      if (!value) return 0;
+      const isoValue = /^\d{4}-\d{2}$/.test(value) ? `${value}-01` : value;
+      const timestamp = Date.parse(isoValue);
+      return Number.isNaN(timestamp) ? 0 : timestamp;
+    };
     const normalizedProjects = projects.map((project) => {
       var _a;
       const clientTypeList = Array.isArray(project.clientType) ? project.clientType : project.clientType ? [project.clientType] : [];
       return __spreadProps(__spreadValues({}, project), {
         clientType: clientTypeList,
-        primaryClientTypeId: (_a = clientTypeList[0]) != null ? _a : null
+        primaryClientTypeId: (_a = clientTypeList[0]) != null ? _a : null,
+        endDateValue: toDateValue(project.endDate)
       });
     });
     return {
@@ -135,7 +142,7 @@ document.addEventListener("alpine:init", () => {
         return parts.join(", ");
       },
       get filteredProjects() {
-        return this.projects.filter((project) => this.projectMatches(project));
+        return this.projects.filter((project) => this.projectMatches(project)).sort((a, b) => b.endDateValue - a.endDateValue);
       },
       handleHeroSelection(filterId, optionId) {
         this.toggle(filterId, optionId);

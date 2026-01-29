@@ -1,7 +1,7 @@
 @layer base {
   :root {
     --bg-image: url('/img/body-bg.png');
-    --hero-gradient-overlay: linear-gradient(135deg, rgba(10, 15, 40, 0.9), rgba(6, 18, 52, 0.75));
+    --hero-gradient-overlay: linear-gradient(135deg, rgba(10, 15, 40, 0.9), rgba(6, 18, 52, 0.4));
     --section-arrow-height: clamp(3rem, 7vw, 5rem);
   }
 

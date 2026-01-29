@@ -1,4 +1,7 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
-  <rect width='64' height='64' rx='16' fill='#0ea5e9'/>
-  <text x='50%' y='58%' font-family='Inter, "Segoe UI", sans-serif' font-weight='600' font-size='20' text-anchor='middle' fill='#ffffff'>K</text>
-</svg>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL was not found on this server.</p>
+</body></html>

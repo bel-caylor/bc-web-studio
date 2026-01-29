@@ -7,6 +7,7 @@
     "logoHasName": false,
     "problem": "HopeIsReal needed a modern website that conveyed their mission, encouraged donations, and was easy to update internally.",
     "solution": "Designed and developed a full WordPress site with ACF blocks, custom buttons in React, and performance/accessibility optimizations.",
+    "summary": "Modern WordPress rebuild with ACF blocks and React-driven CTAs so HopeIsReal can inspire donors and keep content fresh.",
     "tools": [
       "wordpress",
       "acf",
@@ -42,6 +43,7 @@
     "logoHasName": false,
     "problem": "Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.",
     "solution": "Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.",
+    "summary": "Reimagined Perc.org with a structured Gutenberg experience and Alpine-powered filters that make research browsing effortless.",
     "tools": [
       "wordpress",
       "kadence",
@@ -73,6 +75,7 @@
     "logoHasName": true,
     "problem": "BuffaloCorp needed a better e-commerce experience, particularly around navigation and product search.",
     "solution": "Redesigned the storefront with a jQuery-powered mega menu and custom Gutenberg blocks for a better product discovery flow.",
+    "summary": "Commerce-focused redesign with jQuery mega navigation and custom Gutenberg blocks so shoppers can find the right tools faster.",
     "tools": [
       "wordpress",
       "jquery",
@@ -104,6 +107,7 @@
     "logoHasName": true,
     "problem": "A new business needed guidance and execution on building their first digital presence.",
     "solution": "Guided them through site structure and layout, implemented SEO and analytics setup using Google tools.",
+    "summary": "Launched the brand\u2019s first site with guided IA, SEO, and analytics so the new business starts strong online.",
     "tools": [
       "wordpress",
       "seo",
@@ -131,6 +135,7 @@
     "logoHasName": true,
     "problem": "The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.",
     "solution": "Led implementation of their first FSE theme, integrating Tailwind and reusable components with custom jQuery enhancements.",
+    "summary": "Built their inaugural FSE + Tailwind theme with reusable components and jQuery polish to accelerate future experiments.",
     "tools": [
       "wordpress",
       "tailwindcss",
@@ -162,6 +167,7 @@
     "logoHasName": false,
     "problem": "BC Web Studio needed a home for its own services that separated agency partnerships from business consulting while showcasing vetted case studies, service frameworks, and operating principles in one place.",
     "solution": "Designed and developed an Eleventy marketing site with JSON-driven case studies, Alpine.js filtering, and dedicated \"For Agencies\" and \"For Businesses\" landing pages. Built a Tailwind/PostCSS component system, reusable info cards, and media carousels powered by structured project data so updates stay fast and consistent.",
+    "summary": "Created BC Web Studio\u2019s Eleventy marketing hub with Alpine filtering and data-driven case studies tailored to agencies and businesses.",
     "tools": [
       "eleventy",
       "tailwindcss",
@@ -184,12 +190,13 @@
   },
   {
     "slug": "flystl",
-    "title": "FlySTL",
+    "title": "St. Louis Lambert International Airport",
     "url": "https://www.flystl.com/",
     "logo": "/img/logos/stl-logo.webp",
     "logoHasName": false,
     "problem": "Lambert Airport\u2019s public site hadn\u2019t kept pace with traveler expectations: flight status, TSA, parking, and concessions data lived in disconnected systems, navigation was confusing, and the previous theme couldn\u2019t meet the stricter accessibility and multilingual requirements.",
-    "solution": "Dual agency project with Kestrel and Dovetail.  Led the rebuild on a custom Tailwind/_tw WordPress theme, wiring Kadence + ACF blocks for every layout need and hooking Alpine.js components into multiple APIs. Built flight-status and search blocks that hydrate from the airport data feed, cron-driven TSA wait-time + open-lane widgets that cache JSON locally, and parking availability cards that hit SuperParkingLot in real time. Hardened the navigation with accessible mega menus, header tab panels, Kadence off-canvas controls, ReciteMe + Google Translate helpers, and skip-link/keyboard workflows. Imported legacy shop/dine + art content via WP All Import + ACF, added custom tax queries, Gravity Forms, and FacetWP filters so the airport team could manage everything without editors calling an engineer.",
+    "solution": "Partnered with Kestrel and Dovetail to rebuild FlySTL with a WordPress theme. Wired Kadence + ACF blocks for every layout and layered Alpine.js components that talk to flight, TSA, and parking APIs. Built flight-status and search modules that hydrate from the airport feed and parking cards that query SuperParkingLot in real time. Hardened navigation with accessible mega menus, header tab panels, ReciteMe + Google Translate helpers, and skip-link/keyboard patterns. Implemented custom post types so the airport team can manage updates without engineers.",
+    "summary": "Led FlySTL\u2019s API-connected, accessible WordPress rebuild with live travel data widgets and Kadence/ACF layouts that keep passengers informed.",
     "tools": [
       "wordpress",
       "tailwindcss",
@@ -199,7 +206,6 @@
       "restapi",
       "php",
       "gravityforms",
-      "wpallimport",
       "accessibility"
     ],
     "screenshots": null,
@@ -215,6 +221,39 @@
       "data-integrations",
       "content-migration",
       "performance-accessibility"
+    ],
+    "platform": [
+      "wordpress"
+    ]
+  },
+  {
+    "slug": "holland",
+    "title": "Holland Construction Services",
+    "url": "https://www.hollandcs.com/",
+    "logo": "https://www.hollandcs.com/wp-content/uploads/2024/07/holland-40th-logos-01-300x100.png",
+    "logoHasName": false,
+    "problem": "Holland\u2019s legacy marketing site looked outdated, scattered work by sector, and lacked the filtering and CMS flexibility needed for the Kestrel + Dovetail team to tell the whole story without developer help.",
+    "solution": "Partnered with Kestrel and Dovetail to translate their Figma redesign into a Kadence-powered WordPress build. Delivered bespoke Gutenberg blocks, CPTs, and a filter/tab system that lets sales and marketing surface projects, services, and regions with just a few clicks.",
+    "summary": "Joint agency rebuild with Kestrel and Dovetail that turned the Holland site into a Kadence + custom-block experience with CPT-driven filters and tabbed storytelling.",
+    "tools": [
+      "wordpress",
+      "kadence",
+      "acf",
+      "alpinejs",
+      "php",
+      "figma"
+    ],
+    "screenshots": null,
+    "endDate": "2025-01",
+    "clientType": [
+      "agency",
+      "business"
+    ],
+    "scope": [
+      "redesign-rebuild",
+      "build-from-design",
+      "custom-development",
+      "full-website-build"
     ],
     "platform": [
       "wordpress"

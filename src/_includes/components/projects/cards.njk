@@ -34,45 +34,45 @@
     </div>
   </div>
 
-  <div class="projects-results-header pb-4">
-    <span class="projects-results-count">
+  <div class="case-results-header pb-4">
+    <span class="case-results-count">
       <span x-text="filteredProjects.length"></span> case studies
     </span>
-    <span class="projects-results-summary ml-2"
+    <span class="case-results-summary ml-2"
       x-text="hasActiveFilters() ? activeFilterSummary() : 'Showing the full library.'"></span>
   </div>
 
-  <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 !mt-0">
+  <div class="grid gap-x-8 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 !mt-0">
     <template x-for="project in filteredProjects" :key="project.slug">
-      <a class="project-info-card" :href="`/case-studies/${project.slug}/`">
-        <div class="project-info-card__head">
+      <a class="case-info-card" :href="`/case-studies/${project.slug}/`">
+        <div class="case-info-card__head">
           <div>
             <p class="eyebrow eyebrow--compact mb-1"
               x-text="primaryClientType(project) || 'Case Study'"></p>
-            <h3 class="project-info-card__title" x-text="project.title"></h3>
-            <p class="project-info-card__date" x-text="formatDate(project.endDate)"></p>
+            <h3 class="case-info-card__title" x-text="project.title"></h3>
+            <p class="case-info-card__date" x-text="formatDate(project.endDate)"></p>
           </div>
           <template x-if="project.logo">
-            <div class="project-info-card__logo">
+            <div class="case-info-card__logo">
               <img :src="project.logo" :alt="`${project.title} logo`" loading="lazy"
                 class="w-full h-full object-contain">
             </div>
           </template>
         </div>
-        <p class="project-info-card__excerpt" x-text="project.solution"></p>
+        <p class="case-info-card__excerpt" x-text="project.summary || project.solution"></p>
         <template x-if="project.scope && project.scope.length">
-          <div class="project-info-card__tags">
+          <div class="case-info-card__tags">
             <template x-for="item in project.scope" :key="item">
-              <span class="project-info-card__tag" x-text="optionLabel('scope', item)"></span>
+              <span class="case-info-card__tag" x-text="optionLabel('scope', item)"></span>
             </template>
           </div>
         </template>
-        <span class="project-info-card__cta">View case study →</span>
+        <span class="case-info-card__cta">View case study →</span>
       </a>
     </template>
   </div>
 
-  <div class="projects-empty-state" x-show="filteredProjects.length === 0">
+  <div class="cases-empty-state" x-show="filteredProjects.length === 0">
     <p class="text-lg font-semibold mb-2">No matching projects yet.</p>
     <p class="text-sm text-body-muted">Try clearing a filter or choose a different combination.</p>
   </div>

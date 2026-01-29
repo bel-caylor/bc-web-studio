@@ -15,7 +15,7 @@ eleventyComputed:
       <p class="eyebrow eyebrow--wide">Case Study</p>
       <h1 class="mt-4 mb-6">{{ project.title }}</h1>
       <p>
-        {{ project.problem }}
+        {{ project.summary or project.problem }}
       </p>
       {% if project.type %}
         <div class="flex flex-wrap gap-3 mt-6">
@@ -29,7 +29,7 @@ eleventyComputed:
       {% endif %}
     </div>
     {% if project.logo %}
-      <div class="surface-ghost rounded-2xl p-6 flex items-center justify-center flex-shrink-0 md:w-72">
+      <div class="rounded-2xl p-6 flex items-center justify-center flex-shrink-0 md:w-72">
         <img src="{{ project.logo }}" alt="{{ project.title }} logo" class="max-h-24 w-full object-contain">
       </div>
     {% endif %}
@@ -52,12 +52,12 @@ eleventyComputed:
     </div>
     <div class="case-study-sidebar">
       <div>
-        <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Completed</p>
+        <p class="eyebrow eyebrow--compact">Completed</p>
         <p class="text-2xl font-semibold">{{ project.endDate | formatProjectDate }}</p>
       </div>
       {% if project.type %}
         <div>
-          <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Services</p>
+          <p class="eyebrow eyebrow--compact">Services</p>
           <ul class="mt-2 space-y-1">
             {% for type in project.type %}
               <li class="text-lg capitalize">{{ type }}</li>
@@ -67,25 +67,39 @@ eleventyComputed:
       {% endif %}
       {% if project.url %}
         <div>
-          <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Website</p>
+          <p class="eyebrow eyebrow--compact">Website</p>
           <a href="{{ project.url }}" class="link-accent break-words" target="_blank" rel="noopener">{{ project.url }}</a>
         </div>
       {% endif %}
       {% if project.tools %}
-        <div>
-          <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Stack highlights</p>
-          <ul class="flex flex-wrap gap-3 mt-3">
+        <div class="mt-4">
+          <p class="eyebrow eyebrow--compact">Stack highlights</p>
+          <ul class="stack-highlight-list">
             {% for toolId in project.tools %}
               {% set tool = tools | find("id", toolId) %}
               {% if tool %}
-                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
-                  {% if tool.icon %}
-                    <img src="{{ tool.icon }}" alt="" class="w-5 h-5" loading="lazy">
+                <li class="stack-highlight-item">
+                  {% if tool.url %}
+                    <a
+                      href="{{ tool.url }}"
+                      class="stack-highlight-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {% if tool.icon %}
+                        <img src="{{ tool.icon }}" alt="" class="w-5 h-5" loading="lazy">
+                      {% endif %}
+                      <span>{{ tool.name }}</span>
+                    </a>
+                  {% else %}
+                    {% if tool.icon %}
+                      <img src="{{ tool.icon }}" alt="" class="w-5 h-5" loading="lazy">
+                    {% endif %}
+                    <span>{{ tool.name }}</span>
                   {% endif %}
-                  <span>{{ tool.name }}</span>
                 </li>
               {% else %}
-                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
+                <li class="stack-highlight-item">
                   <span>{{ toolId }}</span>
                 </li>
               {% endif %}

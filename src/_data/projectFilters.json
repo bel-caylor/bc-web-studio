@@ -77,10 +77,6 @@
       {
         "id": "woocommerce",
         "label": "WooCommerce"
-      },
-      {
-        "id": "custom-plugin",
-        "label": "Custom Plugin"
       }
     ],
     "width": "32%"
