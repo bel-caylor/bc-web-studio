@@ -20,6 +20,16 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("find", (arr, attr, value) =>
     arr.find(item => item[attr] === value)
   );
+  eleventyConfig.addFilter("formatProjectDate", (value) => {
+    if (!value) {
+      return "";
+    }
+    const date = new Date(value);
+    if (isNaN(date.getTime())) {
+      return value;
+    }
+    return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  });
 
   eleventyConfig.addWatchTarget("src/js");
   eleventyConfig.addWatchTarget("src/style.css");

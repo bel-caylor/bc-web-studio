@@ -2,26 +2,55 @@
 layout: layouts/base.njk
 title: Case Studies
 ---
-<section class="code-bg text-center pt-20 pb-24 md:pb-32">
-  <div class="max-w-3xl mx-auto px-4">
-    <p class="eyebrow eyebrow--wide">Work</p>
-    <h1 class="mt-3 mb-4">Case Studies & Project Deep Dives</h1>
-    <p>
-      Every engagement blends research, component-driven design, and tight feedback loops.
-      Browse a curated set of launches that highlight strategy, process, and measurable wins.
-    </p>
-  </div>
-</section>
-
-<section class="py-28 bg-background-medium dark:bg-zinc-900 relative section-arrow">
-  <div class="xl:container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center mb-12">
-      <p class="eyebrow eyebrow--wide text-electric-dark">Project Library</p>
-      <h2 class="text-3xl font-bold mt-3 mb-4">Filter by platform, industry, or scope</h2>
-      <p class="text-zinc-600 dark:text-zinc-300">
-        Use the tabs to jump straight into the work that best mirrors your upcoming build.
-      </p>
+<div
+  x-data='projectExplorer({
+    projects: {{ projects | dump | safe }},
+    filters: {{ projectFilters | dump | safe }}
+  })'
+  x-init="init()"
+>
+  <section class="code-bg text-center pt-20 pb-20">
+    <div class="max-w-4xl mx-auto px-4 space-y-8">
+      <div class="">
+        <p class="eyebrow eyebrow--wide text-lg">Work</p>
+        <h1 class="hero-title">See what happens <br class="hidden md:block">when strategy meets execution</h1>
+        <p class="hero-subhead">
+          Browse deep dives tailored for agencies, businesses, nonprofits, and commerce teams.
+          Use the chips below to start with the type of organization closest to yours.
+        </p>
+      </div>
+      <template x-for="filter in heroFilters" :key="filter.id">
+        <div class="case-hero-filter-inline flex justify-center gap-8 items-center">
+          <div class="case-hero-filter__chips">
+            <template x-for="option in filter.options" :key="option.id">
+              <button
+                type="button"
+                class="case-hero-chip"
+                @click="handleHeroSelection(filter.id, option.id)"
+                :class="{'case-hero-chip--active': isActive(filter.id, option.id)}"
+                x-text="option.label"
+              ></button>
+            </template>
+          </div>
+          <div class="case-hero-filter-inline__label">
+            <button
+              class="case-hero-filter__reset"
+              type="button"
+              @click="clear(filter.id)"
+              x-show="hasSelection(filter.id)"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </template>
     </div>
-    {% include "components/projects/project-tabs.njk" %}
-  </div>
-</section>
+  </section>
+
+  <section id="case-study-library" class="pt-16 pb-28 bg-background-medium dark:bg-zinc-900 relative section-arrow">
+    <div class="xl:container mx-auto px-4">
+
+      {% include "components/projects/cards.njk" %}
+    </div>
+  </section>
+</div>

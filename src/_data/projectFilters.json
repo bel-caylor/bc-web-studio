@@ -1,0 +1,88 @@
+[
+  {
+    "id": "clientType",
+    "label": "Client Type",
+    "field": "clientType",
+    "placement": "hero",
+    "options": [
+      {
+        "id": "agency",
+        "label": "Agency"
+      },
+      {
+        "id": "business",
+        "label": "Business"
+      },
+      {
+        "id": "nonprofit",
+        "label": "Nonprofit"
+      },
+      {
+        "id": "ecommerce",
+        "label": "E-commerce"
+      }
+    ]
+  },
+  {
+    "id": "scope",
+    "label": "Scope",
+    "field": "scope",
+    "placement": "panel",
+    "options": [
+      {
+        "id": "build-from-design",
+        "label": "Build from Design"
+      },
+      {
+        "id": "full-website-build",
+        "label": "Full Website Build"
+      },
+      {
+        "id": "site-redesign",
+        "label": "Site Redesign"
+      },
+      {
+        "id": "performance-accessibility",
+        "label": "Performance & Accessibility"
+      },
+      {
+        "id": "custom-development",
+        "label": "Custom Development"
+      },
+      {
+        "id": "ongoing-support",
+        "label": "Ongoing Support"
+      }
+    ],
+    "width": "63%"
+  },
+  {
+    "id": "platform",
+    "label": "Platform",
+    "field": "platform",
+    "placement": "panel",
+    "options": [
+      {
+        "id": "wordpress",
+        "label": "WordPress"
+      },
+      {
+        "id": "headless-api",
+        "label": "Headless / API"
+      },
+      {
+        "id": "eleventy",
+        "label": "Eleventy"
+      },
+      {
+        "id": "woocommerce",
+        "label": "WooCommerce"
+      },
+      {
+        "id": "custom-plugin",
+        "label": "Custom Plugin"
+      }
+    ],
+    "width": "32%"
+  }
+]

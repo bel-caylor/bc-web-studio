@@ -1,249 +1,164 @@
 [
-    {
-      "id": "javascript",
-      "name": "JavaScript",
-      "category": "Languages & Syntax",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-    },
-    {
-      "id": "php",
-      "name": "PHP",
-      "category": "Languages & Syntax",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-    },
-    {
-      "id": "html",
-      "name": "HTML5",
-      "category": "Languages & Syntax",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-    },
-    {
-      "id": "css",
-      "name": "CSS3",
-      "category": "Languages & Syntax",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-    },
-    {
-      "id": "sass",
-      "name": "Sass",
-      "category": "Languages & Syntax",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
-    },
-    {
-      "id": "yaml",
-      "name": "YAML",
-      "category": "Languages & Syntax",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yaml/yaml-original.svg"
-    },
-    {
-      "id": "wordpress",
-      "name": "WordPress",
-      "category": "CMS & Site Builders",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
-    },
-    {
-      "id": "acf",
-      "name": "Advanced Custom Fields",
-      "category": "CMS & Site Builders",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
-    },
-    {
-      "id": "kadence",
-      "name": "Kadence",
-      "category": "CMS & Site Builders",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
-    },
-    {
-      "id": "woocommerce",
-      "name": "WooCommerce",
-      "category": "CMS & Site Builders",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg"
-    },
-    {
-      "id": "buddypress",
-      "name": "BuddyPress",
-      "category": "CMS & Site Builders",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
-    },
-    {
-      "id": "gravityforms",
-      "name": "Gravity Forms",
-      "category": "CMS & Site Builders",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
-    },
-    {
-      "id": "theeventscalendar",
-      "name": "The Events Calendar",
-      "category": "CMS & Site Builders",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
-    },
-    {
-      "id": "alpinejs",
-      "name": "Alpine.js",
-      "category": "Frameworks & Libraries",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/alpinejs/alpinejs-original.svg"
-    },
-    {
-      "id": "jquery",
-      "name": "jQuery",
-      "category": "Frameworks & Libraries",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg"
-    },
-    {
-      "id": "react",
-      "name": "React",
-      "category": "Frameworks & Libraries",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    },
-    {
-      "id": "vuejs",
-      "name": "Vue.js",
-      "category": "Frameworks & Libraries",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-    },
-    {
-      "id": "tailwindcss",
-      "name": "Tailwind CSS",
-      "category": "Frameworks & Libraries",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
-    },
-    {
-      "id": "git",
-      "name": "Git",
-      "category": "Tooling & DevOps",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-    },
-    {
-      "id": "github",
-      "name": "GitHub",
-      "category": "Tooling & DevOps",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-    },
-    {
-      "id": "bitbucket",
-      "name": "Bitbucket",
-      "category": "Tooling & DevOps",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg"
-    },
-    {
-      "id": "gulp",
-      "name": "Gulp",
-      "category": "Tooling & DevOps",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gulp/gulp-plain.svg"
-    },
-    {
-      "id": "webpack",
-      "name": "Webpack",
-      "category": "Tooling & DevOps",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg"
-    },
-    {
-      "id": "npm",
-      "name": "npm",
-      "category": "Tooling & DevOps",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"
-    },
-    {
-      "id": "ssh",
-      "name": "SSH",
-      "category": "Tooling & DevOps",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-    },
-    {
-      "id": "sftp",
-      "name": "SFTP",
-      "category": "Tooling & DevOps",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/filezilla/filezilla-plain.svg"
-    },
-    {
-      "id": "mysql",
-      "name": "MySQL",
-      "category": "Data & API Work",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-    },
-    {
-      "id": "nodejs",
-      "name": "Node.js",
-      "category": "Languages & Syntax",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-    },
-    {
-      "id": "python",
-      "name": "Python",
-      "category": "Languages & Syntax",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-    },
-    {
-      "id": "restapi",
-      "name": "REST API",
-      "category": "Data & API Work",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/api/api-original.svg"
-    },
-    {
-      "id": "zoho",
-      "name": "Zoho API",
-      "category": "Data & API Work",
-      "icon": "https://www.zoho.com/favicon.ico"
-    },
-    {
-      "id": "hubspot",
-      "name": "HubSpot API",
-      "category": "Data & API Work",
-      "icon": "https://cdn.worldvectorlogo.com/logos/hubspot.svg"
-    },
-    {
-      "id": "plaid",
-      "name": "Plaid API",
-      "category": "Data & API Work",
-      "icon": "https://cdn.worldvectorlogo.com/logos/plaid-2.svg"
-    },
-    {
-      "id": "googleanalytics",
-      "name": "Google Analytics",
-      "category": "Marketing & Measurement",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
-    },
-    {
-      "id": "gtm",
-      "name": "Google Tag Manager",
-      "category": "Marketing & Measurement",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
-    },
-    {
-      "id": "accessibility",
-      "name": "Accessibility",
-      "category": "Marketing & Measurement",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/accessibility/accessibility-original.svg"
-    },
-    {
-      "id": "chatgpt",
-      "name": "ChatGPT",
-      "category": "AI & Automation",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg"
-    },
-    {
-      "id": "figma",
-      "name": "Figma",
-      "category": "Design & UX Tools",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-    },
-    {
-      "id": "trello",
-      "name": "Trello",
-      "category": "PM & Communication",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg"
-    },
-    {
-      "id": "jira",
-      "name": "Jira",
-      "category": "PM & Communication",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
-    },
-    {
-      "id": "slack",
-      "name": "Slack",
-      "category": "PM & Communication",
-      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg"
-    }
-  ]
-  
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "category": "Languages & Syntax",
+    "icon": "/img/logos/tool-javascript.svg"
+  },
+  {
+    "id": "php",
+    "name": "PHP",
+    "category": "Languages & Syntax",
+    "icon": "/img/logos/tool-php.svg"
+  },
+  {
+    "id": "html",
+    "name": "HTML5",
+    "category": "Languages & Syntax",
+    "icon": "/img/logos/tool-html.svg"
+  },
+  {
+    "id": "css",
+    "name": "CSS3",
+    "category": "Languages & Syntax",
+    "icon": "/img/logos/tool-css.svg"
+  },
+  {
+    "id": "yaml",
+    "name": "YAML",
+    "category": "Languages & Syntax",
+    "icon": "/img/logos/tool-yaml.svg"
+  },
+  {
+    "id": "wordpress",
+    "name": "WordPress",
+    "category": "CMS & Site Builders",
+    "icon": "/img/logos/tool-wordpress.svg"
+  },
+  {
+    "id": "acf",
+    "name": "Advanced Custom Fields",
+    "category": "CMS & Site Builders",
+    "icon": "/img/logos/tool-acf.svg"
+  },
+  {
+    "id": "kadence",
+    "name": "Kadence",
+    "category": "CMS & Site Builders",
+    "icon": "/img/logos/tool-kadence.svg"
+  },
+  {
+    "id": "woocommerce",
+    "name": "WooCommerce",
+    "category": "CMS & Site Builders",
+    "icon": "/img/logos/tool-woocommerce.svg"
+  },
+  {
+    "id": "buddypress",
+    "name": "BuddyPress",
+    "category": "CMS & Site Builders",
+    "icon": "/img/logos/tool-buddypress.svg"
+  },
+  {
+    "id": "gravityforms",
+    "name": "Gravity Forms",
+    "category": "CMS & Site Builders",
+    "icon": "/img/logos/tool-gravityforms.svg"
+  },
+  {
+    "id": "theeventscalendar",
+    "name": "The Events Calendar",
+    "category": "CMS & Site Builders",
+    "icon": "/img/logos/tool-theeventscalendar.svg"
+  },
+  {
+    "id": "alpinejs",
+    "name": "Alpine.js",
+    "category": "Frameworks & Libraries",
+    "icon": "/img/logos/tool-alpinejs.svg"
+  },
+  {
+    "id": "jquery",
+    "name": "jQuery",
+    "category": "Frameworks & Libraries",
+    "icon": "/img/logos/tool-jquery.svg"
+  },
+  {
+    "id": "react",
+    "name": "React",
+    "category": "Frameworks & Libraries",
+    "icon": "/img/logos/tool-react.svg"
+  },
+  {
+    "id": "vuejs",
+    "name": "Vue.js",
+    "category": "Frameworks & Libraries",
+    "icon": "/img/logos/tool-vuejs.svg"
+  },
+  {
+    "id": "tailwindcss",
+    "name": "Tailwind CSS",
+    "category": "Frameworks & Libraries",
+    "icon": "/img/logos/tool-tailwind.svg"
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "category": "Tooling & DevOps",
+    "icon": "/img/logos/tool-git.svg"
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "category": "Tooling & DevOps",
+    "icon": "/img/logos/tool-github.svg"
+  },
+  {
+    "id": "nodejs",
+    "name": "Node.js",
+    "category": "Languages & Syntax",
+    "icon": "/img/logos/tool-nodejs.svg"
+  },
+  {
+    "id": "restapi",
+    "name": "REST API",
+    "category": "Data & API Work",
+    "icon": "/img/logos/tool-restapi.svg"
+  },
+  {
+    "id": "googleanalytics",
+    "name": "Google Analytics",
+    "category": "Marketing & Measurement",
+    "icon": "/img/logos/tool-googleanalytics.svg"
+  },
+  {
+    "id": "gtm",
+    "name": "Google Tag Manager",
+    "category": "Marketing & Measurement",
+    "icon": "/img/logos/tool-gtm.svg"
+  },
+  {
+    "id": "accessibility",
+    "name": "Accessibility",
+    "category": "Marketing & Measurement",
+    "icon": "/img/logos/tool-accessibility.svg"
+  },
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "category": "AI & Automation",
+    "icon": "/img/logos/tool-chatgpt.svg"
+  },
+  {
+    "id": "figma",
+    "name": "Figma",
+    "category": "Design & UX Tools",
+    "icon": "/img/logos/tool-figma.svg"
+  },
+  {
+    "id": "eleventy",
+    "name": "Eleventy",
+    "category": "Frameworks & Libraries",
+    "icon": "/img/logos/tool-eleventy.svg"
+  }
+]

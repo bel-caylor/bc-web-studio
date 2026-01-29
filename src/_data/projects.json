@@ -1,8 +1,9 @@
 [
   {
+    "slug": "hope-church",
     "title": "Hope Church",
     "url": "https://hopeisreal.org/",
-    "logo": "https://hopeisreal.org/wp-content/uploads/2023/03/hope-church-logo.svg",
+    "logo": "/img/logos/hope-church-logo.webp",
     "logoHasName": false,
     "problem": "HopeIsReal needed a modern website that conveyed their mission, encouraged donations, and was easy to update internally.",
     "solution": "Designed and developed a full WordPress site with ACF blocks, custom buttons in React, and performance/accessibility optimizations.",
@@ -20,16 +21,24 @@
       "/img/screenshots/ascentcorp2.png"
     ],
     "endDate": "2023-06",
-    "type": [
-      "design",
-      "develop",
-      "maintain"
+    "clientType": [
+      "business",
+      "nonprofit"
+    ],
+    "scope": [
+      "full-website-build",
+      "performance-accessibility",
+      "ongoing-support"
+    ],
+    "platform": [
+      "wordpress"
     ]
   },
   {
+    "slug": "perc",
     "title": "Perc",
     "url": "https://perc.org/",
-    "logo": "https://perc.org/wp-content/uploads/2023/03/perc-logo.svg",
+    "logo": "/img/logos/perc-logo.svg",
     "logoHasName": false,
     "problem": "Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.",
     "solution": "Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.",
@@ -42,12 +51,22 @@
     ],
     "screenshots": "/assets/screenshots/perc.png",
     "endDate": "2022-12",
-    "type": [
-      "design",
-      "develop"
+    "clientType": [
+      "agency",
+      "nonprofit"
+    ],
+    "scope": [
+      "build-from-design",
+      "redesign-rebuild",
+      "custom-development"
+    ],
+    "platform": [
+      "wordpress",
+      "headless-api"
     ]
   },
   {
+    "slug": "buffalo-store",
     "title": "Buffalo Store",
     "url": "https://www.buffalocorpstore.com/",
     "logo": "/img/logos/buffalo corp.png",
@@ -62,13 +81,23 @@
     ],
     "screenshots": "/assets/screenshots/buffalocorpstore.png",
     "endDate": "2022-06",
-    "type": [
-      "design",
-      "develop",
-      "maintain"
+    "clientType": [
+      "agency",
+      "ecommerce",
+      "business"
+    ],
+    "scope": [
+      "site-redesign",
+      "build-from-design",
+      "ongoing-support"
+    ],
+    "platform": [
+      "woocommerce",
+      "wordpress"
     ]
   },
   {
+    "slug": "new2satx",
     "title": "New2SATX",
     "url": "https://new2satx.com/",
     "logo": "https://new2satx.com/wp-content/uploads/2024/01/New2SATX-Logo-Horizontal-300x96.png",
@@ -83,13 +112,19 @@
     ],
     "screenshots": "/img/screenshots/New2SATX-home.mp4",
     "endDate": "2022-11",
-    "type": [
-      "design",
-      "develop",
-      "maintain"
+    "clientType": [
+      "business"
+    ],
+    "scope": [
+      "full-website-build",
+      "ongoing-support"
+    ],
+    "platform": [
+      "wordpress"
     ]
   },
   {
+    "slug": "ascent",
     "title": "Ascent",
     "url": "https://www.ascentcorp.com/",
     "logo": "/img/logos/ascent.png",
@@ -107,9 +142,44 @@
       "/img/screenshots/ascentcorp2.png"
     ],
     "endDate": "2021-06",
-    "type": [
-      "develop",
-      "maintain"
+    "clientType": [
+      "agency"
+    ],
+    "scope": [
+      "build-from-design",
+      "site-redesign",
+      "custom-development"
+    ],
+    "platform": [
+      "wordpress"
+    ]
+  },
+  {
+    "slug": "bc-web-studio",
+    "title": "BC Web Studio",
+    "url": null,
+    "logo": null,
+    "logoHasName": false,
+    "problem": "BC Web Studio needed a home for its own services that separated agency partnerships from business consulting while showcasing vetted case studies, service frameworks, and operating principles in one place.",
+    "solution": "Designed and developed an Eleventy marketing site with JSON-driven case studies, Alpine.js filtering, and dedicated \"For Agencies\" and \"For Businesses\" landing pages. Built a Tailwind/PostCSS component system, reusable info cards, and media carousels powered by structured project data so updates stay fast and consistent.",
+    "tools": [
+      "eleventy",
+      "tailwindcss",
+      "alpinejs",
+      "nodejs"
+    ],
+    "endDate": "2026-01",
+    "clientType": [
+      "business",
+      "agency"
+    ],
+    "scope": [
+      "full-website-build",
+      "custom-development",
+      "ongoing-support"
+    ],
+    "platform": [
+      "eleventy"
     ]
   }
 ]

@@ -1,0 +1,104 @@
+<div class="space-y-10">
+  <div class="projects-filter-toolbar">
+    <div class="projects-filter-toolbar__header justify-start gap-8">
+      <div>
+        <h2 class="text-lg">Filter Case Studies</h2>
+      </div>
+      <button
+        class="filter-action"
+        type="button"
+        @click="resetAll"
+        x-show="hasActiveFilters()"
+      >
+        Reset all
+      </button>
+    </div>
+    <div class="projects-filter-toolbar__grid !mt-2">
+      <template x-for="filter in panelFilters" :key="filter.id">
+        <div
+          class="filter-chip-group p-4 bg-white"
+          :style="filter.width ? `--filter-width: ${filter.width}` : null"
+          :data-fixed="filter.width ? 'true' : null"
+        >
+          <div class="filter-chip-group__header">
+            <div>
+              <p class="filter-chip-group__label" x-text="filter.label"></p>
+            </div>
+            <button
+              class="filter-action filter-action--small"
+              type="button"
+              @click="clear(filter.id)"
+              x-show="hasSelection(filter.id)"
+            >
+              Clear
+            </button>
+          </div>
+          <div class="filter-chip-row">
+            <template x-for="option in filter.options" :key="option.id">
+              <button
+                class="filter-chip"
+                type="button"
+                @click="toggle(filter.id, option.id)"
+                :class="{
+                  'filter-chip--active': isActive(filter.id, option.id),
+                  'filter-chip--disabled': !optionHasResults(filter.id, option.id)
+                }"
+                :disabled="!optionHasResults(filter.id, option.id)"
+                x-text="option.label"
+              ></button>
+            </template>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <div class="projects-results-header">
+    <div>
+      <p class="projects-results-count">
+        <span x-text="filteredProjects.length"></span> case studies
+      </p>
+      <p class="projects-results-summary" x-text="hasActiveFilters() ? activeFilterSummary() : 'Showing the full library.'"></p>
+    </div>
+    <p class="projects-results-note">Tap any card to read the full breakdown.</p>
+  </div>
+
+  <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 !mt-0">
+    <template x-for="project in filteredProjects" :key="project.slug">
+      <a
+        class="project-info-card"
+        :href="`/case-studies/${project.slug}/`"
+      >
+        <div class="project-info-card__head">
+          <div>
+            <p class="eyebrow eyebrow--compact text-electric-dark mb-1" x-text="primaryClientType(project) || 'Case Study'"></p>
+            <h3 class="project-info-card__title group-hover:text-accent" x-text="project.title"></h3>
+            <p class="project-info-card__date" x-text="formatDate(project.endDate)"></p>
+          </div>
+          <template x-if="project.logo">
+            <div class="project-info-card__logo">
+              <img :src="project.logo" :alt="`${project.title} logo`" loading="lazy" class="w-full h-full object-contain">
+            </div>
+          </template>
+        </div>
+        <p class="project-info-card__excerpt" x-text="project.solution"></p>
+        <template x-if="project.scope && project.scope.length">
+          <div class="project-info-card__tags">
+            <template x-for="item in project.scope" :key="item">
+              <span class="project-info-card__tag" x-text="optionLabel('scope', item)"></span>
+            </template>
+          </div>
+        </template>
+        <span class="project-info-card__cta">View case study →</span>
+      </a>
+    </template>
+  </div>
+
+  <div
+    class="projects-empty-state"
+    x-show="filteredProjects.length === 0"
+  >
+    <p class="text-lg font-semibold mb-2">No matching projects yet.</p>
+    <p class="text-sm text-zinc-500">Try clearing a filter or choose a different combination.</p>
+  </div>
+</div>
