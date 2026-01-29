@@ -11,12 +11,6 @@
     }
   }
 
-  .filter-toolbar {
-    &__title {
-      @apply text-xl font-semibold mt-1 text-zinc-800 dark:text-zinc-100;
-    }
-  }
-
   .filter-action {
     @apply text-sm font-semibold text-accent hover:text-accent-light transition whitespace-nowrap;
 
@@ -26,7 +20,7 @@
   }
 
   .filter-chip-group {
-    @apply flex flex-col gap-3 w-full;
+    @apply flex flex-col gap-3 w-full bg-white;
     flex: 1 1 var(--filter-width, 50%);
     max-width: min(100%, var(--filter-width, 100%));
 

@@ -1,7 +1,7 @@
 @layer components {
   .projects-results {
     &-header {
-      @apply flex flex-col md:flex-row md:items-center md:justify-between gap-4;
+      @apply flex flex-col md:flex-row md:items-center md:justify-start gap-4;
     }
 
     &-count {
@@ -20,7 +20,7 @@
   .project-info-card {
     --project-card-tilt: 3rem;
     clip-path: polygon(0 var(--project-card-tilt), 100% 0, 100% calc(100% - var(--project-card-tilt)), 0 100%);
-    @apply bg-white text-left dark:border-zinc-800 px-8 pb-14 pt-20 flex flex-col gap-4 h-full transition hover:-translate-y-1;
+    @apply bg-white text-left px-8 pb-14 pt-20 flex flex-col gap-4 h-full transition hover:-translate-y-1;
 
     &__head {
       @apply flex items-start gap-4 justify-between;
@@ -31,7 +31,7 @@
     }
 
     &__title {
-      @apply text-2xl font-bold mb-1;
+      @apply text-2xl font-bold !mb-1 group-hover:text-accent;
     }
 
     &__date {
@@ -39,7 +39,7 @@
     }
 
     &__excerpt {
-      @apply text-base text-zinc-700 dark:text-zinc-200;
+      @apply text-base text-zinc-700;
     }
 
     &__tags {
@@ -47,7 +47,7 @@
     }
 
     &__tag {
-      @apply text-xs font-semibold uppercase tracking-[0.2em] bg-background-medium/90 dark:bg-zinc-800 px-3 py-1 rounded-full;
+      @apply text-xs font-semibold bg-background-lighter/90 px-3 py-1 rounded-md;
     }
 
     &__cta {
@@ -63,10 +63,10 @@
     --sidebar-notch: 3rem;
     clip-path: polygon(0 var(--sidebar-notch), 100% 0, 100% calc(100% - var(--sidebar-notch)), 0 100%);
     border-radius: 0;
-    @apply border border-white/40 dark:border-zinc-800 shadow-lg px-8 py-20;
+    @apply border border-white/40 shadow-lg px-8 py-20 bg-background-medium/80;
   }
 
   .projects-empty-state {
-    @apply text-center border border-dashed border-zinc-300 dark:border-zinc-700 rounded-3xl p-10 bg-white/70 dark:bg-zinc-900/60;
+    @apply text-center border border-dashed border-zinc-300 rounded-3xl p-10 bg-white/70;
   }
 }

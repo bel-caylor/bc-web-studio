@@ -5,6 +5,10 @@
     --section-arrow-height: clamp(3rem, 7vw, 5rem);
   }
 
+  html {
+    @apply bg-white text-zinc-900;
+  }
+
   body {
     background-image: var(--hero-gradient-overlay), var(--bg-image);
     background-size: contain;

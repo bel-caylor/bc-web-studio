@@ -1,0 +1,103 @@
+@layer components {
+  /* Text tokens */
+  .text-body {
+    @apply text-zinc-600;
+  }
+
+  .text-body-strong {
+    @apply text-zinc-700;
+  }
+
+  .text-body-muted {
+    @apply text-zinc-500;
+  }
+
+  .text-brand {
+    @apply text-accent;
+  }
+
+  .text-brand-medium {
+    @apply text-accent-medium;
+  }
+
+  .text-brand-soft {
+    @apply text-accent-light;
+  }
+
+  .text-electric-highlight {
+    @apply text-electric;
+  }
+
+  .text-hero-muted {
+    @apply text-white/85;
+  }
+
+  .text-hero-contrast {
+    @apply text-background-lightest;
+  }
+
+  /* Surface tokens */
+  .surface-section {
+    @apply bg-background-medium;
+  }
+
+  .surface-section-alt {
+    @apply bg-background-lighter/80;
+  }
+
+  .surface-panel {
+    @apply bg-white/90;
+  }
+
+  .surface-card {
+    @apply bg-white;
+  }
+
+  .surface-card-soft {
+    @apply bg-white/80;
+  }
+
+  .surface-overlay {
+    @apply bg-white/10;
+  }
+
+  .surface-ghost {
+    @apply bg-white/5;
+  }
+
+  .surface-badge {
+    @apply bg-gray-100;
+  }
+
+  .border-panel {
+    @apply border border-gray-300;
+  }
+
+  .carousel-dot {
+    @apply w-3 h-3 rounded-full bg-white;
+  }
+
+  .site-nav {
+    @apply text-white;
+  }
+
+  .site-footer {
+    @apply text-body-muted;
+  }
+
+  .site-hero {
+    @apply text-white;
+  }
+
+  .site-hero__title {
+    @apply text-4xl md:text-5xl font-bold text-accent mb-4;
+  }
+
+  .site-hero__lead {
+    @apply text-xl text-background-lightest mb-8;
+  }
+
+  .cta-accent {
+    @apply inline-block bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded-2xl shadow-md transition;
+  }
+}

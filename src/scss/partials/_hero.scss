@@ -1,0 +1,72 @@
+@layer components {
+  .hero-bg {
+    @apply text-white;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+
+    >* {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      @apply text-4xl md:text-5xl font-bold text-white;
+    }
+
+    p:not(.eyebrow) {
+      @apply text-white/85 text-lg;
+    }
+  }
+
+  .section-arrow {
+    position: relative;
+    margin-top: calc(var(--section-arrow-height) * -0.5);
+    padding-top: calc(var(--section-arrow-height) + 5rem);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 50% var(--section-arrow-height), 0 0);
+    z-index: 0;
+  }
+
+  .eyebrow {
+    @apply font-mono uppercase text-xs font-bold text-electric-dark;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: inline-block;
+
+    &--wide {
+      letter-spacing: 0.3em;
+    }
+
+    &--compact {
+      letter-spacing: 0.1em;
+    }
+
+    & + h1,
+    & + h2,
+    & + h3 {
+      @apply mt-0 mb-4;
+    }
+  }
+
+  .hero-cta {
+    --hero-cta-arrow-depth: 2rem;
+    @apply md:min-w-[300px] inline-flex items-center justify-center font-heading text-sm uppercase tracking-[0.2em] text-white shadow-lg transition transform hover:translate-x-2 px-8 py-3;
+    border-radius: 0;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--hero-cta-arrow-depth)) 0,
+      100% 50%,
+      calc(100% - var(--hero-cta-arrow-depth)) 100%,
+      0 100%
+    );
+    padding-right: calc(2rem + var(--hero-cta-arrow-depth) * 0.35);
+
+    &--primary {
+      @apply bg-accent;
+    }
+
+    &--secondary {
+      @apply bg-accent/80 hover:bg-accent;
+    }
+  }
+}

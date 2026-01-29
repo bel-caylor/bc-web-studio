@@ -181,5 +181,43 @@
     "platform": [
       "eleventy"
     ]
-  }
+  },
+  {
+    "slug": "flystl",
+    "title": "FlySTL",
+    "url": "https://www.flystl.com/",
+    "logo": "/img/logos/stl-logo.webp",
+    "logoHasName": false,
+    "problem": "Lambert Airport\u2019s public site hadn\u2019t kept pace with traveler expectations: flight status, TSA, parking, and concessions data lived in disconnected systems, navigation was confusing, and the previous theme couldn\u2019t meet the stricter accessibility and multilingual requirements.",
+    "solution": "Dual agency project with Kestrel and Dovetail.  Led the rebuild on a custom Tailwind/_tw WordPress theme, wiring Kadence + ACF blocks for every layout need and hooking Alpine.js components into multiple APIs. Built flight-status and search blocks that hydrate from the airport data feed, cron-driven TSA wait-time + open-lane widgets that cache JSON locally, and parking availability cards that hit SuperParkingLot in real time. Hardened the navigation with accessible mega menus, header tab panels, Kadence off-canvas controls, ReciteMe + Google Translate helpers, and skip-link/keyboard workflows. Imported legacy shop/dine + art content via WP All Import + ACF, added custom tax queries, Gravity Forms, and FacetWP filters so the airport team could manage everything without editors calling an engineer.",
+    "tools": [
+      "wordpress",
+      "tailwindcss",
+      "acf",
+      "kadence",
+      "alpinejs",
+      "restapi",
+      "php",
+      "gravityforms",
+      "wpallimport",
+      "accessibility"
+    ],
+    "screenshots": null,
+    "endDate": "2025-12",
+    "clientType": [
+      "agency",
+      "business"
+    ],
+    "scope": [
+      "full-website-build",
+      "redesign-rebuild",
+      "custom-development",
+      "data-integrations",
+      "content-migration",
+      "performance-accessibility"
+    ],
+    "platform": [
+      "wordpress"
+    ]
+  }  
 ]

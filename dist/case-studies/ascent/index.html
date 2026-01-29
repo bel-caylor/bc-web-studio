@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 <body class="min-h-screen flex flex-col">
   <header class="">
   <div class="p-4">
-    <nav class="max-w-5xl mx-auto flex justify-between items-center text-white">
+    <nav class="site-nav max-w-5xl mx-auto flex justify-between items-center">
       <a href="/" class="font-heading font-bold text-xl">BC Web Studio</a>
       <div class="flex flex-wrap gap-4 text-sm font-heading font-medium tracking-wide">
         <a href="/" class="hover:underline">Home</a>
@@ -26,12 +26,12 @@
 
   <main class="flex-grow">
     
-<section class="code-bg pt-20 pb-24">
+<section class="hero-bg pt-20 pb-24">
   <div class="max-w-5xl mx-auto px-4 flex flex-col gap-10 md:flex-row md:items-center">
     <div class="flex-1">
       <p class="eyebrow eyebrow--wide">Case Study</p>
       <h1 class="mt-4 mb-6">Ascent</h1>
-      <p class="text-white/85 text-lg">
+      <p>
         The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.
       </p>
       
@@ -40,47 +40,47 @@
       
     </div>
     
-      <div class="bg-white/5 rounded-2xl p-6 flex items-center justify-center flex-shrink-0 md:w-72">
+      <div class="surface-ghost rounded-2xl p-6 flex items-center justify-center flex-shrink-0 md:w-72">
         <img src="/img/logos/ascent.png" alt="Ascent logo" class="max-h-24 w-full object-contain">
       </div>
     
   </div>
 </section>
 
-<section class="py-20 bg-white dark:bg-zinc-900 section-arrow pt-36">
+<section class="py-20 surface-card section-arrow pt-36">
   <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-3">
     <div class="md:col-span-2 space-y-8">
       <div>
-        <p class="eyebrow eyebrow--compact text-electric-dark">Challenge</p>
+        <p class="eyebrow eyebrow--compact">Challenge</p>
         <h2 class="text-3xl font-bold mt-4 mb-3">What they needed</h2>
-        <p class="text-lg text-zinc-700 dark:text-zinc-200">The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.</p>
+        <p class="text-lg text-body-strong">The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.</p>
       </div>
       <div>
-        <p class="eyebrow eyebrow--compact text-electric-dark">Approach</p>
+        <p class="eyebrow eyebrow--compact">Approach</p>
         <h2 class="text-3xl font-bold mt-4 mb-3">How we solved it</h2>
-        <p class="text-lg text-zinc-700 dark:text-zinc-200">Led implementation of their first FSE theme, integrating Tailwind and reusable components with custom jQuery enhancements.</p>
+        <p class="text-lg text-body-strong">Led implementation of their first FSE theme, integrating Tailwind and reusable components with custom jQuery enhancements.</p>
       </div>
     </div>
-    <div class="case-study-sidebar bg-background-medium/80 dark:bg-zinc-800">
+    <div class="case-study-sidebar">
       <div>
-        <p class="text-sm uppercase tracking-[0.2em] text-zinc-500">Completed</p>
+        <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Completed</p>
         <p class="text-2xl font-semibold">May 2021</p>
       </div>
       
       
         <div>
-          <p class="text-sm uppercase tracking-[0.2em] text-zinc-500">Website</p>
-          <a href="https://www.ascentcorp.com/" class="text-blue-600 underline break-words" target="_blank" rel="noopener">https://www.ascentcorp.com/</a>
+          <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Website</p>
+          <a href="https://www.ascentcorp.com/" class="link-accent break-words" target="_blank" rel="noopener">https://www.ascentcorp.com/</a>
         </div>
       
       
         <div>
-          <p class="text-sm uppercase tracking-[0.2em] text-zinc-500">Stack highlights</p>
+          <p class="text-sm uppercase tracking-[0.2em] text-body-muted">Stack highlights</p>
           <ul class="flex flex-wrap gap-3 mt-3">
             
               
               
-                <li class="flex items-center gap-2 bg-white/80 dark:bg-zinc-900/60 rounded-full px-3 py-1 text-sm font-medium text-zinc-700 dark:text-zinc-200">
+                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
                   
                     <img src="/img/logos/tool-wordpress.svg" alt="" class="w-5 h-5" loading="lazy">
                   
@@ -90,7 +90,7 @@
             
               
               
-                <li class="flex items-center gap-2 bg-white/80 dark:bg-zinc-900/60 rounded-full px-3 py-1 text-sm font-medium text-zinc-700 dark:text-zinc-200">
+                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
                   
                     <img src="/img/logos/tool-tailwind.svg" alt="" class="w-5 h-5" loading="lazy">
                   
@@ -100,7 +100,7 @@
             
               
               
-                <li class="flex items-center gap-2 bg-white/80 dark:bg-zinc-900/60 rounded-full px-3 py-1 text-sm font-medium text-zinc-700 dark:text-zinc-200">
+                <li class="flex items-center gap-2 surface-card-soft rounded-full px-3 py-1 text-sm font-medium text-body-strong">
                   
                     <img src="/img/logos/tool-jquery.svg" alt="" class="w-5 h-5" loading="lazy">
                   
@@ -116,10 +116,10 @@
 </section>
 
 
-<section class="py-16 bg-background-medium dark:bg-zinc-900">
+<section class="py-16 surface-section">
   <div class="max-w-5xl mx-auto px-4">
     <div class="mb-8 text-center">
-      <p class="eyebrow eyebrow--wide text-electric-dark">Gallery</p>
+      <p class="eyebrow eyebrow--wide">Gallery</p>
       <h2 class="text-3xl font-bold mt-3">Screens & flows</h2>
     </div>
     <div
@@ -132,7 +132,7 @@
       tabindex="0"
       aria-roledescription="carousel"
       aria-label="Ascent screenshots"
-      class="relative w-full overflow-hidden border border-gray-300 shadow-xl rounded-3xl"
+      class="relative w-full overflow-hidden border-panel shadow-xl rounded-3xl"
       style="aspect-ratio: 13 / 9;"
     >
       <template x-for="(src, i) in images" :key="i">
@@ -173,8 +173,8 @@
         <template x-for="(src, i) in images" :key="i">
           <button
             @click="current = i"
+            class="carousel-dot"
             :class="{
-              'w-3 h-3 rounded-full bg-white': true,
               'opacity-50': current !== i,
               'opacity-100': current === i
             }"
@@ -187,7 +187,7 @@
 </section>
 
 
-<section class="py-12 bg-background-medium dark:bg-zinc-900">
+<section class="py-12 surface-section">
   <div class="max-w-4xl mx-auto px-4 text-center">
     <p class="text-lg mb-4">Interested in how this approach translates to your roadmap?</p>
     <div class="flex flex-wrap gap-4 justify-center">
@@ -198,7 +198,7 @@
 </section>
 
   </main>
-  <footer class="p-4 text-center text-sm text-zinc-500 dark:text-zinc-400">
+  <footer class="site-footer p-4 text-center text-sm">
   &copy; 2026 MyProfile. All rights reserved.
 </footer>
 

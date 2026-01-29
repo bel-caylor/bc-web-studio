@@ -2,12 +2,10 @@
   .case-hero-filter {
     @apply bg-white/5 border border-white/20 rounded-3xl p-6 md:p-8 text-left;
 
-    &-inline,
-    &--inline {
+    &-inline {
       @apply text-left;
 
-      &__label,
-      .case-hero-filter__label {
+      &__label {
         @apply flex items-center gap-4;
       }
     }
@@ -33,17 +31,14 @@
   .case-hero-chip {
     --chip-arrow-depth: 1rem;
     clip-path: polygon(0 0, calc(100% - var(--chip-arrow-depth)) 0, 100% 50%, calc(100% - var(--chip-arrow-depth)) 100%, 0 100%);
-    color: white;
-    @apply bg-accent inline-flex items-center justify-center text-sm font-semibold tracking-[0.2em] px-5 py-2 transition;
+    @apply bg-accent text-white border border-transparent inline-flex items-center justify-center text-sm font-semibold tracking-[0.2em] px-5 py-2 transition;
 
     &:hover:not(&--active) {
-      background-color: rgba(176, 48, 42, 0.2);
+      @apply bg-accent/20;
     }
 
     &--active {
-      background-color: white;
-      border-color: #B0302A;
-      color: #B0302A;
+      @apply bg-white text-accent border border-accent;
     }
   }
 

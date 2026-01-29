@@ -4,6 +4,9 @@
 @use "./partials/filters";
 @use "./partials/project-library";
 @use "./partials/case-hero";
+@use "./partials/hero";
+@use "./partials/links";
+@use "./partials/theme";
 
 @tailwind base;
 @tailwind components;

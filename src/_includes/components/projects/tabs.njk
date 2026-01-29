@@ -3,12 +3,9 @@
     <div class="flex md:hidden overflow-x-auto border-b space-x-2 p-2">
         <template x-for="(project, idx) in filteredProjects" :key="idx">
         <button
+            class="tab-chip"
             @click="active = idx + 1"
-            :class="{
-            'text-sm whitespace-nowrap px-4 py-2 rounded-t border-b-2': true,
-            'border-accent text-accent font-semibold': active === idx+1,
-            'border-transparent text-gray-600': active !== idx+1
-            }"
+            :class="active === idx + 1 ? 'tab-chip-active' : 'tab-chip-inactive'"
         >
             <span x-text="project.title"></span>
         </button>

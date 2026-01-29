@@ -1,0 +1,19 @@
+@layer components {
+  .link-accent {
+    @apply text-accent underline decoration-2 decoration-accent/40 transition-colors;
+
+    &:hover,
+    &:focus-visible {
+      @apply text-accent-light;
+    }
+  }
+
+  .link-accent-inverse {
+    @apply text-white underline decoration-2 decoration-white/60 transition-colors;
+
+    &:hover,
+    &:focus-visible {
+      @apply text-electric-light;
+    }
+  }
+}
