@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -479,7 +479,7 @@ code,
     overflow: visible;
     z-index: 1;
 }
-.code-bg>* {
+.code-bg > * {
     position: relative;
     z-index: 1;
   }
@@ -525,6 +525,10 @@ code,
 .eyebrow--compact {
     letter-spacing: 0.1em;
   }
+.eyebrow + h1, .eyebrow + h2, .eyebrow + h3{
+  margin-top: 0px;
+  margin-bottom: 1rem;
+}
 .hero-cta {
     --hero-cta-arrow-depth: 2rem;
     display: inline-flex;
@@ -562,11 +566,7 @@ code,
 }
 .hero-cta {
     border-radius: 0;
-    clip-path: polygon(0 0,
-        calc(100% - var(--hero-cta-arrow-depth)) 0,
-        100% 50%,
-        calc(100% - var(--hero-cta-arrow-depth)) 100%,
-        0 100%);
+    clip-path: polygon(0 0, calc(100% - var(--hero-cta-arrow-depth)) 0, 100% 50%, calc(100% - var(--hero-cta-arrow-depth)) 100%, 0 100%);
     padding-right: calc(2rem + var(--hero-cta-arrow-depth) * 0.35);
   }
 .hero-cta--primary{
@@ -583,11 +583,7 @@ code,
 .case-card {
     --card-arrow-depth: 4rem;
     border-radius: 0;
-    clip-path: polygon(0 0,
-    calc(100% - var(--card-arrow-depth)) 0,
-    100% 50%,
-    calc(100% - var(--card-arrow-depth)) 100%,
-    0 100%);
+    clip-path: polygon(0 0, calc(100% - var(--card-arrow-depth)) 0, 100% 50%, calc(100% - var(--card-arrow-depth)) 100%, 0 100%);
     padding-right: 8rem;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -623,16 +619,10 @@ code,
 .info-card--stacked {
     margin-bottom: 0;
   }
-.info-card>.eyebrow,
-  .info-card>h3{
+.info-card > .eyebrow,
+  .info-card > h3{
   display: block;
   text-align: right;
-}
-.eyebrow + h1,
-  .eyebrow + h2,
-  .eyebrow + h3{
-  margin-top: 0px;
-  margin-bottom: 1rem;
 }
 .select-wrapper{
   border-radius: 0.25rem;
@@ -648,7 +638,7 @@ code,
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1));
 }
-.select{
+.select-wrapper .select{
   width: 100%;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -657,7 +647,7 @@ code,
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.select:focus{
+.select-wrapper .select:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
@@ -731,6 +721,17 @@ code,
     justify-content: space-between;
   }
 }
+.projects-filter-toolbar__grid{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 768px){
+  .projects-filter-toolbar__grid{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .filter-action{
   white-space: nowrap;
   font-size: 0.875rem;
@@ -752,17 +753,6 @@ code,
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.projects-filter-toolbar__grid{
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-@media (min-width: 768px){
-  .projects-filter-toolbar__grid{
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
 .filter-chip-group{
   display: flex;
   width: 100%;
@@ -771,7 +761,7 @@ code,
     flex: 1 1 var(--filter-width, 50%);
     max-width: min(100%, var(--filter-width, 100%));
 }
-.filter-chip-group[data-fixed='true'] {
+.filter-chip-group[data-fixed=true] {
     flex: 0 0 var(--filter-width, auto);
   }
 .filter-chip-group__header{
@@ -1005,10 +995,12 @@ code,
     background-color: rgb(24 24 27 / 0.6);
   }
 }
-.case-hero-filter-inline{
+.case-hero-filter-inline, .case-hero-filter--inline{
   text-align: left;
 }
-.case-hero-filter-inline__label{
+.case-hero-filter-inline__label,
+  .case-hero-filter-inline .case-hero-filter__label, .case-hero-filter--inline__label,
+  .case-hero-filter--inline .case-hero-filter__label{
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -1035,14 +1027,12 @@ code,
 .case-hero-chip {
     --chip-arrow-depth: 1rem;
     clip-path: polygon(0 0, calc(100% - var(--chip-arrow-depth)) 0, 100% 50%, calc(100% - var(--chip-arrow-depth)) 100%, 0 100%);
-    /* border: 1px solid transparent; */
     color: white;
-    /* background-color: #7E1F1C; */
-    --tw-bg-opacity: 1;
-    background-color: rgb(176 48 42 / var(--tw-bg-opacity, 1));
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    --tw-bg-opacity: 1;
+    background-color: rgb(176 48 42 / var(--tw-bg-opacity, 1));
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     padding-top: 0.5rem;

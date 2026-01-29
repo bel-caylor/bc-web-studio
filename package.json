@@ -4,8 +4,12 @@
   "scripts": {
     "dev": "npm-run-all --parallel build:css:watch eleventy:serve",
     "build": "npm-run-all build:css eleventy:build",
-    "build:css": "postcss ./src/style.css -o ./dist/style.css",
-    "build:css:watch": "postcss ./src/style.css -o ./dist/style.css --watch",
+    "sass:build": "sass src/scss/main.scss ./.tmp/style.css --no-source-map",
+    "sass:watch": "sass --watch src/scss/main.scss:./.tmp/style.css --no-source-map",
+    "postcss:build": "postcss ./.tmp/style.css -o ./dist/style.css",
+    "postcss:watch": "postcss ./.tmp/style.css -o ./dist/style.css --watch",
+    "build:css": "npm-run-all sass:build postcss:build",
+    "build:css:watch": "npm-run-all sass:build && npm-run-all --parallel sass:watch postcss:watch",
     "build:js": "esbuild src/js/main.js --bundle --outdir=dist/js --format=esm --target=es2017 --sourcemap",
     "lint": "npm run build:css && npm run eleventy:build && npm run lint:html",
     "lint:html": "node scripts/lint-html.js",
@@ -20,6 +24,7 @@
     "postcss": "^8.4.0",
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.0",
+    "sass": "^1.77.8",
     "tailwindcss": "^3.4.17",
     "esbuild": "^0.21.5"
   },

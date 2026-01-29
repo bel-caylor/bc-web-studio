@@ -1,0 +1,43 @@
+@layer base {
+  :root {
+    --bg-image: url('/img/body-bg.png');
+    --hero-gradient-overlay: linear-gradient(135deg, rgba(10, 15, 40, 0.9), rgba(6, 18, 52, 0.75));
+    --section-arrow-height: clamp(3rem, 7vw, 5rem);
+  }
+
+  body {
+    background-image: var(--hero-gradient-overlay), var(--bg-image);
+    background-size: contain;
+    background-position: top;
+    @apply font-sans text-zinc-900;
+  }
+
+  /* body::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-image: var(--hero-gradient-overlay), var(--bg-image);
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    z-index: 0;
+  } */
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+  }
+
+  p:not(:first-of-type) {
+    @apply mb-4;
+  }
+
+  code,
+  kbd,
+  pre {
+    @apply font-mono;
+  }
+}

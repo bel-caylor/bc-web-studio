@@ -1,0 +1,72 @@
+@layer components {
+  .projects-results {
+    &-header {
+      @apply flex flex-col md:flex-row md:items-center md:justify-between gap-4;
+    }
+
+    &-count {
+      @apply text-xl font-semibold;
+    }
+
+    &-summary {
+      @apply text-sm text-zinc-500;
+    }
+
+    &-note {
+      @apply text-sm text-zinc-600;
+    }
+  }
+
+  .project-info-card {
+    --project-card-tilt: 3rem;
+    clip-path: polygon(0 var(--project-card-tilt), 100% 0, 100% calc(100% - var(--project-card-tilt)), 0 100%);
+    @apply bg-white text-left dark:border-zinc-800 px-8 pb-14 pt-20 flex flex-col gap-4 h-full transition hover:-translate-y-1;
+
+    &__head {
+      @apply flex items-start gap-4 justify-between;
+    }
+
+    &__logo {
+      @apply max-w-[35%] flex items-center justify-center overflow-hidden shrink-0 -mt-4;
+    }
+
+    &__title {
+      @apply text-2xl font-bold mb-1;
+    }
+
+    &__date {
+      @apply text-xs uppercase tracking-[0.3em] text-zinc-500;
+    }
+
+    &__excerpt {
+      @apply text-base text-zinc-700 dark:text-zinc-200;
+    }
+
+    &__tags {
+      @apply flex flex-wrap gap-2 mt-2;
+    }
+
+    &__tag {
+      @apply text-xs font-semibold uppercase tracking-[0.2em] bg-background-medium/90 dark:bg-zinc-800 px-3 py-1 rounded-full;
+    }
+
+    &__cta {
+      @apply inline-flex items-center gap-1 font-heading text-sm text-accent mt-4 transition-colors;
+
+      &:hover {
+        @apply text-accent-light;
+      }
+    }
+  }
+
+  .case-study-sidebar {
+    --sidebar-notch: 3rem;
+    clip-path: polygon(0 var(--sidebar-notch), 100% 0, 100% calc(100% - var(--sidebar-notch)), 0 100%);
+    border-radius: 0;
+    @apply border border-white/40 dark:border-zinc-800 shadow-lg px-8 py-20;
+  }
+
+  .projects-empty-state {
+    @apply text-center border border-dashed border-zinc-300 dark:border-zinc-700 rounded-3xl p-10 bg-white/70 dark:bg-zinc-900/60;
+  }
+}
