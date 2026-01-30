@@ -1,6 +1,7 @@
 @layer components {
   .hero-bg {
     @apply text-white;
+    @apply text-center pt-10 lg:pt-20 pb-16 md:pb-28;
     position: relative;
     overflow: visible;
     z-index: 1;
