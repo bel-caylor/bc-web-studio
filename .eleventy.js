@@ -1,4 +1,7 @@
 const esbuild = require("esbuild");
+const repoName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split("/")[1] : "";
+const isUserSite = repoName && repoName.toLowerCase().endsWith(".github.io");
+const pathPrefix = repoName && !isUserSite ? `/${repoName}` : "/";
 
 function bundleClientJs() {
   esbuild.buildSync({
@@ -47,6 +50,7 @@ module.exports = function(eleventyConfig) {
       input: "src",
       includes: "_includes",
       output: "dist"
-    }
+    },
+    pathPrefix
   };
 };
