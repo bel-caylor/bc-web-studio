@@ -1,0 +1,63 @@
+{% set highlightLimit = limit | default(3) %}
+{% set eyebrow = eyebrow | default("") %}
+{% set title = title | default("Case studies") %}
+{% set description = description | default("Proof points that illustrate how we deliver results.") %}
+{% set clientType = clientType | default("agency") %}
+
+<section class="py-28 surface-section relative">
+  <div class="xl:container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-12 space-y-3">
+      {% if eyebrow %}
+        <p class="eyebrow eyebrow--wide text-lg">{{ eyebrow }}</p>
+      {% endif %}
+      <h2 class="text-3xl font-bold">{{ title }}</h2>
+      <p class="text-body mx-auto max-w-2xl">
+        {{ description }}
+      </p>
+    </div>
+
+    {% set selectedProjects = projects | caseStudyHighlights(clientType, highlightLimit) %}
+
+    <div class="grid gap-8 md:grid-cols-3">
+      {% for project in selectedProjects %}
+        {% set types = project.clientType or [] %}
+        {% set primaryType = types[0] if types | length > 0 else "" %}
+        {% set secondaryType = types[1] if types | length > 1 else "" %}
+        {% set eyebrowType = secondaryType if secondaryType else ("" if primaryType == "agency" else primaryType) %}
+        <a class="case-info-card" href="{{ ('/case-studies/' + project.slug + '/') | url }}">
+          <div class="case-info-card__head">
+            <div>
+              {% if eyebrowType %}
+                <p class="eyebrow eyebrow--compact mb-1">{{ eyebrowType | capitalize }}</p>
+              {% endif %}
+              <h3 class="case-info-card__title !mb-0">{{ project.title }}</h3>
+              {% if project.subtitle %}
+                <p class="project-subtitle case-info-card__subtitle !mb-1">{{ project.subtitle }}</p>
+              {% endif %}
+              {% if project.endDate %}
+                <p class="case-info-card__date">{{ project.endDate | formatProjectDate }}</p>
+              {% endif %}
+            </div>
+            {% if project.logo %}
+              <div class="case-info-card__logo">
+                <img src="{{ project.logo }}" alt="{{ project.title }} logo" loading="lazy" class="w-full h-full object-contain">
+              </div>
+            {% endif %}
+          </div>
+          <p class="case-info-card__excerpt">{{ project.summary or project.solution }}</p>
+          <span class="case-info-card__cta">View case study →</span>
+        </a>
+      {% endfor %}
+    </div>
+
+    {% if selectedProjects | length == 0 %}
+      <p class="text-center text-body mt-6">No case studies are available for this audience yet.</p>
+    {% endif %}
+
+    <div class="pt-10 text-center">
+      <a class="font-heading text-brand-medium info-card__cta inline-flex items-center justify-center gap-1" href="{{ (ctaUrl | default('/case-studies/')) | url }}">
+        {{ ctaLabel | default("View all case studies") }} →
+      </a>
+    </div>
+  </div>
+</section>

@@ -31,6 +31,28 @@ module.exports = function(eleventyConfig) {
     }
     return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
   });
+  eleventyConfig.addFilter("caseStudyHighlights", (projects = [], clientType = "", limit = 3) => {
+    if (!Array.isArray(projects)) {
+      return [];
+    }
+    const toDateValue = (value) => {
+      if (!value) return 0;
+      const isoValue = /^\d{4}-\d{2}$/.test(value) ? `${value}-01` : value;
+      const timestamp = Date.parse(isoValue);
+      return Number.isNaN(timestamp) ? 0 : timestamp;
+    };
+    return projects
+      .filter(project => {
+        const types = Array.isArray(project.clientType)
+          ? project.clientType
+          : project.clientType
+            ? [project.clientType]
+            : [];
+        return clientType ? types.includes(clientType) : true;
+      })
+      .sort((a, b) => toDateValue(b.endDate) - toDateValue(a.endDate))
+      .slice(0, limit);
+  });
 
   eleventyConfig.addWatchTarget("src/js");
   eleventyConfig.addWatchTarget("src/style.css");
@@ -43,7 +65,9 @@ module.exports = function(eleventyConfig) {
     files: ["dist/style.css", "dist/js/**/*.js"], 
   });
 
-  eleventyConfig.on("beforeBuild", bundleClientJs);
+  if (process.env.ELEVENTY_SKIP_BUNDLE !== "1") {
+    eleventyConfig.on("beforeBuild", bundleClientJs);
+  }
 
   return {
     dir: {

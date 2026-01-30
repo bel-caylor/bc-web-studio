@@ -190,8 +190,7 @@
     ],
     "endDate": "2026-02",
     "clientType": [
-      "business",
-      "agency"
+      "business"
     ],
     "scope": [
       "full-website-build",

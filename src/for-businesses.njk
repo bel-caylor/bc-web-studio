@@ -59,23 +59,31 @@ title: For Businesses
   <div class="xl:container mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center">
     <div class="lg:w-1/2">
       <p class="eyebrow eyebrow--compact">Why this works</p>
-      <h3 class="text-3xl font-bold">Built by someone <br class="hidden md:block">who’s run a business</h3>
+      <h3 class="text-3xl font-bold">Built by someone <br class="hidden md:block">who's run a business</h3>
       <p>
-        I’m energized by how modern tools — especially AI — are making it possible for businesses to move faster, make better decisions, and do more with fewer resources.
+        I'm energized by how modern tools — especially AI — are making it possible for businesses to move faster, make better decisions, and do more with fewer resources.
       </p>
-      <p>I’ve also been an entrepreneur and business owner since 2005, which means I approach every recommendation with an eye toward profitability, sustainability, and real-world tradeoffs — not just what’s technically possible.</p>
-      <p>I’ve been building internal apps and workflows on top of tools like Google Sheets and Docs, using AI-assisted development to dramatically reduce build time and cost while improving visibility and decision-making.</p>
+      <p>I've also been an entrepreneur and business owner since 2005, which means I approach every recommendation with an eye toward profitability, sustainability, and real-world tradeoffs — not just what's technically possible.</p>
+      <p>I've been building internal apps and workflows on top of tools like Google Sheets and Docs, using AI-assisted development to dramatically reduce build time and cost while improving visibility and decision-making.</p>
 
     </div>
     <div class="lg:w-1/2 w-full max-w-lg">
       <div class="case-card p-12 hover:translate-x-2 ">
         <p class="eyebrow eyebrow--compact ">About</p>
         <h3 class="text-2xl font-bold mb-3">Meet Belinda</h3>
-        <p>
-          If you are in the San Antonio area, let's grab coffee and chat about how I can help your business thrive with tailored technical solutions.
-        </p>
-        <a href="{{ '/about/' | url }}" class="inline-flex items-center mt-6 font-heading text-brand-medium info-card__cta">Let's Connect →</a>
+      <p>
+        If you are in the San Antonio area, let's grab coffee and chat about how I can help your business thrive with tailored technical solutions.
+      </p>
+      <a href="{{ '/about/' | url }}" class="inline-flex items-center mt-6 font-heading text-brand-medium info-card__cta">Let's Connect →</a>
       </div>
     </div>
   </div>
 </section>
+
+{% set eyebrow = "Case studies" %}
+{% set title = "Business case studies that move the needle" %}
+{% set description = "Sample work that highlights the practical improvements I've shipped for founders and internal teams across product, operations, and marketing." %}
+{% set clientType = "business" %}
+{% set ctaLabel = "See all case studies" %}
+
+{% include "components/case-study-highlights.njk" %}
