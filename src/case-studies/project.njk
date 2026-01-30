@@ -30,7 +30,7 @@ eleventyComputed:
       </div>
       {% endif %}
       {% if project.url %}
-      <a href="{{ project.url }}" class="hero-cta hero-cta--secondary mt-8 inline-flex" target="_blank"
+      <a href="{{ project.url | url }}" class="hero-cta hero-cta--secondary mt-8 inline-flex" target="_blank"
         rel="noopener">Visit live site</a>
       {% endif %}
     </div>
@@ -42,7 +42,7 @@ eleventyComputed:
     <div class="md:col-span-2 space-y-8">
       {% if project.logo %}
       <div class="flex justify-center md:justify-start max-w-[150px]">
-        <img src="{{ project.logo }}" alt="{{ project.title }} logo" class="max-h-20 w-full object-contain"
+        <img src="{{ project.logo | url }}" alt="{{ project.title }} logo" class="max-h-20 w-full object-contain"
           loading="lazy">
       </div>
       {% endif %}
@@ -75,7 +75,7 @@ eleventyComputed:
       {% if project.url %}
       <div>
         <p class="eyebrow eyebrow--compact">Website</p>
-        <a href="{{ project.url }}" class="link-accent break-words" target="_blank" rel="noopener">{{ project.url }}</a>
+        <a href="{{ project.url | url }}" class="link-accent break-words" target="_blank" rel="noopener">{{ project.url }}</a>
       </div>
       {% endif %}
       {% if project.tools %}
@@ -130,7 +130,7 @@ eleventyComputed:
           x-transition:leave="transition ease-in duration-500" x-transition:leave-start="translate-x-0"
           x-transition:leave-end="-translate-x-full">
           <template x-if="src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')">
-            <video :src="src" preload="none" poster="/img/screenshots/video-poster.png"
+            <video :src="src" preload="none" poster="{{ '/img/screenshots/video-poster.png' | url }}"
               class="w-full h-full object-cover" autoplay muted loop playsinline
               :aria-label="`${project.title} demo video`"></video>
           </template>

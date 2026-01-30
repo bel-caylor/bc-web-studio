@@ -5,7 +5,9 @@ title: Case Studies
 <div
   x-data='projectExplorer({
     projects: {{ projects | dump | safe }},
-    filters: {{ projectFilters | dump | safe }}
+    filters: {{ projectFilters | dump | safe }},
+    siteBase: "{{ '/' | url }}",
+    caseStudyBase: "{{ '/case-studies/' | url }}"
   })'
   x-init="init()"
 >

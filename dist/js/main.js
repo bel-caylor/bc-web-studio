@@ -19,20 +19,50 @@ var __spreadValues = (a, b) => {
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 
 // src/js/main.js
+var ensureTrailingSlash = (value = "/") => value.endsWith("/") ? value : `${value}/`;
+var stripLeadingSlash = (value = "") => value.startsWith("/") ? value.slice(1) : value;
+var isExternalPath = (value = "") => /^(?:[a-z]+:)?\/\//i.test(value) || value.startsWith("data:");
+var resolvePathWithBase = (value, base) => {
+  if (!value || typeof value !== "string") {
+    return value;
+  }
+  if (isExternalPath(value)) {
+    return value;
+  }
+  const normalizedBase = ensureTrailingSlash(base || "/");
+  if (value.startsWith("/")) {
+    return normalizedBase + stripLeadingSlash(value);
+  }
+  return normalizedBase + value;
+};
+var getSiteBaseFromWindow = () => ensureTrailingSlash(
+  typeof window !== "undefined" && window.__SITE_BASE ? window.__SITE_BASE : "/"
+);
 document.addEventListener("alpine:init", () => {
   console.log("[main.js] alpine:init");
   Alpine.data("projectCarousel", (project) => {
     var _a;
     return {
       project,
-      images: Array.isArray(project.screenshots) ? project.screenshots : project.screenshots ? [project.screenshots] : [],
+      images: [],
       interval: (_a = project.interval) != null ? _a : 3e3,
       current: 0,
       timer: null,
       init() {
+        this.images = this.normalizeImages(project.screenshots);
         if (this.images.length > 1) {
           this.start();
         }
+      },
+      normalizeImages(source) {
+        const base = getSiteBaseFromWindow();
+        if (Array.isArray(source)) {
+          return source.map((item) => resolvePathWithBase(item, base)).filter(Boolean);
+        }
+        if (typeof source === "string" && source.trim().length) {
+          return [resolvePathWithBase(source, base)].filter(Boolean);
+        }
+        return [];
       },
       start() {
         if (this.images.length <= 1) return;
@@ -49,20 +79,28 @@ document.addEventListener("alpine:init", () => {
       }
     };
   });
-  Alpine.data("projectExplorer", ({ projects, filters }) => {
+  Alpine.data("projectExplorer", ({ projects, filters, siteBase = "/", caseStudyBase = "/case-studies/" }) => {
     const toDateValue = (value) => {
       if (!value) return 0;
       const isoValue = /^\d{4}-\d{2}$/.test(value) ? `${value}-01` : value;
       const timestamp = Date.parse(isoValue);
       return Number.isNaN(timestamp) ? 0 : timestamp;
     };
+    const normalizedSiteBase = ensureTrailingSlash(siteBase || getSiteBaseFromWindow());
+    const normalizedCaseStudyBase = ensureTrailingSlash(caseStudyBase || "/case-studies/");
+    const resolveAssetPath = (value) => resolvePathWithBase(value, normalizedSiteBase);
     const normalizedProjects = projects.map((project) => {
-      var _a;
+      var _a, _b, _c;
       const clientTypeList = Array.isArray(project.clientType) ? project.clientType : project.clientType ? [project.clientType] : [];
+      const normalizedScreenshots = Array.isArray(project.screenshots) ? project.screenshots.map(resolveAssetPath).filter(Boolean) : project.screenshots ? [resolveAssetPath(project.screenshots)].filter(Boolean) : [];
       return __spreadProps(__spreadValues({}, project), {
         clientType: clientTypeList,
         primaryClientTypeId: (_a = clientTypeList[0]) != null ? _a : null,
-        endDateValue: toDateValue(project.endDate)
+        endDateValue: toDateValue(project.endDate),
+        logo: (_b = resolveAssetPath(project.logo)) != null ? _b : project.logo,
+        url: (_c = resolveAssetPath(project.url)) != null ? _c : project.url,
+        screenshots: normalizedScreenshots,
+        detailUrl: project.slug ? `${normalizedCaseStudyBase}${project.slug}/` : normalizedCaseStudyBase
       });
     });
     return {

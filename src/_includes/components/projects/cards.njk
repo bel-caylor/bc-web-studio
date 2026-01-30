@@ -78,7 +78,7 @@
 
   <div class="grid gap-x-8 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 !mt-0">
     <template x-for="project in filteredProjects" :key="project.slug">
-      <a class="case-info-card" :href="`/case-studies/${project.slug}/`">
+      <a class="case-info-card" :href="project.detailUrl">
         <div class="case-info-card__head">
           <div>
             <p class="eyebrow eyebrow--compact mb-1" x-text="primaryClientType(project) || 'Case Study'"></p>

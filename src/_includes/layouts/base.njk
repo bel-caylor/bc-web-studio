@@ -16,6 +16,9 @@
   </main>
   {% include "components/footer.njk" %}
 
+  <script>
+    window.__SITE_BASE = "{{ '/' | url }}";
+  </script>
   <script src="{{ '/js/main.js' | url }}"></script>
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
