@@ -17,6 +17,9 @@
     p:not(.eyebrow) {
       @apply text-white/85 text-lg;
     }
+    .case-card p:not(.eyebrow) {
+      @apply text-zinc-900
+    }
     .eyebrow {
       @apply text-electric-light text-xl;
     }

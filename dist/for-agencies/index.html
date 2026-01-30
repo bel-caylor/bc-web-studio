@@ -70,7 +70,7 @@
     <section class="hero-bg text-center pt-20 pb-28 md:pb-32">
   <div class="max-w-3xl mx-auto px-4">
     <p class="eyebrow eyebrow--wide text-lg">Partner Track</p>
-    <h1 class="mb-6">Web engineering that FITS <br class="hidden md:block"> into agency workflows</h1>
+    <h1 class="mb-6">Web engineering that FITS <br class="block"> into agency workflows</h1>
     <p>
       I partner with digital agencies as an embedded web engineer <br class="hidden md:block">— integrating into sprint cycles to deliver reliable WordPress and <br class="hidden md:block">front-end work without slowing teams down.
     </p>
@@ -81,7 +81,7 @@
   </div>
 </section>
 
-<section class="py-32 pt-40 surface-section relative section-arrow">
+<section class="py-32 pt-40 surface-section surface-section--vertical-fade relative section-arrow">
   <div class="xl:container mx-auto px-4">
     <div class="max-w-3xl mx-auto mb-12 text-center">
       <p class="eyebrow eyebrow--wide">Agency Support</p>
@@ -123,8 +123,8 @@
   </div>
 </section>
 
-<section class="hero-bg py-24">
-  <div class="xl:container mx-auto px-4 md:px-12 flex flex-col lg:flex-row gap-12 items-center">
+<section class="hero-bg py-24 bg-gradient-to-r from-primary-dark/100 via-primary-dark/60 to-primary-dark/10">
+  <div class="max-w-[1100px] mx-auto px-4 md:px-12 flex flex-col lg:flex-row gap-12 items-center">
     <div class="lg:w-3/5">
       <p class="eyebrow eyebrow--compact">Experience</p>
       <h3 class="text-3xl font-bold mb-3">Where I add the most value</h3>
@@ -146,11 +146,11 @@
         </li>           
       </ul>
     </div>
-    <div class="lg:w-1/2 w-full max-w-lg">
+    <div class="lg:w-3/5 w-full max-w-lg">
       <div class="case-card p-12 hover:translate-x-2 ">
         <p class="eyebrow eyebrow--compact ">Featured work</p>
         <h3 class="text-2xl font-bold mb-3">Shared case studies</h3>
-        <p>
+        <p class="text-primary">
           Dive into project deep dives that mirror the workflows I run for agencies across SaaS, higher-ed, and hospitality.
         </p>
         <a href="/case-studies/" class="inline-flex items-center mt-6 font-heading text-brand-medium">Review project snapshots →</a>
@@ -160,10 +160,75 @@
 </section>
 
   </main>
-  <footer class="site-footer p-4 text-center text-sm">
-  &copy; 2026 MyProfile. All rights reserved.
-</footer>
+  
 
+<footer class="site-footer">
+  <div class="bg-background-light w-full">
+    <div class="site-footer__panel">
+      <div class="text-left">
+        <p class="eyebrow eyebrow--compact text-electric-dark text-base">Let's collaborate</p>
+        <h2 class="site-footer__headline">Partner-ready <br class="hidden md:block">web engineering support</h2>
+      </div>
+      <div class="site-footer__contact text-left">
+        <a href="mailto:belinda.caylor+dev@gmail.com" class="site-footer__contact-link pl-12">
+          <div>
+            <span class="eyebrow eyebrow--compact text-electric-dark text-base">Email Belinda</span>
+            <p class="site-footer__link-description text-base">
+              Have a project in mind? <br class="hidden md:block">Email anytime.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer__meta">
+    <div class="site-footer__meta-content">
+      <nav aria-label="Footer navigation">
+        <ul class="site-footer__meta-links">
+          
+          <li><a href="/for-agencies/">For Agencies</a></li>
+          
+          <li><a href="/for-businesses/">For Businesses</a></li>
+          
+          <li><a href="/case-studies/">Case Studies</a></li>
+          
+          <li><a href="/about/">About</a></li>
+          
+        </ul>
+      </nav>
+      <div class="hidden lg:block">
+        <p class="site-footer__brand-mark"><span class="text-accent font-mono">&lt;</span>BC<span
+        class="text-accent font-mono">&gt;</span> Web Studio</p>
+<div class="site-footer__brand-links" aria-label="Social profiles">
+    <a href="https://www.linkedin.com/in/belinda-caylor/" target="_blank" rel="noreferrer noopener">
+        <img src="/img/logos/linkedin-favicon.svg" alt="LinkedIn" width="24" height="24" loading="lazy">
+    </a>
+    <a href="https://github.com/bel-caylor" target="_blank" rel="noreferrer noopener">
+        <img src="/img/logos/github-favicon.svg" alt="GitHub" width="24" height="24" loading="lazy">
+    </a>
+</div>
+      </div>
+      <div class="site-footer__brand text-center">
+        <div class="block lg:hidden">
+          <p class="site-footer__brand-mark"><span class="text-accent font-mono">&lt;</span>BC<span
+        class="text-accent font-mono">&gt;</span> Web Studio</p>
+<div class="site-footer__brand-links" aria-label="Social profiles">
+    <a href="https://www.linkedin.com/in/belinda-caylor/" target="_blank" rel="noreferrer noopener">
+        <img src="/img/logos/linkedin-favicon.svg" alt="LinkedIn" width="24" height="24" loading="lazy">
+    </a>
+    <a href="https://github.com/bel-caylor" target="_blank" rel="noreferrer noopener">
+        <img src="/img/logos/github-favicon.svg" alt="GitHub" width="24" height="24" loading="lazy">
+    </a>
+</div>
+        </div>
+        <p class="site-footer__brand-subtext !mb-0">Built with care and accessibility in mind.</p>
+        <p class="site-footer__copyright text-xs">
+          &copy; 2026 BC Web Studio.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
 
   <script src="/js/main.js"></script>
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>

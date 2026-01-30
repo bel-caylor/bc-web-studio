@@ -1,3 +1,50 @@
-<footer class="site-footer p-4 text-center text-sm">
-  &copy; {{ "" | year }} MyProfile. All rights reserved.
+{% set footerNav = [
+{ "href": "/for-agencies/", "label": "For Agencies" },
+{ "href": "/for-businesses/", "label": "For Businesses" },
+{ "href": "/case-studies/", "label": "Case Studies" },
+{ "href": "/about/", "label": "About" }
+] %}
+
+<footer class="site-footer">
+  <div class="bg-background-light w-full">
+    <div class="site-footer__panel">
+      <div class="text-left">
+        <p class="eyebrow eyebrow--compact text-electric-dark text-base">Let's collaborate</p>
+        <h2 class="site-footer__headline">Partner-ready <br class="hidden md:block">web engineering support</h2>
+      </div>
+      <div class="site-footer__contact text-left">
+        <a href="mailto:belinda.caylor+dev@gmail.com" class="site-footer__contact-link pl-12">
+          <div>
+            <span class="eyebrow eyebrow--compact text-electric-dark text-base">Email Belinda</span>
+            <p class="site-footer__link-description text-base">
+              Have a project in mind? <br class="hidden md:block">Email anytime.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer__meta">
+    <div class="site-footer__meta-content">
+      <nav aria-label="Footer navigation">
+        <ul class="site-footer__meta-links">
+          {% for link in footerNav %}
+          <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div class="hidden lg:block">
+        {% include "components/footer-brand.njk" %}
+      </div>
+      <div class="site-footer__brand text-center">
+        <div class="block lg:hidden">
+          {% include "components/footer-brand.njk" %}
+        </div>
+        <p class="site-footer__brand-subtext !mb-0">Built with care and accessibility in mind.</p>
+        <p class="site-footer__copyright text-xs">
+          &copy; {{ "" | year }} BC Web Studio.
+        </p>
+      </div>
+    </div>
+  </div>
 </footer>

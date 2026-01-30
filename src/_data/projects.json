@@ -161,8 +161,8 @@
   {
     "slug": "bc-web-studio",
     "title": "BC Web Studio",
-    "url": null,
-    "logo": null,
+    "url": "/",
+    "logo": "/img/logos/favicon.svg",
     "logoHasName": false,
     "problem": "BC Web Studio needed a home for its own services that separated agency partnerships from business consulting while showcasing vetted case studies, service frameworks, and operating principles in one place.",
     "solution": "Designed and developed an Eleventy marketing site with JSON-driven case studies, Alpine.js filtering, and dedicated \"For Agencies\" and \"For Businesses\" landing pages. Built a Tailwind/PostCSS component system, reusable info cards, and media carousels powered by structured project data so updates stay fast and consistent.",

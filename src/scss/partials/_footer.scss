@@ -1,0 +1,84 @@
+@layer components {
+  .site-footer {
+    @apply text-white/85 bg-primary/80 text-center lg:text-right;
+
+    &__panel {
+      @apply  max-w-screen-sm md:max-w-screen-lg w-auto
+      @apply mx-auto grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] px-4 sm:px-6 lg:px-8 py-12 lg:py-16 bg-background-light text-zinc-900;
+    }
+
+    &__headline {
+      @apply font-heading text-3xl md:text-4xl text-primary-dark mb-4;
+    }
+
+    &__summary {
+      @apply text-base text-zinc-700 max-w-2xl;
+    }
+
+    &__contact {
+      @apply flex flex-col gap-4;
+
+      &-link {
+        --contact-card-arrow: 3rem;
+        @apply max-w-[350px] w-auto flex items-start gap-5 border border-primary/10 bg-white px-6 py-5 text-primary-dark shadow-[0_20px_60px_rgba(15,27,61,0.08)] transition-all duration-200 hover:shadow-[0_25px_70px_rgba(15,27,61,0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-background-light;
+        border-radius: 0;
+        clip-path: polygon(
+          0 0,
+          calc(100% - var(--contact-card-arrow)) 0,
+          100% 50%,
+          calc(100% - var(--contact-card-arrow)) 100%,
+          0 100%
+        );
+        padding-right: calc(1.5rem + var(--contact-card-arrow));
+      }
+    }
+
+    &__link-description {
+      @apply mt-1 text-sm text-zinc-600;
+    }
+
+    &__meta {
+      @apply border-t border-white/10;
+
+      &-content {
+        @apply max-w-6xl mx-auto flex flex-col align-middle gap-4 md:flex-row md:items-center md:justify-between px-4 sm:px-6 lg:px-8 py-6 text-xs md:text-sm text-white/60;
+      }
+    }
+
+    &__brand-mark {
+      @apply font-heading text-lg text-white;
+    }
+
+    &__brand-subtext {
+      @apply text-white/60;
+    }
+
+    &__meta-links {
+      @apply flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 font-heading text-white/70;
+
+      a {
+        @apply transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-primary-dark rounded-sm;
+      }
+    }
+
+    &__brand {
+      @apply flex flex-col items-center gap-2 text-white/80 text-center;
+    }
+
+    &__brand-links {
+      @apply flex items-center justify-center gap-2;
+
+      a {
+        @apply inline-flex p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-primary-dark;
+      }
+
+      img {
+        @apply h-6 w-6;
+      }
+    }
+
+    &__copyright {
+      @apply text-white/50;
+    }
+  }
+}
