@@ -92,6 +92,7 @@
     }
 
     .info-card {
+      @apply pb-2;
       @apply bg-white text-zinc-800 border-white/70;
       box-shadow: 0 12px 30px rgba(6, 11, 28, 0.35);
 

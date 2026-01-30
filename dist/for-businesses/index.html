@@ -15,15 +15,15 @@
   <div class="p-4">
     <nav class="site-nav max-w-5xl mx-auto flex justify-between items-center gap-4">
       <a href="/" class="font-bold text-xl"><span class="text-accent !font-mono">&lt;</span>BC<span class="text-accent">&gt;</span> <span class="font-heading">Web Studio</span></a>
-      <div class="hidden md:flex flex-wrap gap-4 text-sm font-heading font-medium tracking-wide">
+      <div class="hidden md:flex flex-wrap gap-4 text-base md:text-lg font-heading font-semibold tracking-wide">
         
-        <a href="/for-agencies/" class="hover:underline">For Agencies</a>
+        <a href="/for-agencies/" class="hover:underline text-accent-light">For Agencies</a>
         
-        <a href="/for-businesses/" class="hover:underline">For Businesses</a>
+        <a href="/for-businesses/" class="hover:underline text-accent-light">For Businesses</a>
         
-        <a href="/case-studies/" class="hover:underline">Case Studies</a>
+        <a href="/case-studies/" class="hover:underline text-accent-light">Case Studies</a>
         
-        <a href="/about/" class="hover:underline">About</a>
+        <a href="/about/" class="hover:underline text-accent-light">About</a>
         
       </div>
       <div class="md:hidden relative flex-1 flex justify-end">
@@ -50,13 +50,13 @@
           <div class="projects-filter-dropdown__panel space-y-6">
             <div class="flex flex-col gap-2">
               
-              <a href="/for-agencies/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">For Agencies</a>
+              <a href="/for-agencies/" class="filter-chip text-xl font-semibold text-white" @click="mobileNavOpen = false">For Agencies</a>
               
-              <a href="/for-businesses/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">For Businesses</a>
+              <a href="/for-businesses/" class="filter-chip text-xl font-semibold text-white" @click="mobileNavOpen = false">For Businesses</a>
               
-              <a href="/case-studies/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">Case Studies</a>
+              <a href="/case-studies/" class="filter-chip text-xl font-semibold text-white" @click="mobileNavOpen = false">Case Studies</a>
               
-              <a href="/about/" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">About</a>
+              <a href="/about/" class="filter-chip text-xl font-semibold text-white" @click="mobileNavOpen = false">About</a>
               
             </div>
           </div>
@@ -74,7 +74,7 @@
     <p>
       I help growing businesses SOLVE technical problems, streamline workflows, <br class="hidden md:block">and make better decisions using the tools they already have — from WordPress and internal systems to Google Workspace and applied AI.
     </p>
-    <div class="mt-12 flex flex-col md:flex-row gap-8 justify-center">
+    <div class="hero-links">
       <a href="/case-studies/" class="hero-cta hero-cta--primary">See proof</a>
       <a href="/about/" class="hero-cta hero-cta--secondary">Meet Belinda</a>
     </div>
@@ -139,7 +139,7 @@
         <p>
           If you are in the San Antonio area, let's grab coffee and chat about how I can help your business thrive with tailored technical solutions.
         </p>
-        <a href="/about/" class="inline-flex items-center mt-6 font-heading text-brand-medium">Let's Connect →</a>
+        <a href="/about/" class="inline-flex items-center mt-6 font-heading text-brand-medium info-card__cta">Let's Connect →</a>
       </div>
     </div>
   </div>
@@ -158,10 +158,14 @@
       <div class="site-footer__contact text-left">
         <a href="mailto:belinda.caylor+dev@gmail.com" class="site-footer__contact-link pl-12">
           <div>
-            <span class="eyebrow eyebrow--compact text-electric-dark text-base">Email Belinda</span>
+            <span class="eyebrow eyebrow--compact text-electric-dark text-base">Mail To</span>
             <p class="site-footer__link-description text-base">
               Have a project in mind? <br class="hidden md:block">Email anytime.
             </p>
+            <span href="mailto:belinda.caylor+dev@gmail.com"
+              class="inline-flex items-center mt-6 font-heading info-card__cta text-brand-medium">
+              Email Belinda →
+            </span>
           </div>
         </a>
       </div>
@@ -169,20 +173,20 @@
   </div>
   <div class="site-footer__meta">
     <div class="site-footer__meta-content">
-      <nav aria-label="Footer navigation">
+      <nav class="site-footer__meta-nav" aria-label="Footer navigation">
         <ul class="site-footer__meta-links">
           
-          <li><a href="/for-agencies/">For Agencies</a></li>
+          <li><a href="/for-agencies/" class="text-accent-light">For Agencies</a></li>
           
-          <li><a href="/for-businesses/">For Businesses</a></li>
+          <li><a href="/for-businesses/" class="text-accent-light">For Businesses</a></li>
           
-          <li><a href="/case-studies/">Case Studies</a></li>
+          <li><a href="/case-studies/" class="text-accent-light">Case Studies</a></li>
           
-          <li><a href="/about/">About</a></li>
+          <li><a href="/about/" class="text-accent-light">About</a></li>
           
         </ul>
       </nav>
-      <div class="hidden lg:block">
+      <div class="site-footer__brand text-center">
         <p class="site-footer__brand-mark"><span class="text-accent font-mono">&lt;</span>BC<span
         class="text-accent font-mono">&gt;</span> Web Studio</p>
 <div class="site-footer__brand-links" aria-label="Social profiles">
@@ -195,20 +199,7 @@
 </div>
 
       </div>
-      <div class="site-footer__brand text-center">
-        <div class="block lg:hidden">
-          <p class="site-footer__brand-mark"><span class="text-accent font-mono">&lt;</span>BC<span
-        class="text-accent font-mono">&gt;</span> Web Studio</p>
-<div class="site-footer__brand-links" aria-label="Social profiles">
-    <a href="https://www.linkedin.com/in/belinda-caylor/" target="_blank" rel="noreferrer noopener">
-        <img src="/img/logos/linkedin-favicon.svg" alt="LinkedIn" width="24" height="24" loading="lazy">
-    </a>
-    <a href="https://github.com/bel-caylor" target="_blank" rel="noreferrer noopener">
-        <img src="/img/logos/github-favicon.svg" alt="GitHub" width="24" height="24" loading="lazy">
-    </a>
-</div>
-
-        </div>
+      <div class="site-footer__meta-copy text-center">
         <p class="site-footer__brand-subtext !mb-0">Built with care and accessibility in mind.</p>
         <p class="site-footer__copyright text-xs">
           &copy; 2026 BC Web Studio.
@@ -217,6 +208,7 @@
     </div>
   </div>
 </footer>
+
 
   <script>
     window.__SITE_BASE = "/";

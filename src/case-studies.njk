@@ -22,7 +22,7 @@ title: Case Studies
         </p>
       </div>
       <template x-for="filter in heroFilters" :key="filter.id">
-        <div class="case-hero-filter-inline flex justify-center gap-8 items-center">
+        <div class="case-hero-filter-inline flex flex-col justify-center gap-8 items-center">
           <div class="case-hero-filter__chips">
             <template x-for="option in filter.options" :key="option.id">
               <button

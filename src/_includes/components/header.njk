@@ -8,9 +8,9 @@
   <div class="p-4">
     <nav class="site-nav max-w-5xl mx-auto flex justify-between items-center gap-4">
       <a href="{{ '/' | url }}" class="font-bold text-xl"><span class="text-accent !font-mono">&lt;</span>BC<span class="text-accent">&gt;</span> <span class="font-heading">Web Studio</span></a>
-      <div class="hidden md:flex flex-wrap gap-4 text-sm font-heading font-medium tracking-wide">
+      <div class="hidden md:flex flex-wrap gap-4 text-base md:text-lg font-heading font-semibold tracking-wide">
         {% for link in navLinks %}
-        <a href="{{ link.href | url }}" class="hover:underline">{{ link.label }}</a>
+        <a href="{{ link.href | url }}" class="hover:underline text-accent-light">{{ link.label }}</a>
         {% endfor %}
       </div>
       <div class="md:hidden relative flex-1 flex justify-end">
@@ -37,7 +37,7 @@
           <div class="projects-filter-dropdown__panel space-y-6">
             <div class="flex flex-col gap-2">
               {% for link in navLinks %}
-              <a href="{{ link.href | url }}" class="filter-chip text-xl font-semibold" @click="mobileNavOpen = false">{{ link.label }}</a>
+              <a href="{{ link.href | url }}" class="filter-chip text-xl font-semibold text-white" @click="mobileNavOpen = false">{{ link.label }}</a>
               {% endfor %}
             </div>
           </div>

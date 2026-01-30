@@ -15,10 +15,14 @@
       <div class="site-footer__contact text-left">
         <a href="mailto:belinda.caylor+dev@gmail.com" class="site-footer__contact-link pl-12">
           <div>
-            <span class="eyebrow eyebrow--compact text-electric-dark text-base">Email Belinda</span>
+            <span class="eyebrow eyebrow--compact text-electric-dark text-base">Mail To</span>
             <p class="site-footer__link-description text-base">
               Have a project in mind? <br class="hidden md:block">Email anytime.
             </p>
+            <span href="mailto:belinda.caylor+dev@gmail.com"
+              class="inline-flex items-center mt-6 font-heading info-card__cta text-brand-medium">
+              Email Belinda →
+            </span>
           </div>
         </a>
       </div>
@@ -26,20 +30,17 @@
   </div>
   <div class="site-footer__meta">
     <div class="site-footer__meta-content">
-      <nav aria-label="Footer navigation">
+      <nav class="site-footer__meta-nav" aria-label="Footer navigation">
         <ul class="site-footer__meta-links">
           {% for link in footerNav %}
-          <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+          <li><a href="{{ link.href }}" class="text-accent-light">{{ link.label }}</a></li>
           {% endfor %}
         </ul>
       </nav>
-      <div class="hidden lg:block">
+      <div class="site-footer__brand text-center">
         {% include "components/footer-brand.njk" %}
       </div>
-      <div class="site-footer__brand text-center">
-        <div class="block lg:hidden">
-          {% include "components/footer-brand.njk" %}
-        </div>
+      <div class="site-footer__meta-copy text-center">
         <p class="site-footer__brand-subtext !mb-0">Built with care and accessibility in mind.</p>
         <p class="site-footer__copyright text-xs">
           &copy; {{ "" | year }} BC Web Studio.

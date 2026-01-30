@@ -12,7 +12,7 @@
     }
 
     h1 {
-      @apply text-4xl md:text-5xl font-bold;
+      @apply text-3xl md:text-5xl font-bold;
       @apply text-white;
     }
 
@@ -28,7 +28,7 @@
       @apply text-zinc-900;
     }
     .eyebrow {
-      @apply text-xl;
+      @apply text-lg md:text-xl;
       @apply text-electric-light;
     }
   }
@@ -39,6 +39,9 @@
     padding-top: calc(var(--section-arrow-height) + 5rem);
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 50% var(--section-arrow-height), 0 0);
     z-index: 0;
+    > div {
+      @apply -mt-10 md:mt-0
+    }
   }
 
   .eyebrow {
@@ -61,6 +64,24 @@
     & + h3 {
       @apply mt-0;
       @apply mb-4;
+    }
+  }
+
+  .hero-links {
+    @apply mt-12 flex flex-col md:flex-row gap-8 justify-center;
+    @apply w-full mx-auto;
+    max-width: 300px;
+
+    @screen md {
+      max-width: 640px;
+    }
+
+    > .hero-cta {
+      @apply w-full;
+
+      @screen md {
+        @apply w-auto;
+      }
     }
   }
 

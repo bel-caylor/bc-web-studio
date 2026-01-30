@@ -48,4 +48,24 @@
   [x-cloak] {
     display: none !important;
   }
+
+  main {
+    --edge-pad: clamp(1.5rem, 5vw, 2.5rem);
+    padding-inline: var(--edge-pad);
+  }
+
+  main > * {
+    margin-inline: calc(var(--edge-pad) * -1);
+  }
+
+  @screen md {
+    main {
+      padding-inline: 0;
+    }
+
+    main > * {
+      margin-inline: 0;
+    }
+  }
+
 }

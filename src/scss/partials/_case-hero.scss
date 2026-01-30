@@ -35,7 +35,7 @@
     }
 
     &__chips {
-      @apply flex flex-wrap;
+      @apply flex flex-wrap justify-center;
       @apply gap-3;
     }
   }
