@@ -1,7 +1,8 @@
 @layer components {
   .case-results {
     &-header {
-      @apply flex flex-col md:flex-row md:items-center md:justify-between gap-4;
+      @apply flex flex-col md:flex-row md:items-center md:justify-between;
+      @apply gap-4;
     }
 
     &-count {
@@ -20,41 +21,70 @@
   .case-info-card {
     --project-card-tilt: 3rem;
     clip-path: polygon(0 var(--project-card-tilt), 100% 0, 100% calc(100% - var(--project-card-tilt)), 0 100%);
-    @apply bg-white text-left px-8 pb-14 pt-20 flex flex-col gap-4 h-full transition hover:-translate-y-1;
+    @apply flex flex-col;
+    @apply h-full;
+    @apply gap-4;
+    @apply px-8 pt-20 pb-14;
+    @apply text-left;
+    @apply bg-white;
+    @apply transition;
+    @apply hover:-translate-y-1;
 
     &__head {
-      @apply flex items-start gap-4 justify-between;
+      @apply flex items-start justify-between;
+      @apply gap-4;
     }
 
     &__logo {
       > img {
         @apply max-h-[100px] w-auto;
       }
-      @apply max-w-[35%] flex items-center justify-center overflow-hidden shrink-0 -mt-4;
+      @apply flex items-center justify-center;
+      @apply max-w-[35%] shrink-0;
+      @apply overflow-hidden;
+      @apply -mt-4;
     }
 
     &__title {
-      @apply text-2xl font-bold !mb-1 group-hover:text-accent;
+      @apply text-2xl font-bold !mb-1;
+      @apply group-hover:text-accent;
+    }
+
+    &__subtitle {
+      @apply text-base;
+      @apply text-body-muted;
     }
 
     &__date {
-      @apply text-xs uppercase tracking-[0.3em] text-zinc-500;
+      @apply text-xs uppercase tracking-[0.3em];
+      @apply text-zinc-500;
     }
 
     &__excerpt {
-      @apply text-base text-zinc-700;
+      @apply text-base;
+      @apply text-zinc-700;
     }
 
     &__tags {
-      @apply flex flex-wrap gap-2 mt-2;
+      @apply flex flex-wrap;
+      @apply gap-2;
+      @apply mt-2;
     }
 
     &__tag {
-      @apply text-xs font-semibold bg-background-lighter/90 px-3 py-1 rounded-md;
+      @apply px-3 py-1;
+      @apply text-xs font-semibold;
+      @apply rounded-md;
+      @apply bg-background-lighter/90;
     }
 
     &__cta {
-      @apply inline-flex items-center gap-1 font-heading text-lg text-accent mt-4 transition-colors;
+      @apply inline-flex items-center;
+      @apply gap-1;
+      @apply mt-4;
+      @apply font-heading text-lg;
+      @apply text-accent;
+      @apply transition-colors;
 
       &:hover {
         @apply text-accent-light;
@@ -66,22 +96,44 @@
     --sidebar-notch: 3rem;
     clip-path: polygon(0 var(--sidebar-notch), 100% 0, 100% calc(100% - var(--sidebar-notch)), 0 100%);
     border-radius: 0;
-    @apply border border-white/40 shadow-lg px-8 py-20 bg-background-medium/80;
+    @apply px-8 py-20;
+    @apply bg-background-medium/80;
+    @apply border border-white/40;
+    @apply shadow-lg;
 
     .stack-highlight-list {
-      @apply flex flex-wrap gap-3 mt-3;
+      @apply flex flex-wrap;
+      @apply gap-3;
+      @apply mt-3;
     }
 
     .stack-highlight-item {
-      @apply flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium text-body-strong;
+      @apply flex items-center;
+      @apply gap-2;
+      @apply px-3 py-1;
+      @apply text-sm font-medium;
+      @apply text-body-strong;
+      @apply rounded-full;
     }
 
     .stack-highlight-link {
-      @apply inline-flex items-center gap-2 text-current no-underline transition-colors hover:text-accent;
+      @apply inline-flex items-center;
+      @apply gap-2;
+      @apply text-current no-underline;
+      @apply transition-colors;
+      @apply hover:text-accent;
     }
   }
 
   .cases-empty-state {
-    @apply text-center border border-dashed border-zinc-300 rounded-3xl p-10 bg-white/70;
+    @apply p-10;
+    @apply text-center;
+    @apply bg-white/70;
+    @apply border border-dashed border-zinc-300;
+    @apply rounded-3xl;
+  }
+
+  .project-detail__subtitle {
+    @apply text-body;
   }
 }

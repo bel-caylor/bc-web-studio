@@ -2,13 +2,25 @@
 layout: layouts/base.njk
 title: About
 ---
-<section class="hero-bg text-center pt-20 pb-28 md:pb-32">
-  <div class="max-w-3xl mx-auto px-4">
-    <p class="eyebrow eyebrow--wide">Profile</p>
-    <h1 class="mb-6">About Belinda</h1>
-    <p>
-      Web engineer focused on performant, accessible builds for agencies and growth-minded business owners.
-    </p>
+<section class="hero-bg pt-20 pb-28 md:pb-32">
+  <div class="lg:max-w-screen-lg mx-auto px-4">
+    <div class="flex flex-col-reverse gap-12 items-center text-center lg:flex-row lg:text-left">
+      <div class="w-full lg:w-3/5 max-w-3xl text-center lg:text-left">
+        <p class="eyebrow eyebrow--wide">Profile</p>
+        <h1 class="mb-6">About Belinda</h1>
+        <div class="hero-headshot max-w-sm mx-auto mb-6 lg:hidden">
+          <img src="/img/belinda-320x320.jpg" alt="Belinda Caylor Headshot" loading="eager">
+        </div>
+        <p class="max-w-[480px] w-full mx-auto lg:mx-0 lg:ml-0">
+          Web engineer focused on performant, accessible builds for agencies and growth-minded business owners.
+        </p>
+      </div>
+      <div class="w-full lg:w-2/5 hidden lg:flex justify-center lg:justify-end">
+        <div class="hero-headshot max-w-md md:mr-10">
+          <img src="/img/belinda-320x320.jpg" alt="Belinda Caylor Headshot" loading="eager">
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -18,7 +30,8 @@ title: About
       <p class="eyebrow eyebrow--wide">Principles</p>
       <h2 class="text-3xl font-bold mt-3 mb-4">A framework for every engagement</h2>
       <p class="text-body">
-        Years inside agencies, in-house teams, and as an independent partner taught me what keeps projects calm and on track.
+        Years inside agencies, in-house teams, and as an independent partner taught me what keeps projects calm and on
+        track.
       </p>
     </div>
     <div class="grid gap-8 md:grid-cols-3">
@@ -48,39 +61,51 @@ title: About
 </section>
 
 <section class="py-24 surface-panel">
-  <div class="xl:container mx-auto px-4 flex flex-col lg:flex-row gap-12 items-start">
-    <div class="lg:w-1/2 space-y-6">
+  <div class="xl:container mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center">
+    <div class="lg:w-3/5 space-y-6">
       <p class="eyebrow eyebrow--compact">Background</p>
-      <h3 class="text-3xl font-bold">15+ years across digital agencies & product orgs</h3>
+      <h3 class="text-3xl font-bold">Engineering roots with <br class="block">decades of applied problem-solving</h3>
       <p class="text-body-strong">
-        Built for higher-ed, fintech, boutique hospitality, and local businesses while mentoring internal devs on modern workflows.
+        My work is shaped by a long arc that starts in engineering, moves through entrepreneurship, and ultimately settles in modern web systems. I bring structured thinking, production discipline, and real-world business context to every build — whether I’m working with an agency team or independently with a business owner.
       </p>
-      <ul class="space-y-3 text-left text-body-strong">
-        <li class="flex gap-3">
-          <span class="font-mono text-brand">2010</span>
-          <span>Started in agency production teams shipping custom WordPress sites.</span>
+      <ul class="space-y-4 text-left text-body-strong">
+        <li class="flex gap-4">
+          <span class="font-mono text-brand-soft">1993</span>
+          <span>Engineering career focused on quality systems <br class="block">and custom SQL/database applications for manufacturing teams.</span>
         </li>
-        <li class="flex gap-3">
-          <span class="font-mono text-brand">2015</span>
-          <span>Led design systems + performance at a venture-backed SaaS platform.</span>
+        <li class="flex gap-4">
+          <span class="font-mono text-brand-soft">1999</span>
+          <span>Deepened web development skills while building <br class="block">and maintaining websites for small businesses alongside engineering work.</span>
         </li>
-        <li class="flex gap-3">
-          <span class="font-mono text-brand">2020</span>
-          <span>Launched BC Web Studio to merge hands-on engineering with strategic direction.</span>
+        <li class="flex gap-4">
+          <span class="font-mono text-brand-soft">2007</span>
+          <span>Founded and led a custom product business <br class="block">covering design, ecommerce, automation, SEO, and platform strategy.</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="font-mono text-brand-soft">2020</span>
+          <span>Agency-based web development delivering production <br class="block">WordPress sites, design systems, and performance-focused builds.</span>
+        </li>
+        <li class="flex gap-4">
+          <span class="font-mono text-brand-soft">2023</span>
+          <span>Independent web engineering and consulting for agencies <br class="block">and growth-minded businesses, focused on accessible, maintainable sites.</span>
         </li>
       </ul>
     </div>
-    <div class="lg:w-5/12 w-full">
+    <div class="lg:w-2/5 w-full">
       <div class="info-card info-card--stacked">
-        <p class="eyebrow eyebrow--compact">Tools on rotation</p>
+        <p class="eyebrow eyebrow--compact pb-10 text-base">MODERN TOOLING</p>
         <ul class="space-y-2 text-body">
-          <li>WordPress + Advanced Custom Fields</li>
-          <li>Eleventy, Alpine.js, Vite, Astro</li>
+          <li>API-driven integrations & data flows</li>
+          <li>JavaScript (Alpine.js, jQuery) + PHP</li>
+          <li>WordPress + Gutenberg + ACF + Kadence</li>
+          <li>Custom WordPress themes & block development</li>
+          <li>Eleventy static builds & content architecture</li>
           <li>Tailwind CSS + custom component libraries</li>
-          <li>Figma design systems + tokens</li>
-          <li>Netlify, Vercel, and modern hosting pipelines</li>
+          <li>WP Engine, Pantheon, SiteGround, GoDaddy</li>
+          <li>Git-based workflows & secure deployments</li>
         </ul>
-        <a href="/for-agencies/" class="inline-flex items-center mt-6 font-heading text-electric-highlight">See how we collaborate →</a>
+        <a href="/for-agencies/" class="inline-flex items-center mt-6 font-heading text-electric-highlight">See how we
+          collaborate →</a>
       </div>
     </div>
   </div>

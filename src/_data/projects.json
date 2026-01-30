@@ -38,6 +38,7 @@
   {
     "slug": "perc",
     "title": "Perc",
+    "subtitle": "Policy research institute",
     "url": "https://perc.org/",
     "logo": "/img/logos/perc-logo.svg",
     "logoHasName": false,
@@ -69,6 +70,7 @@
   {
     "slug": "buffalo-store",
     "title": "Buffalo Store",
+    "subtitle": "Industrial tools ecommerce",
     "url": "https://www.buffalocorpstore.com/",
     "logo": "/img/logos/buffalo corp.png",
     "logoHasName": true,
@@ -101,6 +103,7 @@
   {
     "slug": "new2satx",
     "title": "New2SATX",
+    "subtitle": "Local moving & relocation guide",
     "url": "https://new2satx.com/",
     "logo": "https://new2satx.com/wp-content/uploads/2024/01/New2SATX-Logo-Horizontal-300x96.png",
     "logoHasName": true,
@@ -129,16 +132,19 @@
   {
     "slug": "ascent",
     "title": "Ascent",
+    "subtitle": "B2B security & compliance",
     "url": "https://www.ascentcorp.com/",
-    "logo": "/img/logos/ascent.png",
+    "logo": "/img/logos/logo-ascent.svg",
     "logoHasName": true,
-    "problem": "The team wanted to experiment with Full Site Editing and TailwindCSS for future projects.",
-    "solution": "Led implementation of their first FSE theme, integrating Tailwind and reusable components with custom jQuery enhancements.",
-    "summary": "Built their inaugural FSE + Tailwind theme with reusable components and jQuery polish to accelerate future experiments.",
+    "problem": "Ascent partnered with Kestrel and Dovetail for a full marketing site redesign and needed a build team to translate their Figma system into a flexible WordPress experience.",
+    "solution": "Worked alongside the partner agencies to rebuild the site from the approved Figma files, wiring ACF-driven custom post types, bespoke blocks, and Kadence sections so every page can mix custom layouts with reusable components.",
+    "summary": "Agency partnership with Kestrel and Dovetail delivering a Figma-to-WordPress rebuild powered by ACF CPTs, custom blocks, and Kadence layouts.",
     "tools": [
       "wordpress",
-      "tailwindcss",
-      "jquery"
+      "acf",
+      "kadence",
+      "figma",
+      "php"
     ],
     "interval": 5000,
     "screenshots": [
@@ -150,6 +156,7 @@
       "agency"
     ],
     "scope": [
+      "full-website-build",
       "build-from-design",
       "site-redesign",
       "custom-development"
@@ -161,6 +168,7 @@
   {
     "slug": "bc-web-studio",
     "title": "BC Web Studio",
+    "subtitle": "Agency + consulting hub",
     "url": "/",
     "logo": "/img/logos/favicon.svg",
     "logoHasName": false,
@@ -190,7 +198,8 @@
   },
   {
     "slug": "flystl",
-    "title": "St. Louis Lambert International Airport",
+    "title": "St. Louis Lambert",
+    "subtitle": "International Airport",
     "url": "https://www.flystl.com/",
     "logo": "/img/logos/stl-logo.webp",
     "logoHasName": false,
@@ -228,6 +237,7 @@
   {
     "slug": "holland",
     "title": "Holland",
+    "subtitle": "Commercial construction",
     "url": "https://www.hollandcs.com/",
     "logo": "https://www.hollandcs.com/wp-content/uploads/2024/07/holland-40th-logos-01-300x100.png",
     "logoHasName": false,
@@ -256,6 +266,110 @@
     ],
     "platform": [
       "wordpress"
+    ]
+  },
+  {
+    "slug": "dan-stro-main",
+    "title": "Dan St. Romain",
+    "subtitle": "Educational Consulting",
+    "url": "https://danstromain.com/",
+    "logo": "/img/logos/logo-dan.png",
+    "logoHasName": true,
+    "problem": "Dan Stro Main needed help improving site performance and maintainability while transitioning away from Elementor on a live WooCommerce site, and wanted to introduce gated digital content for members.",
+    "solution": "Provided ongoing technical support to migrate layouts from Elementor to Kadence, resolve WooCommerce layout and speed issues, and implement a WooCommerce-based digital content membership system without disrupting existing sales.",
+    "summary": "Long-term WooCommerce support engagement focused on performance, Kadence migration, and a digital content membership system for a growing individual business.",
+    "tools": [
+      "wordpress",
+      "woocommerce",
+      "kadence",
+      "php",
+      "performance-optimization",
+      "digital-memberships"
+    ],
+    "screenshots": null,
+    "endDate": "2025-06",
+    "clientType": [
+      "business"
+    ],
+    "scope": [
+      "technical-support",
+      "performance-optimization",
+      "page-builder-migration",
+      "membership-system",
+      "ongoing-support"
+    ],
+    "platform": [
+      "wordpress",
+      "woocommerce"
+    ]
+  },
+  {
+    "slug": "dan-st-romain-courses",
+    "title": "Dan St. Romain",
+    "subtitle": "LearnDash Courses",
+    "url": "https://danstromain.com/courses/",
+    "logo": "/img/logos/logo-dan.png",
+    "logoHasName": true,
+    "problem": "Dan St. Romain needed a scalable course platform to deliver digital education, migrate existing content into a modern layout, and enforce structured learning progress with assessments and gated content.",
+    "solution": "Built and migrated courses using LearnDash, transitioned layouts into a Kadence-based design system, automated user registrations with a custom plugin workflow, and implemented BuddyPress for student communication. Added custom PHP and JavaScript logic for learner note-taking, quiz enforcement, and conditional access rules that lock or hide topics until required quizzes are passed.",
+    "summary": "Custom LearnDash course platform with Kadence layouts, automated enrollment, gated learning progression, learner note-taking, and BuddyPress-powered community features.",
+    "tools": [
+      "wordpress",
+      "learndash",
+      "kadence",
+      "php",
+      "buddypress",
+      "automation"
+    ],
+    "screenshots": null,
+    "endDate": "2025-01",
+    "clientType": [
+      "business"
+    ],
+    "scope": [
+      "course-platform",
+      "content-migration",
+      "layout-system",
+      "user-automation",
+      "community-features",
+      "ongoing-support"
+    ],
+    "platform": [
+      "wordpress",
+      "learndash"
+    ]
+  },
+  {
+    "slug": "tri-star-systems-participant-app",
+    "title": "Tri-Star Systems",
+    "subtitle": "Enrollment & Benefits Workflow",
+    "url": "https://www.tri-starsystems.com/",
+    "logo": "/img/logos/logo-tri-star.png",
+    "logoHasName": true,
+    "problem": "Tri-Star Systems needed to modernize their participant-facing application while preserving existing backend APIs and guiding users through a complex enrollment and benefits review process.",
+    "solution": "Rebuilt the participant application using Eleventy templates and Tailwind CSS, integrating existing API endpoints and implementing advanced, state-driven workflows with Alpine.js to guide participants through sign-up, health information review, and insurance election confirmation.",
+    "summary": "Modernized participant application with Eleventy, Tailwind, and Alpine.js that integrates existing APIs and guides users through a complex, multi-step enrollment and benefits workflow.",
+    "tools": [
+      "eleventy",
+      "tailwindcss",
+      "alpinejs",
+      "javascript",
+      "restapi"
+    ],
+    "screenshots": null,
+    "endDate": "2025-12",
+    "clientType": [
+      "business"
+    ],
+    "scope": [
+      "application-rebuild",
+      "frontend-architecture",
+      "api-integration",
+      "workflow-logic",
+      "ux-process-design"
+    ],
+    "platform": [
+      "eleventy"
     ]
   }
 ]

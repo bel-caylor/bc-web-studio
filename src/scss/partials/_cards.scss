@@ -9,7 +9,9 @@
       calc(100% - var(--card-arrow-depth)) 100%,
       0 100%
     );
-    @apply pr-32 transition-transform duration-300 ease-out bg-white;
+    @apply pr-32;
+    @apply bg-white;
+    @apply transition-transform duration-300 ease-out;
 
     h3 {
       @apply text-zinc-700;
@@ -25,8 +27,13 @@
     @apply border border-primary/10;
     border-radius: 0;
     clip-path: polygon(0 var(--info-card-tilt), 100% 0, 100% calc(100% - var(--info-card-tilt)), 0 100%);
-    @apply h-full flex flex-col gap-2 justify-start;
-    @apply bg-white/80 -mb-12 p-8 py-16 transition hover:translate-x-2;
+    @apply flex flex-col justify-start;
+    @apply h-full;
+    @apply gap-2;
+    @apply p-8 py-16;
+    @apply -mb-12;
+    @apply bg-white/80;
+    @apply transition hover:translate-x-2;
 
     &--stacked {
       margin-bottom: 0;
@@ -39,22 +46,40 @@
   }
 
   .select-wrapper {
-    @apply bg-white pr-3 border rounded focus-within:ring-2 focus-within:ring-electric;
+    @apply pr-3;
+    @apply bg-white;
+    @apply border rounded;
+    @apply focus-within:ring-2 focus-within:ring-electric;
 
     .select {
-      @apply px-3 py-2 text-sm w-full focus:outline-none;
+      @apply w-full;
+      @apply px-3 py-2;
+      @apply text-sm;
+      @apply focus:outline-none;
     }
   }
 
   .tab {
-    @apply text-sm px-4 py-2 border-b-2 md:border-l-2 border-transparent hover:text-accent focus:outline-none;
+    @apply px-4 py-2;
+    @apply text-sm;
+    @apply border-b-2 md:border-l-2 border-transparent;
+    @apply hover:text-accent;
+    @apply focus:outline-none;
 
     &-headers {
-      @apply flex flex-wrap border-b md:flex-col md:border-b-0 overflow-x-auto md:overflow-visible w-full md:w-1/4;
+      @apply flex flex-wrap md:flex-col;
+      @apply overflow-x-auto md:overflow-visible;
+      @apply w-full md:w-1/4;
+      @apply border-b md:border-b-0;
     }
 
     &-button {
-      @apply px-4 py-4 m-2 md:min-h-[100px] bg-white border-b-4 md:border-b-0 md:border-r-4 hover:text-primary-medium focus:outline-none;
+      @apply px-4 py-4 m-2;
+      @apply md:min-h-[100px];
+      @apply bg-white;
+      @apply border-b-4 md:border-b-0 md:border-r-4;
+      @apply hover:text-primary-medium;
+      @apply focus:outline-none;
 
       &-active {
         @apply border-accent text-accent font-semibold;
@@ -66,12 +91,16 @@
     }
 
     &-logo {
-      @apply mr-2 inline object-cover;
+      @apply inline object-cover;
+      @apply mr-2;
     }
   }
 
   .tab-chip {
-    @apply text-sm whitespace-nowrap px-4 py-2 rounded-t border-b-2;
+    @apply px-4 py-2;
+    @apply text-sm whitespace-nowrap;
+    @apply rounded-t;
+    @apply border-b-2;
   }
 
   .tab-chip-active {

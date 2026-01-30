@@ -60,6 +60,22 @@
       {
         "id": "content-migration",
         "label": "Content Migration"
+      },
+      {
+        "id": "technical-support",
+        "label": "Technical Support"
+      },
+      {
+        "id": "performance-optimization",
+        "label": "Performance Optimization"
+      },
+      {
+        "id": "page-builder-migration",
+        "label": "Page Builder Migration"
+      },
+      {
+        "id": "membership-system",
+        "label": "Membership System"
       }
     ],
     "width": "63%"

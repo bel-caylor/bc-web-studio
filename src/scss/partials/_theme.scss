@@ -21,7 +21,11 @@
   }
 
   .text-brand-soft {
-    @apply text-accent-light;
+    color: rgba(255, 196, 158, 0.95);
+  }
+
+  .text-brand-light {
+    color: rgba(255, 255, 255, 0.75);
   }
 
   .text-electric-highlight {
@@ -34,6 +38,12 @@
 
   .text-hero-contrast {
     @apply text-background-lightest;
+  }
+
+  .project-subtitle {
+    @apply block;
+    @apply text-base font-semibold leading-snug;
+    @apply tracking-tight;
   }
 
   /* Surface tokens */
@@ -51,12 +61,56 @@
     }
   }
 
+  .eyebrow {
+    &::before {
+      content: "<";
+      display: inline-block;
+      margin-right: 0.2rem;
+    }
+
+    &::after {
+      content: ">";
+      display: inline-block;
+      margin-left: 0.1rem;
+    }
+  }
+
   .surface-section-alt {
     @apply bg-background-lighter/80;
   }
 
   .surface-panel {
-    @apply bg-white/90;
+    position: relative;
+    isolation: isolate;
+    color: #f4f7ff;
+    background: linear-gradient(90deg, rgba(5, 10, 25, 0.9) 0%, rgba(8, 20, 54, 0.6) 55%, rgba(15, 58, 110, 0.5) 100%);
+    overflow: hidden;
+
+    .text-body,
+    .text-body-strong {
+      @apply text-white/85;
+    }
+
+    .info-card {
+      @apply bg-white text-zinc-800 border-white/70;
+      box-shadow: 0 12px 30px rgba(6, 11, 28, 0.35);
+
+      .eyebrow {
+        @apply text-accent;
+      }
+
+      .text-body {
+        @apply text-zinc-600;
+      }
+
+      a {
+        @apply text-accent hover:text-accent-dark;
+      }
+    }
+
+    .eyebrow {
+      @apply text-electric-light;
+    }
   }
 
   .surface-card {
@@ -84,7 +138,9 @@
   }
 
   .carousel-dot {
-    @apply w-3 h-3 rounded-full bg-white;
+    @apply w-3 h-3;
+    @apply rounded-full;
+    @apply bg-white;
   }
 
   .site-nav {
@@ -100,14 +156,24 @@
   }
 
   .site-hero__title {
-    @apply text-4xl md:text-5xl font-bold text-accent mb-4;
+    @apply text-4xl md:text-5xl font-bold;
+    @apply text-accent;
+    @apply mb-4;
   }
 
   .site-hero__lead {
-    @apply text-xl text-background-lightest mb-8;
+    @apply text-xl;
+    @apply text-background-lightest;
+    @apply mb-8;
   }
 
   .cta-accent {
-    @apply inline-block bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded-2xl shadow-md transition;
+    @apply inline-block;
+    @apply px-6 py-3;
+    @apply text-white font-semibold;
+    @apply bg-accent;
+    @apply rounded-2xl;
+    @apply shadow-md;
+    @apply transition hover:bg-accent-dark;
   }
 }

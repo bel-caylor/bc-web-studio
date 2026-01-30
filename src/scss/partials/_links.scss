@@ -1,6 +1,8 @@
 @layer components {
   .link-accent {
-    @apply text-accent underline decoration-2 decoration-accent/40 transition-colors;
+    @apply underline decoration-2 decoration-accent/40;
+    @apply text-accent;
+    @apply transition-colors;
 
     &:hover,
     &:focus-visible {
@@ -9,7 +11,9 @@
   }
 
   .link-accent-inverse {
-    @apply text-white underline decoration-2 decoration-white/60 transition-colors;
+    @apply underline decoration-2 decoration-white/60;
+    @apply text-white;
+    @apply transition-colors;
 
     &:hover,
     &:focus-visible {

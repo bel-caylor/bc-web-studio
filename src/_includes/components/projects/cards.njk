@@ -82,7 +82,10 @@
         <div class="case-info-card__head">
           <div>
             <p class="eyebrow eyebrow--compact mb-1" x-text="primaryClientType(project) || 'Case Study'"></p>
-            <h3 class="case-info-card__title" x-text="project.title"></h3>
+            <h3 class="case-info-card__title !mb-0" x-text="project.title"></h3>
+            <template x-if="project.subtitle">
+              <p class="project-subtitle !mb-1 case-info-card__subtitle" x-text="project.subtitle"></p>
+            </template>
             <p class="case-info-card__date" x-text="formatDate(project.endDate)"></p>
           </div>
           <template x-if="project.logo">

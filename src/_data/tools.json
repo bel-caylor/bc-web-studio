@@ -194,5 +194,19 @@
     "category": "Frameworks & Libraries",
     "icon": "https://www.11ty.dev/img/logo.svg",
     "url": "https://www.11ty.dev/"
+  },
+  {
+    "id": "learndash",
+    "name": "LearnDash",
+    "category": "WordPress Plugins",
+    "icon": "https://www.learndash.com/wp-content/uploads/ld_favicon-150x150.png",
+    "url": "https://www.learndash.com/"
+  },
+  {
+    "id": "automation",
+    "name": "Automation",
+    "category": "WordPress Plugins",
+    "icon": "https://cdn.simpleicons.org/zapier/FF4A00",
+    "url": "https://zapier.com/"
   }
 ]

@@ -1,53 +1,75 @@
 @layer components {
   .case-hero-filter {
-    @apply bg-white/5 border border-white/20 rounded-3xl p-6 md:p-8 text-left;
+    @apply p-6 md:p-8;
+    @apply text-left;
+    @apply bg-white/5;
+    @apply border border-white/20;
+    @apply rounded-3xl;
 
     &-inline {
       @apply text-left;
 
       &__label {
-        @apply flex items-center gap-4;
+        @apply flex items-center;
+        @apply gap-4;
       }
     }
 
     &__header {
-      @apply flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4;
+      @apply flex flex-col md:flex-row md:items-center md:justify-between;
+      @apply gap-3;
+      @apply mb-4;
     }
 
     &__hint {
-      @apply text-sm text-white/80 mt-1;
+      @apply mt-1;
+      @apply text-sm;
+      @apply text-white/80;
     }
 
     &__reset {
-      @apply text-sm font-semibold tracking-[0.2em] text-accent-light transition;
+      @apply text-sm font-semibold tracking-[0.2em];
+      @apply text-accent-light;
+      @apply transition;
       background: none;
     }
 
     &__chips {
-      @apply flex flex-wrap gap-3;
+      @apply flex flex-wrap;
+      @apply gap-3;
     }
   }
 
   .case-hero-chip {
     --chip-arrow-depth: 1rem;
     clip-path: polygon(0 0, calc(100% - var(--chip-arrow-depth)) 0, 100% 50%, calc(100% - var(--chip-arrow-depth)) 100%, 0 100%);
-    @apply bg-accent text-white border border-transparent inline-flex items-center justify-center text-sm font-semibold tracking-[0.2em] px-5 py-2 transition;
+    @apply inline-flex items-center justify-center;
+    @apply px-5 py-2;
+    @apply text-sm font-semibold tracking-[0.2em];
+    @apply text-white;
+    @apply bg-accent;
+    @apply border border-transparent;
+    @apply transition;
 
     &:hover:not(&--active) {
       @apply bg-accent/20;
     }
 
     &--active {
-      @apply bg-white text-accent border border-accent;
+      @apply text-accent;
+      @apply bg-white;
+      @apply border border-accent;
     }
   }
 
   .hero-title {
-    @apply text-4xl md:text-5xl font-bold text-white;
+    @apply text-4xl md:text-5xl font-bold;
+    @apply text-white;
   }
 
   .hero-subhead {
-    @apply text-lg text-white/80;
+    @apply text-lg;
+    @apply text-white/80;
   }
 }
 

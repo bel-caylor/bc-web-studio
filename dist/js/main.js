@@ -24,14 +24,18 @@ document.addEventListener("alpine:init", () => {
   Alpine.data("projectCarousel", (project) => {
     var _a;
     return {
+      project,
       images: Array.isArray(project.screenshots) ? project.screenshots : project.screenshots ? [project.screenshots] : [],
       interval: (_a = project.interval) != null ? _a : 3e3,
       current: 0,
       timer: null,
       init() {
-        this.start();
+        if (this.images.length > 1) {
+          this.start();
+        }
       },
       start() {
+        if (this.images.length <= 1) return;
         this.stop();
         this.timer = setInterval(() => {
           this.current = (this.current + 1) % this.images.length;

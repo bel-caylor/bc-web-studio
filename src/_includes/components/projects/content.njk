@@ -2,9 +2,14 @@
     <template x-for="(project, idx) in projects" :key="idx">
     <div x-show="active === idx + 1" x-transition class="tab-content">
         <div class="surface-card shadow rounded p-8 max-w-4xl mx-auto">
-            <div class="flex justify-between align-bottom">
-                <h2 class="mb-4 font-bold text-3xl py-3" x-text="project.title"></h2>
-                <p class="text-xl text-body-muted my-4"
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-2">
+                <div>
+                    <h2 class="mb-2 font-bold text-3xl" x-text="project.title"></h2>
+                    <template x-if="project.subtitle">
+                        <p class="project-subtitle project-detail__subtitle" x-text="project.subtitle"></p>
+                    </template>
+                </div>
+                <p class="text-xl text-body-muted my-2 md:my-0"
                     x-text="new Date(project.endDate)
                         .toLocaleString('en-US', { month: 'long', year: '2-digit' })"
                     ></p>
