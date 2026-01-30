@@ -52,7 +52,10 @@
       "restapi",
       "php"
     ],
-    "screenshots": "/assets/screenshots/perc.png",
+    "screenshots": [
+      "/img/screenshots/perc1.png",
+      "/img/screenshots/perc2.png"
+    ],
     "endDate": "2022-12",
     "clientType": [
       "agency",
@@ -83,7 +86,10 @@
       "woocommerce",
       "php"
     ],
-    "screenshots": "/assets/screenshots/buffalocorpstore.png",
+    "screenshots": [
+      "/img/screenshots/buffalo1.png",
+      "/img/screenshots/buffalo2.png"
+    ],
     "endDate": "2022-06",
     "clientType": [
       "agency",
