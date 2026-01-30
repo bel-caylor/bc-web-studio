@@ -1,16 +1,14 @@
-const { execFileSync } = require("child_process");
-const esbuildCli = require.resolve("esbuild/bin/esbuild");
-const esbuildArgs = [
-  "src/js/main.js",
-  "--bundle",
-  "--outdir=dist/js",
-  "--format=esm",
-  "--target=es2017",
-  "--sourcemap"
-];
+const esbuild = require("esbuild");
 
 function bundleClientJs() {
-  execFileSync(process.execPath, [esbuildCli, ...esbuildArgs], { stdio: "inherit" });
+  esbuild.buildSync({
+    entryPoints: ["src/js/main.js"],
+    bundle: true,
+    outdir: "dist/js",
+    format: "esm",
+    target: "es2017",
+    sourcemap: true
+  });
 }
 
 module.exports = function(eleventyConfig) {
