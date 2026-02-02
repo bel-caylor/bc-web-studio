@@ -444,6 +444,7 @@ html{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(24 24 27 / var(--tw-text-opacity, 1));
+  overflow-x: hidden;
 }
 body {
     background-image: var(--hero-gradient-overlay), var(--bg-image);
@@ -452,6 +453,7 @@ body {
     font-family: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --tw-text-opacity: 1;
     color: rgb(24 24 27 / var(--tw-text-opacity, 1));
+    overflow-x: hidden;
   }
 h1,
   h2,
