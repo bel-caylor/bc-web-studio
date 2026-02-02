@@ -1197,6 +1197,29 @@ main > * {
   --tw-text-opacity: 1;
   color: rgb(82 82 91 / var(--tw-text-opacity, 1));
 }
+.case-study-gallery__slider{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.case-study-gallery__slider > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.case-study-gallery__frame{
+  position: relative;
+  width: 100%;
+}
+@media (max-width: 767px) {
+    .case-study-gallery__frame {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      width: 100vw;
+      border-radius: 0;
+    }
+  }
 .case-hero-filter-inline{
   text-align: left;
 }

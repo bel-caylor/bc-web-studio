@@ -3,6 +3,8 @@
 {% set title = title | default("Case studies") %}
 {% set description = description | default("Proof points that illustrate how we deliver results.") %}
 {% set clientType = clientType | default("agency") %}
+{% set scopeFilter = projectFilters | find("id", "scope") %}
+{% set scopeOptions = (scopeFilter and scopeFilter.options) or [] %}
 
 <section class="surface-section surface-section--vertical-gradient relative section-arrow -mt-20">
   <div class="section-container">
@@ -40,11 +42,19 @@
             </div>
             {% if project.logo %}
               <div class="case-info-card__logo">
-                <img src="{{ project.logo }}" alt="{{ project.title }} logo" loading="lazy" class="w-full h-full object-contain">
+                <img src="{{ project.logo | url }}" alt="{{ project.title }} logo" loading="lazy" class="w-full h-full object-contain">
               </div>
             {% endif %}
           </div>
           <p class="case-info-card__excerpt">{{ project.summary or project.solution }}</p>
+          {% if project.scope and project.scope | length %}
+            <div class="case-info-card__tags">
+              {% for tag in project.scope %}
+                {% set scopeOption = scopeOptions | find("id", tag) %}
+                <span class="case-info-card__tag">{{ (scopeOption and scopeOption.label) or tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
           <span class="case-info-card__cta">View case study →</span>
         </a>
       {% endfor %}

@@ -124,8 +124,8 @@ eleventyComputed:
       <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
         @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{{ project | dump }}' tabindex="0"
         aria-roledescription="carousel" aria-label="{{ project.title }} screenshots"
-        class="relative w-full mx-auto space-y-6">
-        <div class="relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+        class="case-study-gallery__slider relative w-full mx-auto space-y-6">
+        <div class="case-study-gallery__frame relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
           <template x-for="(src, i) in images" :key="i">
             <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
               x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"

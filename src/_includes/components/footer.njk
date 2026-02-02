@@ -33,7 +33,7 @@
       <nav class="site-footer__meta-nav" aria-label="Footer navigation">
         <ul class="site-footer__meta-links">
           {% for link in footerNav %}
-          <li><a href="{{ link.href }}" class="text-accent-light">{{ link.label }}</a></li>
+          <li><a href="{{ link.href | url }}" class="text-accent-light">{{ link.label }}</a></li>
           {% endfor %}
         </ul>
       </nav>

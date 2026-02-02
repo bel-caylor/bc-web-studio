@@ -138,4 +138,23 @@
   .project-detail__subtitle {
     @apply text-body;
   }
+
+  .case-study-gallery {
+    &__slider {
+      @apply relative w-full mx-auto space-y-6;
+    }
+
+    &__frame {
+      @apply relative w-full;
+    }
+
+    @media (max-width: 767px) {
+      &__frame {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        width: 100vw;
+        border-radius: 0;
+      }
+    }
+  }
 }
