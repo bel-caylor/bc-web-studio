@@ -15,10 +15,36 @@ const resolvePathWithBase = (value, base) => {
   }
   return normalizedBase + value;
 };
-const getSiteBaseFromWindow = () =>
-  ensureTrailingSlash(
+const getGitHubRepoBaseFromPath = () => {
+  if (typeof window === "undefined") {
+    return "/";
+  }
+
+  const hostname = window.location?.hostname ?? "";
+  if (!hostname.endsWith(".github.io")) {
+    return "/";
+  }
+
+  const segments = window.location.pathname.split("/").filter(Boolean);
+  if (!segments.length) {
+    return "/";
+  }
+
+  return `/${segments[0]}/`;
+};
+
+const getSiteBaseFromWindow = () => {
+  const definedBase = ensureTrailingSlash(
     typeof window !== "undefined" && window.__SITE_BASE ? window.__SITE_BASE : "/"
   );
+
+  if (definedBase !== "/") {
+    return definedBase;
+  }
+
+  const githubBase = getGitHubRepoBaseFromPath();
+  return githubBase !== "/" ? ensureTrailingSlash(githubBase) : definedBase;
+};
 
 document.addEventListener("alpine:init", () => {
   console.log("[main.js] alpine:init");
@@ -48,14 +74,32 @@ document.addEventListener("alpine:init", () => {
       if (this.images.length <= 1) return;
       this.stop();
       this.timer = setInterval(() => {
-        this.current = (this.current + 1) % this.images.length;
+        this.next();
       }, this.interval);
     },
     stop() {
-      clearInterval(this.timer);
+      if (this.timer) {
+        clearInterval(this.timer);
+        this.timer = null;
+      }
+    },
+    prev() {
+      if (!this.images.length) return;
+      const nextIndex = (this.current - 1 + this.images.length) % this.images.length;
+      this.goTo(nextIndex);
+    },
+    next() {
+      if (!this.images.length) return;
+      const nextIndex = (this.current + 1) % this.images.length;
+      this.goTo(nextIndex);
     },
     goTo(i) {
-      this.current = i;
+      if (!this.images.length) {
+        this.current = 0;
+        return;
+      }
+      const normalized = ((i % this.images.length) + this.images.length) % this.images.length;
+      this.current = normalized;
     }
   }));
   Alpine.data('projectExplorer', ({ projects, filters, siteBase = '/', caseStudyBase = '/case-studies/' }) => {

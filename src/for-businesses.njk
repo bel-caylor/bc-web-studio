@@ -5,9 +5,9 @@ title: For Businesses
 <section class="hero-bg">
   <div class="max-w-3xl mx-auto px-4">
     <p class="eyebrow eyebrow--wide text-lg">GROWTH TRACK</p>
-    <h1 class="mb-6">Technical consulting for growing businesses</h1>
+    <h1 class="mb-6">Technical consulting for growing businesses that need clarity and momentum</h1>
     <p>
-      I help growing businesses SOLVE technical problems, streamline workflows, <br class="hidden md:block">and make better decisions using the tools they already have — from WordPress and internal systems to Google Workspace and applied AI.
+      I help growing businesses SOLVE technical problems, streamline workflows, <br class="hidden md:block">and make better decisions using the tools they already have <br class="hidden md:block">— from WordPress and internal systems to Google Workspace and applied AI.
     </p>
     <div class="hero-links">
       <a href="{{ '/case-studies/' | url }}" class="hero-cta hero-cta--primary">See proof</a>
@@ -16,9 +16,9 @@ title: For Businesses
   </div>
 </section>
 
-<section id="services" class="pt-44 pb-32 surface-section relative section-arrow">
-  <div class="xl:container mx-auto px-4">
-    <div class="max-w-3xl mx-auto mb-12 text-center">
+<section id="services" class="pt-44 pb-32 surface-section relative section-arrow surface-section--vertical-gradient">
+  <div class="section-container">
+    <div class="section-heading">
       <p class="eyebrow eyebrow--wide">Owner Support</p>
       <h2 class="text-3xl font-bold mt-3 mb-4">How I help</h2>
       <p class="text-body">
@@ -26,12 +26,12 @@ title: For Businesses
       </p>
     </div>
 
-    <div class="grid gap-8 md:grid-cols-3">
+    <div class="card-grid">
       <div class="info-card info-card--stacked h-full">
         <p class="eyebrow eyebrow--compact">Consulting</p>
         <h3 class="text-2xl font-bold mb-3 text-right text-body-strong">Technical clarity & problem-solving</h3>
         <p class="text-body">
-          I help diagnose technical issues, clarify options, and guide implementation — focusing on solutions that are practical, sustainable, and actually useful.
+          I help diagnose technical issues, clarify options, and guide implementation decisions— focusing on solutions that are practical, sustainable, and actually useful.
         </p>
       </div>
       <div class="info-card info-card--stacked h-full">
@@ -50,31 +50,38 @@ title: For Businesses
       </div>
     </div>
     <div class="pt-16 text-center">
-      <p class="text-xl">This work is a good fit for businesses that want practical progress <br class="hidden md:block">— whether that’s incremental improvements, a full rebuild, or a longer-term platform migration.</p>
+      <p class="text-2xl">This work is a good fit for businesses that want practical progress <br class="hidden md:block">— whether that’s incremental improvements, a full rebuild, or a longer-term platform migration.</p>
     </div>
   </div>
 </section>
 
-<section class="py-24 surface-section-alt">
-  <div class="xl:container mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center">
-    <div class="lg:w-1/2">
-      <p class="eyebrow eyebrow--compact">Why this works</p>
-      <h3 class="text-3xl font-bold">Built by someone <br class="hidden md:block">who's run a business</h3>
-      <p>
-        I'm energized by how modern tools — especially AI — are making it possible for businesses to move faster, make better decisions, and do more with fewer resources.
-      </p>
-      <p>I've also been an entrepreneur and business owner since 2005, which means I approach every recommendation with an eye toward profitability, sustainability, and real-world tradeoffs — not just what's technically possible.</p>
-      <p>I've been building internal apps and workflows on top of tools like Google Sheets and Docs, using AI-assisted development to dramatically reduce build time and cost while improving visibility and decision-making.</p>
-
+<section class="surface-dark-section surface-section relative section-arrow -mt-20">
+  <div class="section-container flex flex-col lg:flex-row gap-12 items-center">
+    <div class="lg:w-1/2 space-y-8 max-w-[650px]">
+      <div class="space-y-3">
+        <p class="eyebrow eyebrow--wide text-white/70">Why this works</p>
+        <h3 class="text-3xl font-bold text-white">Built by someone <br class="hidden md:block">who's run a business</h3>
+      </div>
+      <div class="space-y-4 text-body text-white/80">
+        <p>
+          I'm energized by how modern tools — especially AI — are making it possible for businesses to move faster, make better decisions, and do more with fewer resources.
+        </p>
+        <p>
+          I've also been an entrepreneur and business owner since 2005, which means I approach every recommendation with an eye toward profitability, sustainability, and real-world tradeoffs — not just what's technically possible.
+        </p>
+        <p>
+          I've been building internal apps and workflows on top of tools like Google Sheets and Docs, using AI-assisted development to dramatically reduce build time and cost while improving visibility and decision-making.
+        </p>
+      </div>
     </div>
     <div class="lg:w-1/2 w-full max-w-lg">
-      <div class="case-card p-12 hover:translate-x-2 ">
-        <p class="eyebrow eyebrow--compact ">About</p>
+      <div class="case-card p-12 hover:translate-x-2">
+        <p class="eyebrow eyebrow--compact">About</p>
         <h3 class="text-2xl font-bold mb-3">Meet Belinda</h3>
-      <p>
-        If you are in the San Antonio area, let's grab coffee and chat about how I can help your business thrive with tailored technical solutions.
-      </p>
-      <a href="{{ '/about/' | url }}" class="inline-flex items-center mt-6 font-heading text-brand-medium info-card__cta">Let's Connect →</a>
+        <p>
+          If you are in the San Antonio area, let's grab coffee and chat about how I can help your business thrive with tailored technical solutions.
+        </p>
+        <a href="{{ '/about/' | url }}" class="inline-flex items-center mt-6 font-heading text-brand-medium info-card__cta">Let's Connect →</a>
       </div>
     </div>
   </div>
@@ -85,5 +92,6 @@ title: For Businesses
 {% set description = "Sample work that highlights the practical improvements I've shipped for founders and internal teams across product, operations, and marketing." %}
 {% set clientType = "business" %}
 {% set ctaLabel = "See all case studies" %}
+{% set ctaUrl = "/case-studies/?clientType=business" %}
 
 {% include "components/case-study-highlights.njk" %}

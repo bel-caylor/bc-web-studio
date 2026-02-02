@@ -4,13 +4,13 @@
 {% set description = description | default("Proof points that illustrate how we deliver results.") %}
 {% set clientType = clientType | default("agency") %}
 
-<section class="py-28 surface-section relative">
-  <div class="xl:container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center mb-12 space-y-3">
+<section class="surface-section surface-section--vertical-gradient relative section-arrow -mt-20">
+  <div class="section-container">
+    <div class="section-heading section-heading--tight">
       {% if eyebrow %}
         <p class="eyebrow eyebrow--wide text-lg">{{ eyebrow }}</p>
       {% endif %}
-      <h2 class="text-3xl font-bold">{{ title }}</h2>
+      <h2 class="text-3xl font-bold mt-1">{{ title }}</h2>
       <p class="text-body mx-auto max-w-2xl">
         {{ description }}
       </p>
@@ -18,7 +18,7 @@
 
     {% set selectedProjects = projects | caseStudyHighlights(clientType, highlightLimit) %}
 
-    <div class="grid gap-8 md:grid-cols-3">
+    <div class="card-grid max-w-[650px] lg:max-w-none mx-auto">
       {% for project in selectedProjects %}
         {% set types = project.clientType or [] %}
         {% set primaryType = types[0] if types | length > 0 else "" %}

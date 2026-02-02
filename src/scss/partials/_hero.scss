@@ -11,6 +11,25 @@
       z-index: 1;
     }
 
+    > div:first-child {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: -1.25rem -1rem;
+        z-index: -1;
+        pointer-events: none;
+        background: linear-gradient(
+          115deg,
+          rgba(7, 18, 45, 0) 0%,
+          rgba(3, 8, 20, 0.3) 18%,
+          rgba(7, 18, 45, 0.22) 56%,
+          rgba(7, 18, 45, 0) 100%
+        );
+      }
+    }
+
     h1 {
       @apply text-3xl md:text-5xl font-bold;
       @apply text-white;
@@ -39,6 +58,7 @@
     padding-top: calc(var(--section-arrow-height) + 5rem);
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 50% var(--section-arrow-height), 0 0);
     z-index: 0;
+    @apply py-36;
     > div {
       @apply -mt-10 md:mt-0
     }
@@ -95,6 +115,7 @@
     @apply shadow-lg;
     @apply transform;
     @apply transition hover:translate-x-2;
+    @apply focus:outline-none focus-visible:outline-none;
     border-radius: 0;
     clip-path: polygon(
       0 0,
@@ -105,13 +126,21 @@
     );
     padding-right: calc(2rem + var(--hero-cta-arrow-depth) * 0.35);
 
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      /* clip-path can hide outline/ring; drop-shadow renders outside the clipped shape */
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.95));
+    }
+
     &--primary {
-      @apply bg-accent;
+      @apply bg-accent focus-visible:bg-accent-light;
     }
 
     &--secondary {
       @apply bg-accent/80
-             hover:bg-accent;
+             hover:bg-accent
+             focus-visible:bg-accent;
     }
   }
 

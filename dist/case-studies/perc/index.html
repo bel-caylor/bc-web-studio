@@ -78,7 +78,7 @@
       <p class="project-subtitle project-hero__subtitle">Policy research institute</p>
       
       <p>
-        Reimagined Perc.org with a structured Gutenberg experience and Alpine-powered filters that make research browsing effortless.
+        Large-scale, agency-led WordPress redesign and migration with a custom block system and Alpine-powered search that makes deep policy research easy to explore.
       </p>
       
       
@@ -89,8 +89,8 @@
   </div>
 </section>
 
-<section class="py-20 surface-card section-arrow pt-36">
-  <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-3">
+<section class="py-36 surface-card section-arrow">
+  <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-3 justify-items-center">
     <div class="md:col-span-2 space-y-8">
       
       <div class="flex justify-center md:justify-start max-w-[150px]">
@@ -101,18 +101,18 @@
       <div>
         <p class="eyebrow eyebrow--compact">Challenge</p>
         <h2 class="text-3xl font-bold mt-4 mb-3">What they needed</h2>
-        <p class="text-lg text-body-strong">Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.</p>
+        <p class="text-lg text-body-strong">Perc.org required a large-scale redesign and migration, including thousands of research pages, improved information architecture, and a robust search and filtering experience to support active researchers.</p>
       </div>
       <div>
         <p class="eyebrow eyebrow--compact">Approach</p>
         <h2 class="text-3xl font-bold mt-4 mb-3">How we solved it</h2>
-        <p class="text-lg text-body-strong">Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.</p>
+        <p class="text-lg text-body-strong">Partnered with Kestrel and Atomic Dust on a full site redesign and migration. Built custom Gutenberg and Kadence blocks from Figma designs, migrated thousands of pages, and developed Alpine-powered filtering using the WordPress REST API to support fast, flexible research discovery.</p>
       </div>
     </div>
     <div class="case-study-sidebar">
       <div>
         <p class="eyebrow eyebrow--compact">Completed</p>
-        <p class="text-2xl font-semibold">November 2022</p>
+        <p class="text-2xl font-semibold">May 2023</p>
       </div>
       
       
@@ -130,11 +130,11 @@
           
           <li class="stack-highlight-item">
             
-            <a href="https://wordpress.org/" class="stack-highlight-link" target="_blank" rel="noopener">
+            <a href="https://www.kadencewp.com/" class="stack-highlight-link" target="_blank" rel="noopener">
               
-              <img src="https://s0.wp.com/i/favicon.ico" alt="WordPress icon" class="w-5 h-5" loading="lazy">
+              <img src="https://www.kadencewp.com/wp-content/uploads/2023/11/kadencewp-icon.png" alt="Kadence icon" class="w-5 h-5" loading="lazy">
               
-              <span>WordPress</span>
+              <span>Kadence</span>
             </a>
             
           </li>
@@ -144,11 +144,11 @@
           
           <li class="stack-highlight-item">
             
-            <a href="https://www.kadencewp.com/" class="stack-highlight-link" target="_blank" rel="noopener">
+            <a href="https://wordpress.org/" class="stack-highlight-link" target="_blank" rel="noopener">
               
-              <img src="https://www.kadencewp.com/wp-content/uploads/2023/11/kadencewp-icon.png" alt="Kadence icon" class="w-5 h-5" loading="lazy">
+              <img src="https://s0.wp.com/i/favicon.ico" alt="Gutenberg icon" class="w-5 h-5" loading="lazy">
               
-              <span>Kadence</span>
+              <span>Gutenberg</span>
             </a>
             
           </li>
@@ -204,64 +204,72 @@
 </section>
 
 
-<section class="py-16 surface-section">
-  <div class="max-w-5xl mx-auto px-4">
-    <div class="mb-8 text-center">
-      <p class="eyebrow eyebrow--wide">Gallery</p>
-      <h2 class="text-3xl font-bold mt-3">Screens & flows</h2>
-    </div>
-    <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
-      @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;perc&quot;,&quot;title&quot;:&quot;Perc&quot;,&quot;subtitle&quot;:&quot;Policy research institute&quot;,&quot;url&quot;:&quot;https://perc.org/&quot;,&quot;logo&quot;:&quot;/img/logos/perc-logo.svg&quot;,&quot;logoHasName&quot;:false,&quot;problem&quot;:&quot;Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.&quot;,&quot;solution&quot;:&quot;Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.&quot;,&quot;summary&quot;:&quot;Reimagined Perc.org with a structured Gutenberg experience and Alpine-powered filters that make research browsing effortless.&quot;,&quot;tools&quot;:[&quot;wordpress&quot;,&quot;kadence&quot;,&quot;alpinejs&quot;,&quot;restapi&quot;,&quot;php&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/perc1.png&quot;,&quot;/img/screenshots/perc2.png&quot;],&quot;endDate&quot;:&quot;2022-12&quot;,&quot;clientType&quot;:[&quot;agency&quot;,&quot;nonprofit&quot;],&quot;scope&quot;:[&quot;build-from-design&quot;,&quot;custom-development&quot;],&quot;platform&quot;:[&quot;wordpress&quot;,&quot;headless-api&quot;]}' tabindex="0"
-      aria-roledescription="carousel" aria-label="Perc screenshots"
-      class="relative w-full overflow-hidden border-panel shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
-      <template x-for="(src, i) in images" :key="i">
-        <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
-          x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
-          x-transition:leave="transition ease-in duration-500" x-transition:leave-start="translate-x-0"
-          x-transition:leave-end="-translate-x-full">
-          <template x-if="src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')">
-            <video :src="src" preload="none" poster="/img/screenshots/video-poster.png"
-              class="w-full h-full object-cover" autoplay muted loop playsinline
-              :aria-label="`${project.title} demo video`"></video>
-          </template>
-          <template x-if="!(src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm'))">
-            <img :src="src" loading="lazy" class="w-full h-full object-cover"
-              :alt="`${project.title} screenshot ${i + 1}`" />
+<section class="surface-dark-section surface-section relative section-arrow -mt-20 pb-20">
+  <div class="section-container">
+    <div class="max-w-5xl mx-auto px-4 space-y-8">
+      <div class="section-heading section-heading--tight text-white">
+        <p class="eyebrow eyebrow--wide text-electric-light">Gallery</p>
+        <h2 class="text-3xl font-bold mt-1">Screens & flows</h2>
+      </div>
+      <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
+        @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;perc&quot;,&quot;title&quot;:&quot;Perc&quot;,&quot;subtitle&quot;:&quot;Policy research institute&quot;,&quot;url&quot;:&quot;https://perc.org/&quot;,&quot;logo&quot;:&quot;/img/logos/perc-logo.svg&quot;,&quot;logoHasName&quot;:false,&quot;partners&quot;:[&quot;Kestrel&quot;,&quot;Atomic Dust&quot;],&quot;problem&quot;:&quot;Perc.org required a large-scale redesign and migration, including thousands of research pages, improved information architecture, and a robust search and filtering experience to support active researchers.&quot;,&quot;solution&quot;:&quot;Partnered with Kestrel and Atomic Dust on a full site redesign and migration. Built custom Gutenberg and Kadence blocks from Figma designs, migrated thousands of pages, and developed Alpine-powered filtering using the WordPress REST API to support fast, flexible research discovery.&quot;,&quot;summary&quot;:&quot;Large-scale, agency-led WordPress redesign and migration with a custom block system and Alpine-powered search that makes deep policy research easy to explore.&quot;,&quot;tools&quot;:[&quot;kadence&quot;,&quot;gutenberg&quot;,&quot;alpinejs&quot;,&quot;restapi&quot;,&quot;php&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/perc1.png&quot;,&quot;/img/screenshots/perc2.png&quot;],&quot;endDate&quot;:&quot;2023-06&quot;,&quot;clientType&quot;:[&quot;agency&quot;,&quot;nonprofit&quot;],&quot;scope&quot;:[&quot;build-from-design&quot;,&quot;full-website-build&quot;,&quot;site-redesign&quot;,&quot;content-migration&quot;,&quot;custom-development&quot;,&quot;frontend-architecture&quot;],&quot;platform&quot;:[&quot;wordpress&quot;,&quot;rest-api&quot;]}' tabindex="0"
+        aria-roledescription="carousel" aria-label="Perc screenshots"
+        class="relative w-full mx-auto space-y-6">
+        <div class="relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+          <template x-for="(src, i) in images" :key="i">
+            <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
+              x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+              x-transition:leave="transition ease-in duration-500" x-transition:leave-start="translate-x-0"
+              x-transition:leave-end="-translate-x-full">
+              <template x-if="src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')">
+                <video :src="src" preload="none" poster="/img/screenshots/video-poster.png"
+                  class="w-full h-full object-cover" autoplay muted loop playsinline
+                  :aria-label="`${project.title} demo video`"></video>
+              </template>
+              <template x-if="!(src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm'))">
+                <img :src="src" loading="lazy" class="w-full h-full object-cover"
+                  :alt="`${project.title} screenshot ${i + 1}`" />
+              </template>
+            </div>
           </template>
         </div>
-      </template>
-      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        <template x-for="(src, i) in images" :key="i">
-          <button @click="current = i" class="carousel-dot" :class="{
-              'opacity-50': current !== i,
-              'opacity-100': current === i
-            }" :aria-label="`Go to slide ${i + 1}`"></button>
-        </template>
+        <div class="carousel-controls mx-auto">
+          <button type="button" class="carousel-arrow-btn" @click="prev()" aria-label="Previous screenshot">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div class="flex gap-3">
+            <template x-for="(src, i) in images" :key="i">
+              <button type="button" @click="goTo(i)" class="carousel-dot" :class="{
+                  'opacity-50': current !== i,
+                  'opacity-100': current === i
+                }" :aria-label="`Go to slide ${i + 1}`"></button>
+            </template>
+          </div>
+          <button type="button" class="carousel-arrow-btn" @click="next()" aria-label="Next screenshot">
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</section>
-
-
-<section class="py-12 surface-section">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <p class="text-lg mb-4">Interested in how this approach translates to your roadmap?</p>
+  <div class="max-w-4xl mx-auto px-4 text-center pt-20">
     <div class="flex flex-wrap gap-4 justify-center">
       <a href="/case-studies/" class="hero-cta hero-cta--secondary">Back to case studies</a>
-      <a href="/for-businesses/" class="hero-cta hero-cta--primary">Start a project</a>
     </div>
   </div>
 </section>
+
+
 
   </main>
   
 
 <footer class="site-footer">
   <div class="bg-background-light w-full">
-    <div class="site-footer__panel">
-      <div class="text-left">
+    <div class="site-footer__panel max-w-[900px]">
+      <div class="md:text-left">
         <p class="eyebrow eyebrow--compact text-electric-dark text-base">Let's collaborate</p>
-        <h2 class="site-footer__headline">Partner-ready <br class="hidden md:block">web engineering support</h2>
+        <h2 class="site-footer__headline">Partner-ready <br class="block">web engineering support</h2>
       </div>
       <div class="site-footer__contact text-left">
         <a href="mailto:belinda.caylor+dev@gmail.com" class="site-footer__contact-link pl-12">

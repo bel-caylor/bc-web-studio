@@ -89,8 +89,8 @@
   </div>
 </section>
 
-<section class="py-20 surface-card section-arrow pt-36">
-  <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-3">
+<section class="py-36 surface-card section-arrow">
+  <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-3 justify-items-center">
     <div class="md:col-span-2 space-y-8">
       
       <div class="flex justify-center md:justify-start max-w-[150px]">
@@ -204,26 +204,72 @@
 </section>
 
 
-
-<section class="py-12 surface-section">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <p class="text-lg mb-4">Interested in how this approach translates to your roadmap?</p>
+<section class="surface-dark-section surface-section relative section-arrow -mt-20 pb-20">
+  <div class="section-container">
+    <div class="max-w-5xl mx-auto px-4 space-y-8">
+      <div class="section-heading section-heading--tight text-white">
+        <p class="eyebrow eyebrow--wide text-electric-light">Gallery</p>
+        <h2 class="text-3xl font-bold mt-1">Screens & flows</h2>
+      </div>
+      <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
+        @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;tri-star-systems-participant-app&quot;,&quot;title&quot;:&quot;Tri-Star Systems&quot;,&quot;subtitle&quot;:&quot;Enrollment &amp; Benefits Workflow&quot;,&quot;url&quot;:&quot;https://www.tri-starsystems.com/&quot;,&quot;logo&quot;:&quot;/img/logos/logo-tri-star.png&quot;,&quot;logoHasName&quot;:true,&quot;problem&quot;:&quot;Tri-Star Systems needed to modernize their participant-facing application while preserving existing backend APIs and guiding users through a complex enrollment and benefits review process.&quot;,&quot;solution&quot;:&quot;Rebuilt the participant application using Eleventy templates and Tailwind CSS, integrating existing API endpoints and implementing advanced, state-driven workflows with Alpine.js to guide participants through sign-up, health information review, and insurance election confirmation.&quot;,&quot;summary&quot;:&quot;Modernized participant application with Eleventy, Tailwind, and Alpine.js that integrates existing APIs and guides users through a complex, multi-step enrollment and benefits workflow.&quot;,&quot;tools&quot;:[&quot;eleventy&quot;,&quot;tailwindcss&quot;,&quot;alpinejs&quot;,&quot;javascript&quot;,&quot;restapi&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/TriStar-nav.mp4&quot;,&quot;/img/screenshots/TriStar-workflow.mp4&quot;],&quot;endDate&quot;:&quot;2025-12&quot;,&quot;clientType&quot;:[&quot;business&quot;],&quot;scope&quot;:[&quot;application-rebuild&quot;,&quot;frontend-architecture&quot;,&quot;api-integration&quot;,&quot;workflow-logic&quot;,&quot;ux-process-design&quot;],&quot;platform&quot;:[&quot;eleventy&quot;]}' tabindex="0"
+        aria-roledescription="carousel" aria-label="Tri-Star Systems screenshots"
+        class="relative w-full mx-auto space-y-6">
+        <div class="relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+          <template x-for="(src, i) in images" :key="i">
+            <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
+              x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+              x-transition:leave="transition ease-in duration-500" x-transition:leave-start="translate-x-0"
+              x-transition:leave-end="-translate-x-full">
+              <template x-if="src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')">
+                <video :src="src" preload="none" poster="/img/screenshots/video-poster.png"
+                  class="w-full h-full object-cover" autoplay muted loop playsinline
+                  :aria-label="`${project.title} demo video`"></video>
+              </template>
+              <template x-if="!(src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm'))">
+                <img :src="src" loading="lazy" class="w-full h-full object-cover"
+                  :alt="`${project.title} screenshot ${i + 1}`" />
+              </template>
+            </div>
+          </template>
+        </div>
+        <div class="carousel-controls mx-auto">
+          <button type="button" class="carousel-arrow-btn" @click="prev()" aria-label="Previous screenshot">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div class="flex gap-3">
+            <template x-for="(src, i) in images" :key="i">
+              <button type="button" @click="goTo(i)" class="carousel-dot" :class="{
+                  'opacity-50': current !== i,
+                  'opacity-100': current === i
+                }" :aria-label="`Go to slide ${i + 1}`"></button>
+            </template>
+          </div>
+          <button type="button" class="carousel-arrow-btn" @click="next()" aria-label="Next screenshot">
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-4xl mx-auto px-4 text-center pt-20">
     <div class="flex flex-wrap gap-4 justify-center">
       <a href="/case-studies/" class="hero-cta hero-cta--secondary">Back to case studies</a>
-      <a href="/for-businesses/" class="hero-cta hero-cta--primary">Start a project</a>
     </div>
   </div>
 </section>
+
+
 
   </main>
   
 
 <footer class="site-footer">
   <div class="bg-background-light w-full">
-    <div class="site-footer__panel">
-      <div class="text-left">
+    <div class="site-footer__panel max-w-[900px]">
+      <div class="md:text-left">
         <p class="eyebrow eyebrow--compact text-electric-dark text-base">Let's collaborate</p>
-        <h2 class="site-footer__headline">Partner-ready <br class="hidden md:block">web engineering support</h2>
+        <h2 class="site-footer__headline">Partner-ready <br class="block">web engineering support</h2>
       </div>
       <div class="site-footer__contact text-left">
         <a href="mailto:belinda.caylor+dev@gmail.com" class="site-footer__contact-link pl-12">

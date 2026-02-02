@@ -87,8 +87,8 @@
   </div>
 </section>
 
-<section class="py-20 surface-card section-arrow pt-36">
-  <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-3">
+<section class="py-36 surface-card section-arrow">
+  <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-3 justify-items-center">
     <div class="md:col-span-2 space-y-8">
       
       <div class="flex justify-center md:justify-start max-w-[150px]">
@@ -230,64 +230,72 @@
 </section>
 
 
-<section class="py-16 surface-section">
-  <div class="max-w-5xl mx-auto px-4">
-    <div class="mb-8 text-center">
-      <p class="eyebrow eyebrow--wide">Gallery</p>
-      <h2 class="text-3xl font-bold mt-3">Screens & flows</h2>
-    </div>
-    <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
-      @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;hope-church&quot;,&quot;title&quot;:&quot;Hope Church&quot;,&quot;url&quot;:&quot;https://hopeisreal.org/&quot;,&quot;logo&quot;:&quot;/img/logos/hope-church-logo.webp&quot;,&quot;logoHasName&quot;:false,&quot;problem&quot;:&quot;HopeIsReal needed a modern website that conveyed their mission, encouraged donations, and was easy to update internally.&quot;,&quot;solution&quot;:&quot;Designed and developed a full WordPress site with ACF blocks, custom buttons in React, and performance/accessibility optimizations.&quot;,&quot;summary&quot;:&quot;Modern WordPress rebuild with ACF blocks and React-driven CTAs so HopeIsReal can inspire donors and keep content fresh.&quot;,&quot;tools&quot;:[&quot;wordpress&quot;,&quot;acf&quot;,&quot;react&quot;,&quot;tailwindcss&quot;,&quot;accessibility&quot;,&quot;googleanalytics&quot;,&quot;gtm&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/ascentcorp1.png&quot;,&quot;/img/screenshots/ascentcorp2.png&quot;],&quot;endDate&quot;:&quot;2023-06&quot;,&quot;clientType&quot;:[&quot;business&quot;,&quot;nonprofit&quot;],&quot;scope&quot;:[&quot;full-website-build&quot;,&quot;performance-accessibility&quot;,&quot;ongoing-support&quot;],&quot;platform&quot;:[&quot;wordpress&quot;]}' tabindex="0"
-      aria-roledescription="carousel" aria-label="Hope Church screenshots"
-      class="relative w-full overflow-hidden border-panel shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
-      <template x-for="(src, i) in images" :key="i">
-        <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
-          x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
-          x-transition:leave="transition ease-in duration-500" x-transition:leave-start="translate-x-0"
-          x-transition:leave-end="-translate-x-full">
-          <template x-if="src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')">
-            <video :src="src" preload="none" poster="/img/screenshots/video-poster.png"
-              class="w-full h-full object-cover" autoplay muted loop playsinline
-              :aria-label="`${project.title} demo video`"></video>
-          </template>
-          <template x-if="!(src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm'))">
-            <img :src="src" loading="lazy" class="w-full h-full object-cover"
-              :alt="`${project.title} screenshot ${i + 1}`" />
+<section class="surface-dark-section surface-section relative section-arrow -mt-20 pb-20">
+  <div class="section-container">
+    <div class="max-w-5xl mx-auto px-4 space-y-8">
+      <div class="section-heading section-heading--tight text-white">
+        <p class="eyebrow eyebrow--wide text-electric-light">Gallery</p>
+        <h2 class="text-3xl font-bold mt-1">Screens & flows</h2>
+      </div>
+      <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
+        @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;hope-church&quot;,&quot;title&quot;:&quot;Hope Church&quot;,&quot;url&quot;:&quot;https://hopeisreal.org/&quot;,&quot;logo&quot;:&quot;/img/logos/hope-church-logo.webp&quot;,&quot;logoHasName&quot;:false,&quot;problem&quot;:&quot;HopeIsReal needed a modern website that conveyed their mission, encouraged donations, and was easy to update internally.&quot;,&quot;solution&quot;:&quot;Designed and developed a full WordPress site with ACF blocks, custom buttons in React, and performance/accessibility optimizations.&quot;,&quot;summary&quot;:&quot;Modern WordPress rebuild with ACF blocks and React-driven CTAs so HopeIsReal can inspire donors and keep content fresh.&quot;,&quot;tools&quot;:[&quot;wordpress&quot;,&quot;acf&quot;,&quot;react&quot;,&quot;tailwindcss&quot;,&quot;accessibility&quot;,&quot;googleanalytics&quot;,&quot;gtm&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/ascentcorp1.png&quot;,&quot;/img/screenshots/ascentcorp2.png&quot;],&quot;endDate&quot;:&quot;2023-06&quot;,&quot;clientType&quot;:[&quot;business&quot;,&quot;nonprofit&quot;],&quot;scope&quot;:[&quot;full-website-build&quot;,&quot;performance-accessibility&quot;,&quot;ongoing-support&quot;],&quot;platform&quot;:[&quot;wordpress&quot;]}' tabindex="0"
+        aria-roledescription="carousel" aria-label="Hope Church screenshots"
+        class="relative w-full mx-auto space-y-6">
+        <div class="relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+          <template x-for="(src, i) in images" :key="i">
+            <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
+              x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+              x-transition:leave="transition ease-in duration-500" x-transition:leave-start="translate-x-0"
+              x-transition:leave-end="-translate-x-full">
+              <template x-if="src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')">
+                <video :src="src" preload="none" poster="/img/screenshots/video-poster.png"
+                  class="w-full h-full object-cover" autoplay muted loop playsinline
+                  :aria-label="`${project.title} demo video`"></video>
+              </template>
+              <template x-if="!(src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm'))">
+                <img :src="src" loading="lazy" class="w-full h-full object-cover"
+                  :alt="`${project.title} screenshot ${i + 1}`" />
+              </template>
+            </div>
           </template>
         </div>
-      </template>
-      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        <template x-for="(src, i) in images" :key="i">
-          <button @click="current = i" class="carousel-dot" :class="{
-              'opacity-50': current !== i,
-              'opacity-100': current === i
-            }" :aria-label="`Go to slide ${i + 1}`"></button>
-        </template>
+        <div class="carousel-controls mx-auto">
+          <button type="button" class="carousel-arrow-btn" @click="prev()" aria-label="Previous screenshot">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div class="flex gap-3">
+            <template x-for="(src, i) in images" :key="i">
+              <button type="button" @click="goTo(i)" class="carousel-dot" :class="{
+                  'opacity-50': current !== i,
+                  'opacity-100': current === i
+                }" :aria-label="`Go to slide ${i + 1}`"></button>
+            </template>
+          </div>
+          <button type="button" class="carousel-arrow-btn" @click="next()" aria-label="Next screenshot">
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</section>
-
-
-<section class="py-12 surface-section">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <p class="text-lg mb-4">Interested in how this approach translates to your roadmap?</p>
+  <div class="max-w-4xl mx-auto px-4 text-center pt-20">
     <div class="flex flex-wrap gap-4 justify-center">
       <a href="/case-studies/" class="hero-cta hero-cta--secondary">Back to case studies</a>
-      <a href="/for-businesses/" class="hero-cta hero-cta--primary">Start a project</a>
     </div>
   </div>
 </section>
+
+
 
   </main>
   
 
 <footer class="site-footer">
   <div class="bg-background-light w-full">
-    <div class="site-footer__panel">
-      <div class="text-left">
+    <div class="site-footer__panel max-w-[900px]">
+      <div class="md:text-left">
         <p class="eyebrow eyebrow--compact text-electric-dark text-base">Let's collaborate</p>
-        <h2 class="site-footer__headline">Partner-ready <br class="hidden md:block">web engineering support</h2>
+        <h2 class="site-footer__headline">Partner-ready <br class="block">web engineering support</h2>
       </div>
       <div class="site-footer__contact text-left">
         <a href="mailto:belinda.caylor+dev@gmail.com" class="site-footer__contact-link pl-12">

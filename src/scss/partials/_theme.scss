@@ -46,17 +46,37 @@
     @apply tracking-tight;
   }
 
+  .section-container {
+    @apply xl:container mx-auto px-4;
+  }
+
+  .section-heading {
+    @apply max-w-3xl mx-auto text-center;
+    margin-bottom: 3rem;
+  }
+
+  .section-heading--left {
+    @apply text-left;
+  }
+
+  .section-heading--tight {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-heading--spacious {
+    margin-bottom: 3.5rem;
+  }
+
   /* Surface tokens */
   .surface-section {
     @apply bg-background-medium;
 
-    &--vertical-fade {
-      background-color: transparent;
+    &--vertical-gradient {
       background-image: linear-gradient(
         to bottom,
         rgba(220, 227, 235, 1),
-        rgba(220, 227, 235, 0.85),
-        rgba(220, 227, 235, 0.7)
+        rgba(210, 224, 244, 0.95),
+        rgba(195, 217, 247, 0.9)
       );
     }
   }
@@ -79,12 +99,22 @@
     @apply bg-background-lighter/80;
   }
 
+  .surface-dark-section,
   .surface-panel {
     position: relative;
     isolation: isolate;
     color: #f4f7ff;
-    background: linear-gradient(90deg, rgba(5, 10, 25, 0.9) 0%, rgba(8, 20, 54, 0.6) 55%, rgba(15, 58, 110, 0.5) 100%);
-    overflow: hidden;
+    background-color: #050a19;
+    background-image: linear-gradient(110deg, rgba(6, 12, 30, 0.96) 0%, rgba(9, 24, 58, 0.9) 52%, rgba(18, 56, 108, 0.82) 100%);
+    overflow: visible;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(90% 65% at 85% 12%, rgba(91, 190, 255, 0.12), rgba(91, 190, 255, 0));
+    }
 
     .text-body,
     .text-body-strong {
@@ -92,12 +122,13 @@
     }
 
     .info-card {
-      @apply pb-2;
+      --info-card-tilt: 2.75rem;
+      @apply pt-10 pb-12;
       @apply bg-white text-zinc-800 border-white/70;
       box-shadow: 0 12px 30px rgba(6, 11, 28, 0.35);
 
       .eyebrow {
-        @apply text-accent;
+        @apply text-electric-dark;
       }
 
       .text-body {
@@ -111,6 +142,11 @@
 
     .eyebrow {
       @apply text-electric-light;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      color: inherit;
     }
   }
 
@@ -142,6 +178,29 @@
     @apply w-3 h-3;
     @apply rounded-full;
     @apply bg-white;
+    @apply transition-opacity;
+  }
+
+  .carousel-controls {
+    @apply mt-6 flex items-center justify-center gap-6;
+  }
+
+  .carousel-arrow-btn {
+    @apply w-10 h-10;
+    @apply flex items-center justify-center;
+    @apply rounded-full border border-white/40;
+    @apply text-2xl font-bold text-white/80;
+    @apply transition duration-200 ease-in-out;
+    background-color: rgba(255, 255, 255, 0.08);
+
+    &:hover {
+      @apply border-white/70 text-white;
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    &:focus-visible {
+      @apply outline-none ring-2 ring-white ring-offset-0;
+    }
   }
 
   .site-nav {

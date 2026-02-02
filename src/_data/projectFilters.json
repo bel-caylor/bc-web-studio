@@ -76,6 +76,34 @@
       {
         "id": "membership-system",
         "label": "Membership System"
+      },
+      {
+        "id": "application-rebuild",
+        "label": "Application Rebuild"
+      },
+      {
+        "id": "frontend-architecture",
+        "label": "Frontend Architecture"
+      },
+      {
+        "id": "api-integration",
+        "label": "API Integration"
+      },
+      {
+        "id": "workflow-logic",
+        "label": "Workflow Logic"
+      },
+      {
+        "id": "ux-process-design",
+        "label": "UX Process Design"
+      },
+      {
+        "id": "course-platform",
+        "label": "Course Platform"
+      },
+      {
+        "id": "user-automation",
+        "label": "User Automation"
       }
     ],
     "width": "63%"

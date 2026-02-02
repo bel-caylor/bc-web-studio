@@ -42,12 +42,16 @@
     "url": "https://perc.org/",
     "logo": "/img/logos/perc-logo.svg",
     "logoHasName": false,
-    "problem": "Perc.org needed a major redesign with better content organization, modern design, and easier content filtering.",
-    "solution": "Created a full redesign with Gutenberg blocks (core + Kadence), implemented Alpine.js filtering using the WP REST API.",
-    "summary": "Reimagined Perc.org with a structured Gutenberg experience and Alpine-powered filters that make research browsing effortless.",
+    "partners": [
+      "Kestrel",
+      "Atomic Dust"
+    ],
+    "problem": "Perc.org required a large-scale redesign and migration, including thousands of research pages, improved information architecture, and a robust search and filtering experience to support active researchers.",
+    "solution": "Partnered with Kestrel and Atomic Dust on a full site redesign and migration. Built custom Gutenberg and Kadence blocks from Figma designs, migrated thousands of pages, and developed Alpine-powered filtering using the WordPress REST API to support fast, flexible research discovery.",
+    "summary": "Large-scale, agency-led WordPress redesign and migration with a custom block system and Alpine-powered search that makes deep policy research easy to explore.",
     "tools": [
-      "wordpress",
       "kadence",
+      "gutenberg",
       "alpinejs",
       "restapi",
       "php"
@@ -56,18 +60,22 @@
       "/img/screenshots/perc1.png",
       "/img/screenshots/perc2.png"
     ],
-    "endDate": "2022-12",
+    "endDate": "2023-06",
     "clientType": [
       "agency",
       "nonprofit"
     ],
     "scope": [
       "build-from-design",
-      "custom-development"
+      "full-website-build",
+      "site-redesign",
+      "content-migration",
+      "custom-development",
+      "frontend-architecture"
     ],
     "platform": [
       "wordpress",
-      "headless-api"
+      "rest-api"
     ]
   },
   {
@@ -210,7 +218,7 @@
     "logoHasName": false,
     "problem": "Lambert Airport\u2019s public site hadn\u2019t kept pace with traveler expectations: flight status, TSA, parking, and concessions data lived in disconnected systems, navigation was confusing, and the previous theme couldn\u2019t meet the stricter accessibility and multilingual requirements.",
     "solution": "Partnered with Kestrel and Dovetail to rebuild FlySTL with a WordPress theme. Wired Kadence + ACF blocks for every layout and layered Alpine.js components that talk to flight, TSA, and parking APIs. Built flight-status and search modules that hydrate from the airport feed and parking cards that query SuperParkingLot in real time. Hardened navigation with accessible mega menus, header tab panels, ReciteMe + Google Translate helpers, and skip-link/keyboard patterns. Implemented custom post types so the airport team can manage updates without engineers.",
-    "summary": "Led FlySTL\u2019s API-connected, accessible WordPress rebuild with live travel data widgets and Kadence/ACF layouts that keep passengers informed.",
+    "summary": "Led FlySTL’s API-connected, accessible WordPress rebuild in collaboration with internal and agency stakeholders, delivering live travel data widgets and Kadence/ACF layouts that keep passengers informed.",
     "tools": [
       "wordpress",
       "tailwindcss",
@@ -222,7 +230,11 @@
       "gravityforms",
       "accessibility"
     ],
-    "screenshots": null,
+    "screenshots": [
+    "/img/screenshots/flystl.mp4",
+    "/img/screenshots/flystl-flights.mp4",
+    "/img/screenshots/flystl-shop.mp4"
+  ],
     "endDate": "2025-07",
     "clientType": [
       "agency",
@@ -264,7 +276,6 @@
       "business"
     ],
     "scope": [
-      "redesign-rebuild",
       "build-from-design",
       "custom-development",
       "full-website-build"
@@ -334,10 +345,7 @@
     "scope": [
       "course-platform",
       "content-migration",
-      "layout-system",
-      "user-automation",
-      "community-features",
-      "ongoing-support"
+      "user-automation"
     ],
     "platform": [
       "wordpress",
@@ -361,7 +369,10 @@
       "javascript",
       "restapi"
     ],
-    "screenshots": null,
+    "screenshots": [
+      "/img/screenshots/TriStar-nav.mp4",
+      "/img/screenshots/TriStar-workflow.mp4"
+    ],
     "endDate": "2025-12",
     "clientType": [
       "business"

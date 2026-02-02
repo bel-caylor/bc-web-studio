@@ -100,9 +100,11 @@
     @apply bg-background-medium/80;
     @apply border border-white/40;
     @apply shadow-lg;
+    @apply max-w-[320px] w-auto;
+    @apply flex flex-col justify-center;
 
     .stack-highlight-list {
-      @apply flex flex-wrap;
+      @apply flex flex-col justify-center;
       @apply gap-3;
       @apply mt-3;
     }

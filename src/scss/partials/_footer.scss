@@ -6,7 +6,7 @@
 
     &__panel {
       @apply max-w-screen-sm md:max-w-screen-lg w-auto;
-      @apply grid lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)];
+      @apply grid md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)];
       @apply gap-10;
       @apply mx-auto;
       @apply px-4 sm:px-6 lg:px-8 py-12 lg:py-16;
@@ -27,7 +27,7 @@
     }
 
     &__contact {
-      @apply flex flex-col;
+      @apply flex flex-col items-center md:items-end;
       @apply gap-4;
 
       &-link {
