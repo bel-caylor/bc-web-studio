@@ -29,9 +29,17 @@ eleventyComputed:
         {% endfor %}
       </div>
       {% endif %}
-      {% if project.url %}
-      <a href="{{ project.url | url }}" class="hero-cta hero-cta--secondary mt-8 inline-flex" target="_blank"
-        rel="noopener">Visit live site</a>
+      {% if project.url or project.repo %}
+      <div class="mt-8 flex flex-col gap-3 items-center">
+        {% if project.url %}
+        <a href="{{ project.url | url }}" class="hero-cta hero-cta--secondary inline-flex" target="_blank"
+          rel="noopener">Visit live site</a>
+        {% endif %}
+        {% if project.repo %}
+        <a href="{{ project.repo | url }}" class="hero-cta hero-cta--secondary inline-flex" target="_blank"
+          rel="noopener">View repository</a>
+        {% endif %}
+      </div>
       {% endif %}
     </div>
   </div>
@@ -73,9 +81,15 @@ eleventyComputed:
       </div>
       {% endif %}
       {% if project.url %}
-      <div>
+      <div class="space-y-1">
         <p class="eyebrow eyebrow--compact">Website</p>
-        <a href="{{ project.url | url }}" class="link-accent break-words" target="_blank" rel="noopener">{{ project.url }}</a>
+        <a href="{{ project.url | url }}" class="link-accent break-words block" target="_blank" rel="noopener">{{ project.url }}</a>
+      </div>
+      {% endif %}
+      {% if project.repo %}
+      <div class="space-y-1 mt-4">
+        <p class="eyebrow eyebrow--compact">Repository</p>
+        <a href="{{ project.repo | url }}" class="link-accent break-words block" target="_blank" rel="noopener">{{ project.repo }}</a>
       </div>
       {% endif %}
       {% if project.tools %}
@@ -124,8 +138,8 @@ eleventyComputed:
       <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
         @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{{ project | dump }}' tabindex="0"
         aria-roledescription="carousel" aria-label="{{ project.title }} screenshots"
-        class="case-study-gallery__slider relative w-full mx-auto space-y-6">
-        <div class="case-study-gallery__frame relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+        class="case-study-gallery__slider case-study-gallery__slider--full relative w-full mx-auto space-y-6">
+        <div class="case-study-gallery__frame relative w-full overflow-hidden bg-transparent shadow-none" style="aspect-ratio: 13 / 9;">
           <template x-for="(src, i) in images" :key="i">
             <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
               x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"

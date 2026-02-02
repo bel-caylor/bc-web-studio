@@ -82,8 +82,13 @@
       </p>
       
       
-      <a href="https://www.lendesca.com/" class="hero-cta hero-cta--secondary mt-8 inline-flex" target="_blank"
-        rel="noopener">Visit live site</a>
+      <div class="mt-8 flex flex-col gap-3 items-center">
+        
+        <a href="https://www.lendesca.com/" class="hero-cta hero-cta--secondary inline-flex" target="_blank"
+          rel="noopener">Visit live site</a>
+        
+        
+      </div>
       
     </div>
   </div>
@@ -111,10 +116,11 @@
       </div>
       
       
-      <div>
+      <div class="space-y-1">
         <p class="eyebrow eyebrow--compact">Website</p>
-        <a href="https://www.lendesca.com/" class="link-accent break-words" target="_blank" rel="noopener">https://www.lendesca.com/</a>
+        <a href="https://www.lendesca.com/" class="link-accent break-words block" target="_blank" rel="noopener">https://www.lendesca.com/</a>
       </div>
+      
       
       
       <div class="mt-4">
@@ -209,8 +215,8 @@
       <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
         @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;lindeskca-site&quot;,&quot;title&quot;:&quot;Lindesca&quot;,&quot;subtitle&quot;:&quot;Custom Kadence Block Design &amp; Styling&quot;,&quot;url&quot;:&quot;https://www.lendesca.com/&quot;,&quot;logo&quot;:null,&quot;logoHasName&quot;:true,&quot;problem&quot;:&quot;Lindesca needed a modern, visually distinctive website that balanced editorial-style layouts with performance, accessibility, and easy content management in WordPress.&quot;,&quot;solution&quot;:&quot;Built a custom WordPress site using Kadence blocks with tailored styling and layout logic. Developed custom block configurations, advanced CSS styling, and a horizontally scrolling section to create a unique visual rhythm while maintaining editor-friendly content management.&quot;,&quot;summary&quot;:&quot;Designed and built a custom WordPress Kadence block site featuring bespoke block styling, editorial layouts, and a horizontally scrolling section for visual storytelling.&quot;,&quot;tools&quot;:[&quot;wordpress&quot;,&quot;kadence&quot;,&quot;css&quot;,&quot;javascript&quot;,&quot;php&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/Lendesca.mp4&quot;],&quot;endDate&quot;:&quot;2024-11&quot;,&quot;clientType&quot;:[&quot;business&quot;],&quot;scope&quot;:[&quot;custom-block-styling&quot;,&quot;frontend-development&quot;,&quot;layout-design&quot;,&quot;performance-optimization&quot;],&quot;platform&quot;:[&quot;wordpress&quot;]}' tabindex="0"
         aria-roledescription="carousel" aria-label="Lindesca screenshots"
-        class="case-study-gallery__slider relative w-full mx-auto space-y-6">
-        <div class="case-study-gallery__frame relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+        class="case-study-gallery__slider case-study-gallery__slider--full relative w-full mx-auto space-y-6">
+        <div class="case-study-gallery__frame relative w-full overflow-hidden bg-transparent shadow-none" style="aspect-ratio: 13 / 9;">
           <template x-for="(src, i) in images" :key="i">
             <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
               x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"

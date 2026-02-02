@@ -82,8 +82,16 @@
       </p>
       
       
-      <a href="https://bel-caylor.github.io/worship-plan-ts/" class="hero-cta hero-cta--secondary mt-8 inline-flex" target="_blank"
-        rel="noopener">Visit live site</a>
+      <div class="mt-8 flex flex-col gap-3 items-center">
+        
+        <a href="https://bel-caylor.github.io/worship-plan-ts/" class="hero-cta hero-cta--secondary inline-flex" target="_blank"
+          rel="noopener">Visit live site</a>
+        
+        
+        <a href="https://github.com/bel-caylor/worship-plan-ts" class="hero-cta hero-cta--secondary inline-flex" target="_blank"
+          rel="noopener">View repository</a>
+        
+      </div>
       
     </div>
   </div>
@@ -111,9 +119,15 @@
       </div>
       
       
-      <div>
+      <div class="space-y-1">
         <p class="eyebrow eyebrow--compact">Website</p>
-        <a href="https://bel-caylor.github.io/worship-plan-ts/" class="link-accent break-words" target="_blank" rel="noopener">https://bel-caylor.github.io/worship-plan-ts/</a>
+        <a href="https://bel-caylor.github.io/worship-plan-ts/" class="link-accent break-words block" target="_blank" rel="noopener">https://bel-caylor.github.io/worship-plan-ts/</a>
+      </div>
+      
+      
+      <div class="space-y-1 mt-4">
+        <p class="eyebrow eyebrow--compact">Repository</p>
+        <a href="https://github.com/bel-caylor/worship-plan-ts" class="link-accent break-words block" target="_blank" rel="noopener">https://github.com/bel-caylor/worship-plan-ts</a>
       </div>
       
       
@@ -221,10 +235,10 @@
         <h2 class="text-3xl font-bold mt-1">Screens & flows</h2>
       </div>
       <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
-        @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;worship-planning-app&quot;,&quot;title&quot;:&quot;Worship Planning&quot;,&quot;subtitle&quot;:&quot;AI-Assisted Worship &amp; Team Coordination&quot;,&quot;url&quot;:&quot;https://bel-caylor.github.io/worship-plan-ts/&quot;,&quot;logo&quot;:null,&quot;logoHasName&quot;:false,&quot;problem&quot;:&quot;A growing church needed a better way to plan worship services by connecting scripture, themes, song selection, and volunteer scheduling—while coordinating communication across a rotating team.&quot;,&quot;solution&quot;:&quot;Designed and built a nonprofit-focused web application that integrates Google Spreadsheets and Google Documents with AI-powered logic. The app analyzes scripture text to determine service themes, selects appropriate worship songs from an existing Google Docs song database, manages team scheduling with exclusion dates, and provides built-in email communication for upcoming services.&quot;,&quot;summary&quot;:&quot;Built an AI-assisted worship planning app that connects scripture-based theme analysis, intelligent song selection, team scheduling, and email communication using Google Workspace tools.&quot;,&quot;tools&quot;:[&quot;google-sheets&quot;,&quot;google-docs&quot;,&quot;ai-integration&quot;,&quot;restapi&quot;,&quot;javascript&quot;,&quot;alpinejs&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/WorshipPlanning1.mp4&quot;,&quot;/img/screenshots/WorshipPlanning2.mp4&quot;],&quot;endDate&quot;:&quot;2026-02&quot;,&quot;clientType&quot;:[&quot;business&quot;,&quot;nonprofit&quot;],&quot;scope&quot;:[&quot;application-design&quot;,&quot;ai-assisted-workflows&quot;,&quot;data-integration&quot;,&quot;team-scheduling&quot;,&quot;email-automation&quot;],&quot;platform&quot;:[&quot;web-app&quot;]}' tabindex="0"
+        @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;worship-planning-app&quot;,&quot;title&quot;:&quot;Worship Planning&quot;,&quot;subtitle&quot;:&quot;AI-Assisted Worship &amp; Team Coordination&quot;,&quot;url&quot;:&quot;https://bel-caylor.github.io/worship-plan-ts/&quot;,&quot;repo&quot;:&quot;https://github.com/bel-caylor/worship-plan-ts&quot;,&quot;logo&quot;:null,&quot;logoHasName&quot;:false,&quot;problem&quot;:&quot;A growing church needed a better way to plan worship services by connecting scripture, themes, song selection, and volunteer scheduling—while coordinating communication across a rotating team.&quot;,&quot;solution&quot;:&quot;Designed and built a nonprofit-focused web application that integrates Google Spreadsheets and Google Documents with AI-powered logic. The app analyzes scripture text to determine service themes, selects appropriate worship songs from an existing Google Docs song database, manages team scheduling with exclusion dates, and provides built-in email communication for upcoming services.&quot;,&quot;summary&quot;:&quot;Built an AI-assisted worship planning app that connects scripture-based theme analysis, intelligent song selection, team scheduling, and email communication using Google Workspace tools.&quot;,&quot;tools&quot;:[&quot;google-sheets&quot;,&quot;google-docs&quot;,&quot;ai-integration&quot;,&quot;restapi&quot;,&quot;javascript&quot;,&quot;alpinejs&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/WorshipPlanning1.mp4&quot;,&quot;/img/screenshots/WorshipPlanning2.mp4&quot;],&quot;endDate&quot;:&quot;2026-02&quot;,&quot;clientType&quot;:[&quot;business&quot;,&quot;nonprofit&quot;],&quot;scope&quot;:[&quot;application-design&quot;,&quot;ai-assisted-workflows&quot;,&quot;data-integration&quot;,&quot;team-scheduling&quot;,&quot;email-automation&quot;],&quot;platform&quot;:[&quot;web-app&quot;]}' tabindex="0"
         aria-roledescription="carousel" aria-label="Worship Planning screenshots"
-        class="case-study-gallery__slider relative w-full mx-auto space-y-6">
-        <div class="case-study-gallery__frame relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+        class="case-study-gallery__slider case-study-gallery__slider--full relative w-full mx-auto space-y-6">
+        <div class="case-study-gallery__frame relative w-full overflow-hidden bg-transparent shadow-none" style="aspect-ratio: 13 / 9;">
           <template x-for="(src, i) in images" :key="i">
             <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
               x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"

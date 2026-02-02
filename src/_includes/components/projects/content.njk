@@ -96,6 +96,15 @@
                 >
                     Visit project
                 </a>
+                <a
+                    x-show="project.repo"
+                    :href="project.repo"
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-block mt-2 ml-4 link-accent"
+                >
+                    View repository
+                </a>
             </div>
 
             {% include "components/projects/tools.njk" %}

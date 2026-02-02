@@ -80,8 +80,13 @@
       </p>
       
       
-      <a href="https://hopeisreal.org/" class="hero-cta hero-cta--secondary mt-8 inline-flex" target="_blank"
-        rel="noopener">Visit live site</a>
+      <div class="mt-8 flex flex-col gap-3 items-center">
+        
+        <a href="https://hopeisreal.org/" class="hero-cta hero-cta--secondary inline-flex" target="_blank"
+          rel="noopener">Visit live site</a>
+        
+        
+      </div>
       
     </div>
   </div>
@@ -114,10 +119,11 @@
       </div>
       
       
-      <div>
+      <div class="space-y-1">
         <p class="eyebrow eyebrow--compact">Website</p>
-        <a href="https://hopeisreal.org/" class="link-accent break-words" target="_blank" rel="noopener">https://hopeisreal.org/</a>
+        <a href="https://hopeisreal.org/" class="link-accent break-words block" target="_blank" rel="noopener">https://hopeisreal.org/</a>
       </div>
+      
       
       
       <div class="mt-4">
@@ -240,8 +246,8 @@
       <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
         @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;hope-church&quot;,&quot;title&quot;:&quot;Hope Church&quot;,&quot;url&quot;:&quot;https://hopeisreal.org/&quot;,&quot;logo&quot;:&quot;/img/logos/hope-church-logo.webp&quot;,&quot;logoHasName&quot;:false,&quot;problem&quot;:&quot;HopeIsReal needed a modern website that conveyed their mission, encouraged donations, and was easy to update internally.&quot;,&quot;solution&quot;:&quot;Designed and developed a full WordPress site with ACF blocks, custom buttons in React, and performance/accessibility optimizations.&quot;,&quot;summary&quot;:&quot;Modern WordPress rebuild with ACF blocks and React-driven CTAs so HopeIsReal can inspire donors and keep content fresh.&quot;,&quot;tools&quot;:[&quot;wordpress&quot;,&quot;acf&quot;,&quot;react&quot;,&quot;tailwindcss&quot;,&quot;accessibility&quot;,&quot;googleanalytics&quot;,&quot;gtm&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/ascentcorp1.png&quot;,&quot;/img/screenshots/ascentcorp2.png&quot;],&quot;endDate&quot;:&quot;2023-06&quot;,&quot;clientType&quot;:[&quot;business&quot;,&quot;nonprofit&quot;],&quot;scope&quot;:[&quot;full-website-build&quot;,&quot;performance-accessibility&quot;,&quot;ongoing-support&quot;],&quot;platform&quot;:[&quot;wordpress&quot;]}' tabindex="0"
         aria-roledescription="carousel" aria-label="Hope Church screenshots"
-        class="case-study-gallery__slider relative w-full mx-auto space-y-6">
-        <div class="case-study-gallery__frame relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+        class="case-study-gallery__slider case-study-gallery__slider--full relative w-full mx-auto space-y-6">
+        <div class="case-study-gallery__frame relative w-full overflow-hidden bg-transparent shadow-none" style="aspect-ratio: 13 / 9;">
           <template x-for="(src, i) in images" :key="i">
             <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
               x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"

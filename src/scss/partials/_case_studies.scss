@@ -144,17 +144,22 @@
       @apply relative w-full mx-auto space-y-6;
     }
 
-    &__frame {
-      @apply relative w-full;
+    &__slider--full {
+      @apply max-w-none;
     }
 
     @media (max-width: 767px) {
-      &__frame {
+      &__slider--full &__frame {
+        width: 100vw;
+        max-width: 100vw;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
-        width: 100vw;
         border-radius: 0;
       }
+    }
+
+    &__frame {
+      @apply relative w-full;
     }
   }
 }

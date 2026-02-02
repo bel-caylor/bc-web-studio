@@ -82,8 +82,13 @@
       </p>
       
       
-      <a href="https://www.flystl.com/" class="hero-cta hero-cta--secondary mt-8 inline-flex" target="_blank"
-        rel="noopener">Visit live site</a>
+      <div class="mt-8 flex flex-col gap-3 items-center">
+        
+        <a href="https://www.flystl.com/" class="hero-cta hero-cta--secondary inline-flex" target="_blank"
+          rel="noopener">Visit live site</a>
+        
+        
+      </div>
       
     </div>
   </div>
@@ -116,10 +121,11 @@
       </div>
       
       
-      <div>
+      <div class="space-y-1">
         <p class="eyebrow eyebrow--compact">Website</p>
-        <a href="https://www.flystl.com/" class="link-accent break-words" target="_blank" rel="noopener">https://www.flystl.com/</a>
+        <a href="https://www.flystl.com/" class="link-accent break-words block" target="_blank" rel="noopener">https://www.flystl.com/</a>
       </div>
+      
       
       
       <div class="mt-4">
@@ -270,8 +276,8 @@
       <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
         @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;flystl&quot;,&quot;title&quot;:&quot;St. Louis Lambert&quot;,&quot;subtitle&quot;:&quot;International Airport&quot;,&quot;url&quot;:&quot;https://www.flystl.com/&quot;,&quot;logo&quot;:&quot;/img/logos/stl-logo.webp&quot;,&quot;logoHasName&quot;:false,&quot;problem&quot;:&quot;Lambert Airport’s public site hadn’t kept pace with traveler expectations: flight status, TSA, parking, and concessions data lived in disconnected systems, navigation was confusing, and the previous theme couldn’t meet the stricter accessibility and multilingual requirements.&quot;,&quot;solution&quot;:&quot;Partnered with Kestrel and Dovetail to rebuild FlySTL with a WordPress theme. Wired Kadence + ACF blocks for every layout and layered Alpine.js components that talk to flight, TSA, and parking APIs. Built flight-status and search modules that hydrate from the airport feed and parking cards that query SuperParkingLot in real time. Hardened navigation with accessible mega menus, header tab panels, ReciteMe + Google Translate helpers, and skip-link/keyboard patterns. Implemented custom post types so the airport team can manage updates without engineers.&quot;,&quot;summary&quot;:&quot;Led FlySTL’s API-connected, accessible WordPress rebuild in collaboration with internal and agency stakeholders, delivering live travel data widgets and Kadence/ACF layouts that keep passengers informed.&quot;,&quot;tools&quot;:[&quot;wordpress&quot;,&quot;tailwindcss&quot;,&quot;acf&quot;,&quot;kadence&quot;,&quot;alpinejs&quot;,&quot;restapi&quot;,&quot;php&quot;,&quot;gravityforms&quot;,&quot;accessibility&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/flystl.mp4&quot;,&quot;/img/screenshots/flystl-flights.mp4&quot;,&quot;/img/screenshots/flystl-shop.mp4&quot;],&quot;endDate&quot;:&quot;2025-07&quot;,&quot;clientType&quot;:[&quot;agency&quot;,&quot;business&quot;],&quot;scope&quot;:[&quot;full-website-build&quot;,&quot;custom-development&quot;,&quot;data-integrations&quot;,&quot;content-migration&quot;,&quot;performance-accessibility&quot;],&quot;platform&quot;:[&quot;wordpress&quot;]}' tabindex="0"
         aria-roledescription="carousel" aria-label="St. Louis Lambert screenshots"
-        class="case-study-gallery__slider relative w-full mx-auto space-y-6">
-        <div class="case-study-gallery__frame relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+        class="case-study-gallery__slider case-study-gallery__slider--full relative w-full mx-auto space-y-6">
+        <div class="case-study-gallery__frame relative w-full overflow-hidden bg-transparent shadow-none" style="aspect-ratio: 13 / 9;">
           <template x-for="(src, i) in images" :key="i">
             <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
               x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
