@@ -189,6 +189,13 @@
     "url": "https://openai.com/blog/openai-codex"
   },
   {
+    "id": "ai-integration",
+    "name": "AI Integration",
+    "category": "AI & Automation",
+    "icon": "https://cdn.simpleicons.org/openai/000000",
+    "url": "https://openai.com/"
+  },
+  {
     "id": "figma",
     "name": "Figma",
     "category": "Design & UX Tools",
@@ -215,5 +222,19 @@
     "category": "WordPress Plugins",
     "icon": "https://cdn.simpleicons.org/zapier/FF4A00",
     "url": "https://zapier.com/"
+  },
+  {
+    "id": "google-docs",
+    "name": "Google Docs",
+    "category": "Productivity & Docs",
+    "icon": "https://www.gstatic.com/images/branding/product/1x/docs_2020q4_48dp.png",
+    "url": "https://www.google.com/docs/about/"
+  },
+  {
+    "id": "google-sheets",
+    "name": "Google Sheets",
+    "category": "Productivity & Docs",
+    "icon": "https://www.gstatic.com/images/branding/product/1x/sheets_2020q4_48dp.png",
+    "url": "https://www.google.com/sheets/about/"
   }
 ]

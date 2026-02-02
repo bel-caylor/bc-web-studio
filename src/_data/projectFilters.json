@@ -98,6 +98,26 @@
         "label": "UX Process Design"
       },
       {
+        "id": "application-design",
+        "label": "Application Design"
+      },
+      {
+        "id": "ai-assisted-workflows",
+        "label": "AI-Assisted Workflows"
+      },
+      {
+        "id": "data-integration",
+        "label": "Data Integration"
+      },
+      {
+        "id": "team-scheduling",
+        "label": "Team Scheduling"
+      },
+      {
+        "id": "email-automation",
+        "label": "Email Automation"
+      },
+      {
         "id": "course-platform",
         "label": "Course Platform"
       },

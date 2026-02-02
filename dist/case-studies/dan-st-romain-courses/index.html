@@ -112,7 +112,7 @@
     <div class="case-study-sidebar">
       <div>
         <p class="eyebrow eyebrow--compact">Completed</p>
-        <p class="text-2xl font-semibold">December 2024</p>
+        <p class="text-2xl font-semibold">April 2025</p>
       </div>
       
       
@@ -217,6 +217,61 @@
   </div>
 </section>
 
+
+<section class="surface-dark-section surface-section relative section-arrow -mt-20 pb-20">
+  <div class="section-container">
+    <div class="max-w-5xl mx-auto px-4 space-y-8">
+      <div class="section-heading section-heading--tight text-white">
+        <p class="eyebrow eyebrow--wide text-electric-light">Gallery</p>
+        <h2 class="text-3xl font-bold mt-1">Screens & flows</h2>
+      </div>
+      <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
+        @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;dan-st-romain-courses&quot;,&quot;title&quot;:&quot;Dan St. Romain&quot;,&quot;subtitle&quot;:&quot;LearnDash Courses&quot;,&quot;url&quot;:&quot;https://danstromain.com/courses/&quot;,&quot;logo&quot;:&quot;/img/logos/logo-Dan.png&quot;,&quot;logoHasName&quot;:true,&quot;problem&quot;:&quot;Dan St. Romain needed a scalable course platform to deliver digital education, migrate existing content into a modern layout, and enforce structured learning progress with assessments and gated content.&quot;,&quot;solution&quot;:&quot;Built and migrated courses using LearnDash, transitioned layouts into a Kadence-based design system, automated user registrations with a custom plugin workflow, and implemented BuddyPress for student communication. Added custom PHP and JavaScript logic for learner note-taking, quiz enforcement, and conditional access rules that lock or hide topics until required quizzes are passed.&quot;,&quot;summary&quot;:&quot;Custom LearnDash course platform with Kadence layouts, automated enrollment, gated learning progression, learner note-taking, and BuddyPress-powered community features.&quot;,&quot;tools&quot;:[&quot;wordpress&quot;,&quot;learndash&quot;,&quot;kadence&quot;,&quot;php&quot;,&quot;buddypress&quot;,&quot;automation&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/DanCourses1.mp4&quot;],&quot;endDate&quot;:&quot;2025-05&quot;,&quot;clientType&quot;:[&quot;business&quot;],&quot;scope&quot;:[&quot;course-platform&quot;,&quot;content-migration&quot;,&quot;user-automation&quot;],&quot;platform&quot;:[&quot;wordpress&quot;,&quot;learndash&quot;]}' tabindex="0"
+        aria-roledescription="carousel" aria-label="Dan St. Romain screenshots"
+        class="case-study-gallery__slider relative w-full mx-auto space-y-6">
+        <div class="case-study-gallery__frame relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+          <template x-for="(src, i) in images" :key="i">
+            <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
+              x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+              x-transition:leave="transition ease-in duration-500" x-transition:leave-start="translate-x-0"
+              x-transition:leave-end="-translate-x-full">
+              <template x-if="src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')">
+                <video :src="src" preload="none" poster="/img/screenshots/video-poster.png"
+                  class="w-full h-full object-cover" autoplay muted loop playsinline
+                  :aria-label="`${project.title} demo video`"></video>
+              </template>
+              <template x-if="!(src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm'))">
+                <img :src="src" loading="lazy" class="w-full h-full object-cover"
+                  :alt="`${project.title} screenshot ${i + 1}`" />
+              </template>
+            </div>
+          </template>
+        </div>
+        <div class="carousel-controls mx-auto">
+          <button type="button" class="carousel-arrow-btn" @click="prev()" aria-label="Previous screenshot">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div class="flex gap-3">
+            <template x-for="(src, i) in images" :key="i">
+              <button type="button" @click="goTo(i)" class="carousel-dot" :class="{
+                  'opacity-50': current !== i,
+                  'opacity-100': current === i
+                }" :aria-label="`Go to slide ${i + 1}`"></button>
+            </template>
+          </div>
+          <button type="button" class="carousel-arrow-btn" @click="next()" aria-label="Next screenshot">
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-4xl mx-auto px-4 text-center pt-20">
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="/case-studies/" class="hero-cta hero-cta--secondary">Back to case studies</a>
+    </div>
+  </div>
+</section>
 
 
 

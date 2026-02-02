@@ -231,10 +231,10 @@
       "accessibility"
     ],
     "screenshots": [
-    "/img/screenshots/flystl.mp4",
-    "/img/screenshots/flystl-flights.mp4",
-    "/img/screenshots/flystl-shop.mp4"
-  ],
+      "/img/screenshots/flystl.mp4",
+      "/img/screenshots/flystl-flights.mp4",
+      "/img/screenshots/flystl-shop.mp4"
+    ],
     "endDate": "2025-07",
     "clientType": [
       "agency",
@@ -303,7 +303,7 @@
       "digital-memberships"
     ],
     "screenshots": null,
-    "endDate": "2025-06",
+    "endDate": "2024-08",
     "clientType": [
       "business"
     ],
@@ -337,8 +337,10 @@
       "buddypress",
       "automation"
     ],
-    "screenshots": null,
-    "endDate": "2025-01",
+    "screenshots": [
+      "/img/screenshots/DanCourses1.mp4"
+    ],
+    "endDate": "2025-05",
     "clientType": [
       "business"
     ],
@@ -386,6 +388,78 @@
     ],
     "platform": [
       "eleventy"
+    ]
+  },
+  {
+    "slug": "worship-planning-app",
+    "title": "Worship Planning",
+    "subtitle": "AI-Assisted Worship & Team Coordination",
+    "url": "https://bel-caylor.github.io/worship-plan-ts/",
+    "logo": null,
+    "logoHasName": false,
+    "problem": "A growing church needed a better way to plan worship services by connecting scripture, themes, song selection, and volunteer scheduling—while coordinating communication across a rotating team.",
+    "solution": "Designed and built a nonprofit-focused web application that integrates Google Spreadsheets and Google Documents with AI-powered logic. The app analyzes scripture text to determine service themes, selects appropriate worship songs from an existing Google Docs song database, manages team scheduling with exclusion dates, and provides built-in email communication for upcoming services.",
+    "summary": "Built an AI-assisted worship planning app that connects scripture-based theme analysis, intelligent song selection, team scheduling, and email communication using Google Workspace tools.",
+    "tools": [
+      "google-sheets",
+      "google-docs",
+      "ai-integration",
+      "restapi",
+      "javascript",
+      "alpinejs"
+    ],
+    "screenshots": [
+      "/img/screenshots/WorshipPlanning1.mp4",
+      "/img/screenshots/WorshipPlanning2.mp4"
+    ],
+    "endDate": "2026-02",
+    "clientType": [
+      "business",
+      "nonprofit"
+    ],
+    "scope": [
+      "application-design",
+      "ai-assisted-workflows",
+      "data-integration",
+      "team-scheduling",
+      "email-automation"
+    ],
+    "platform": [
+      "web-app"
+    ]
+  },
+  {
+    "slug": "lindeskca-site",
+    "title": "Lindesca",
+    "subtitle": "Custom Kadence Block Design & Styling",
+    "url": "https://www.lendesca.com/",
+    "logo": null,
+    "logoHasName": true,
+    "problem": "Lindesca needed a modern, visually distinctive website that balanced editorial-style layouts with performance, accessibility, and easy content management in WordPress.",
+    "solution": "Built a custom WordPress site using Kadence blocks with tailored styling and layout logic. Developed custom block configurations, advanced CSS styling, and a horizontally scrolling section to create a unique visual rhythm while maintaining editor-friendly content management.",
+    "summary": "Designed and built a custom WordPress Kadence block site featuring bespoke block styling, editorial layouts, and a horizontally scrolling section for visual storytelling.",
+    "tools": [
+      "wordpress",
+      "kadence",
+      "css",
+      "javascript",
+      "php"
+    ],
+    "screenshots": [
+      "/img/screenshots/Lendesca.mp4"
+    ],
+    "endDate": "2024-11",
+    "clientType": [
+      "business"
+    ],
+    "scope": [
+      "custom-block-styling",
+      "frontend-development",
+      "layout-design",
+      "performance-optimization"
+    ],
+    "platform": [
+      "wordpress"
     ]
   }
 ]

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lindeska Case Study</title>
+  <link rel="icon" type="image/svg+xml" href="/img/logos/favicon.svg">
+  <link href="/style.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex flex-col">
+  
+<header class="" x-data="{ mobileNavOpen: false }">
+  <div class="p-4">
+    <nav class="site-nav max-w-5xl mx-auto flex justify-between items-center gap-4">
+      <a href="/" class="font-bold text-xl"><span class="text-accent !font-mono">&lt;</span>BC<span class="text-accent">&gt;</span> <span class="font-heading">Web Studio</span></a>
+      <div class="hidden md:flex flex-wrap gap-4 text-base md:text-lg font-heading font-semibold tracking-wide">
+        
+        <a href="/for-agencies/" class="hover:underline text-accent-light">For Agencies</a>
+        
+        <a href="/for-businesses/" class="hover:underline text-accent-light">For Businesses</a>
+        
+        <a href="/case-studies/" class="hover:underline text-accent-light">Case Studies</a>
+        
+        <a href="/about/" class="hover:underline text-accent-light">About</a>
+        
+      </div>
+      <div class="md:hidden relative flex-1 flex justify-end">
+        <button class="filter-toggle max-w-[220px]" type="button" @click="mobileNavOpen = !mobileNavOpen"
+          :aria-expanded="mobileNavOpen ? 'true' : 'false'" aria-controls="mobile-nav-panel">
+          <div class="filter-toggle__labels">
+            <p class="sr-only eyebrow eyebrow--compact">Menu</p>
+            <p class="sr-only filter-toggle__summary" x-text="mobileNavOpen ? 'Close navigation' : 'Open navigation'"></p>
+          </div>
+          <div class="filter-toggle__meta">
+            <span class="filter-toggle__icon" :class="{ 'filter-toggle__icon--open': mobileNavOpen }">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </div>
+        </button>
+        <div id="mobile-nav-panel" class="projects-filter-dropdown mobile-nav-dropdown w-auto" x-show="mobileNavOpen"
+          x-transition:enter="ease-out duration-200" x-transition:enter-start="-translate-x-4 opacity-0"
+          x-transition:enter-end="translate-x-0 opacity-100" x-transition:leave="ease-in duration-150"
+          x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="-translate-x-4 opacity-0"
+          x-cloak @keydown.escape.window="mobileNavOpen = false" @click.outside="mobileNavOpen = false">
+          <div class="projects-filter-dropdown__panel space-y-6">
+            <div class="flex flex-col gap-2">
+              
+              <a href="/for-agencies/" class="filter-chip text-xl font-semibold text-white" @click="mobileNavOpen = false">For Agencies</a>
+              
+              <a href="/for-businesses/" class="filter-chip text-xl font-semibold text-white" @click="mobileNavOpen = false">For Businesses</a>
+              
+              <a href="/case-studies/" class="filter-chip text-xl font-semibold text-white" @click="mobileNavOpen = false">Case Studies</a>
+              
+              <a href="/about/" class="filter-chip text-xl font-semibold text-white" @click="mobileNavOpen = false">About</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <main class="flex-grow">
+    
+<section class="hero-bg pt-20 pb-24">
+  <div
+    class="max-w-5xl mx-auto px-4 flex flex-col items-center gap-10 text-center md:flex-row md:items-center md:text-center">
+    <div class="flex-1 max-w-3xl mx-auto">
+      <p class="eyebrow eyebrow--wide">Case Study</p>
+      <h1 class="mt-4 mb-6">Lindeska</h1>
+      
+      <p class="project-subtitle project-hero__subtitle">Custom Kadence Block Design &amp; Styling</p>
+      
+      <p>
+        Designed and built a custom WordPress Kadence block site featuring bespoke block styling, editorial layouts, and a horizontally scrolling section for visual storytelling.
+      </p>
+      
+      
+      <a href="https://www.lendesca.com/" class="hero-cta hero-cta--secondary mt-8 inline-flex" target="_blank"
+        rel="noopener">Visit live site</a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="py-36 surface-card section-arrow">
+  <div class="max-w-5xl mx-auto px-4 grid gap-10 md:grid-cols-3 justify-items-center">
+    <div class="md:col-span-2 space-y-8">
+      
+      <div>
+        <p class="eyebrow eyebrow--compact">Challenge</p>
+        <h2 class="text-3xl font-bold mt-4 mb-3">What they needed</h2>
+        <p class="text-lg text-body-strong">Lindeska needed a modern, visually distinctive website that balanced editorial-style layouts with performance, accessibility, and easy content management in WordPress.</p>
+      </div>
+      <div>
+        <p class="eyebrow eyebrow--compact">Approach</p>
+        <h2 class="text-3xl font-bold mt-4 mb-3">How we solved it</h2>
+        <p class="text-lg text-body-strong">Built a custom WordPress site using Kadence blocks with tailored styling and layout logic. Developed custom block configurations, advanced CSS styling, and a horizontally scrolling section to create a unique visual rhythm while maintaining editor-friendly content management.</p>
+      </div>
+    </div>
+    <div class="case-study-sidebar">
+      <div>
+        <p class="eyebrow eyebrow--compact">Completed</p>
+        <p class="text-2xl font-semibold">October 2024</p>
+      </div>
+      
+      
+      <div>
+        <p class="eyebrow eyebrow--compact">Website</p>
+        <a href="https://www.lendesca.com/" class="link-accent break-words" target="_blank" rel="noopener">https://www.lendesca.com/</a>
+      </div>
+      
+      
+      <div class="mt-4">
+        <p class="eyebrow eyebrow--compact">Stack highlights</p>
+        <ul class="stack-highlight-list">
+          
+          
+          
+          <li class="stack-highlight-item">
+            
+            <a href="https://wordpress.org/" class="stack-highlight-link" target="_blank" rel="noopener">
+              
+              <img src="https://s0.wp.com/i/favicon.ico" alt="WordPress icon" class="w-5 h-5" loading="lazy">
+              
+              <span>WordPress</span>
+            </a>
+            
+          </li>
+          
+          
+          
+          
+          <li class="stack-highlight-item">
+            
+            <a href="https://www.kadencewp.com/" class="stack-highlight-link" target="_blank" rel="noopener">
+              
+              <img src="https://www.kadencewp.com/wp-content/uploads/2023/11/kadencewp-icon.png" alt="Kadence icon" class="w-5 h-5" loading="lazy">
+              
+              <span>Kadence</span>
+            </a>
+            
+          </li>
+          
+          
+          
+          
+          <li class="stack-highlight-item">
+            
+            <a href="https://developer.mozilla.org/docs/Web/CSS" class="stack-highlight-link" target="_blank" rel="noopener">
+              
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 icon" class="w-5 h-5" loading="lazy">
+              
+              <span>CSS3</span>
+            </a>
+            
+          </li>
+          
+          
+          
+          
+          <li class="stack-highlight-item">
+            
+            <a href="https://developer.mozilla.org/docs/Web/JavaScript" class="stack-highlight-link" target="_blank" rel="noopener">
+              
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript icon" class="w-5 h-5" loading="lazy">
+              
+              <span>JavaScript</span>
+            </a>
+            
+          </li>
+          
+          
+          
+          
+          <li class="stack-highlight-item">
+            
+            <a href="https://www.php.net/" class="stack-highlight-link" target="_blank" rel="noopener">
+              
+              <img src="https://www.php.net/favicon.ico" alt="PHP icon" class="w-5 h-5" loading="lazy">
+              
+              <span>PHP</span>
+            </a>
+            
+          </li>
+          
+          
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="surface-dark-section surface-section relative section-arrow -mt-20 pb-20">
+  <div class="section-container">
+    <div class="max-w-5xl mx-auto px-4 space-y-8">
+      <div class="section-heading section-heading--tight text-white">
+        <p class="eyebrow eyebrow--wide text-electric-light">Gallery</p>
+        <h2 class="text-3xl font-bold mt-1">Screens & flows</h2>
+      </div>
+      <div x-data="projectCarousel(JSON.parse($el.dataset.project))" x-init="init()" @mouseenter="stop()"
+        @mouseleave="start()" @focusin="stop()" @focusout="start()" data-project='{&quot;slug&quot;:&quot;lindeska-site&quot;,&quot;title&quot;:&quot;Lindeska&quot;,&quot;subtitle&quot;:&quot;Custom Kadence Block Design &amp; Styling&quot;,&quot;url&quot;:&quot;https://www.lendesca.com/&quot;,&quot;logo&quot;:null,&quot;logoHasName&quot;:true,&quot;problem&quot;:&quot;Lindeska needed a modern, visually distinctive website that balanced editorial-style layouts with performance, accessibility, and easy content management in WordPress.&quot;,&quot;solution&quot;:&quot;Built a custom WordPress site using Kadence blocks with tailored styling and layout logic. Developed custom block configurations, advanced CSS styling, and a horizontally scrolling section to create a unique visual rhythm while maintaining editor-friendly content management.&quot;,&quot;summary&quot;:&quot;Designed and built a custom WordPress Kadence block site featuring bespoke block styling, editorial layouts, and a horizontally scrolling section for visual storytelling.&quot;,&quot;tools&quot;:[&quot;wordpress&quot;,&quot;kadence&quot;,&quot;css&quot;,&quot;javascript&quot;,&quot;php&quot;],&quot;screenshots&quot;:[&quot;/img/screenshots/Lendesca.mp4&quot;],&quot;endDate&quot;:&quot;2024-11&quot;,&quot;clientType&quot;:[&quot;business&quot;],&quot;scope&quot;:[&quot;custom-block-styling&quot;,&quot;frontend-development&quot;,&quot;layout-design&quot;,&quot;performance-optimization&quot;],&quot;platform&quot;:[&quot;wordpress&quot;]}' tabindex="0"
+        aria-roledescription="carousel" aria-label="Lindeska screenshots"
+        class="case-study-gallery__slider relative w-full mx-auto space-y-6">
+        <div class="case-study-gallery__frame relative w-full overflow-hidden border border-white/20 shadow-xl rounded-3xl" style="aspect-ratio: 13 / 9;">
+          <template x-for="(src, i) in images" :key="i">
+            <div x-show="current === i" class="absolute inset-0" x-transition:enter="transition ease-out duration-500"
+              x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+              x-transition:leave="transition ease-in duration-500" x-transition:leave-start="translate-x-0"
+              x-transition:leave-end="-translate-x-full">
+              <template x-if="src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm')">
+                <video :src="src" preload="none" poster="/img/screenshots/video-poster.png"
+                  class="w-full h-full object-cover" autoplay muted loop playsinline
+                  :aria-label="`${project.title} demo video`"></video>
+              </template>
+              <template x-if="!(src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm'))">
+                <img :src="src" loading="lazy" class="w-full h-full object-cover"
+                  :alt="`${project.title} screenshot ${i + 1}`" />
+              </template>
+            </div>
+          </template>
+        </div>
+        <div class="carousel-controls mx-auto">
+          <button type="button" class="carousel-arrow-btn" @click="prev()" aria-label="Previous screenshot">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div class="flex gap-3">
+            <template x-for="(src, i) in images" :key="i">
+              <button type="button" @click="goTo(i)" class="carousel-dot" :class="{
+                  'opacity-50': current !== i,
+                  'opacity-100': current === i
+                }" :aria-label="`Go to slide ${i + 1}`"></button>
+            </template>
+          </div>
+          <button type="button" class="carousel-arrow-btn" @click="next()" aria-label="Next screenshot">
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-4xl mx-auto px-4 text-center pt-20">
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="/case-studies/" class="hero-cta hero-cta--secondary">Back to case studies</a>
+    </div>
+  </div>
+</section>
+
+
+
+  </main>
+  
+
+<footer class="site-footer">
+  <div class="bg-background-light w-full">
+    <div class="site-footer__panel max-w-[900px]">
+      <div class="md:text-left">
+        <p class="eyebrow eyebrow--compact text-electric-dark text-base">Let's collaborate</p>
+        <h2 class="site-footer__headline">Partner-ready <br class="block">web engineering support</h2>
+      </div>
+      <div class="site-footer__contact text-left">
+        <a href="mailto:belinda.caylor+dev@gmail.com" class="site-footer__contact-link pl-12">
+          <div>
+            <span class="eyebrow eyebrow--compact text-electric-dark text-base">Mail To</span>
+            <p class="site-footer__link-description text-base">
+              Have a project in mind? <br class="hidden md:block">Email anytime.
+            </p>
+            <span href="mailto:belinda.caylor+dev@gmail.com"
+              class="inline-flex items-center mt-6 font-heading info-card__cta text-brand-medium">
+              Email Belinda →
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer__meta">
+    <div class="site-footer__meta-content">
+      <nav class="site-footer__meta-nav" aria-label="Footer navigation">
+        <ul class="site-footer__meta-links">
+          
+          <li><a href="/for-agencies/" class="text-accent-light">For Agencies</a></li>
+          
+          <li><a href="/for-businesses/" class="text-accent-light">For Businesses</a></li>
+          
+          <li><a href="/case-studies/" class="text-accent-light">Case Studies</a></li>
+          
+          <li><a href="/about/" class="text-accent-light">About</a></li>
+          
+        </ul>
+      </nav>
+      <div class="site-footer__brand text-center">
+        <p class="site-footer__brand-mark"><span class="text-accent font-mono">&lt;</span>BC<span
+        class="text-accent font-mono">&gt;</span> Web Studio</p>
+<div class="site-footer__brand-links" aria-label="Social profiles">
+    <a href="https://www.linkedin.com/in/belinda-caylor/" target="_blank" rel="noreferrer noopener">
+        <img src="/img/logos/linkedin-favicon.svg" alt="LinkedIn" width="24" height="24" loading="lazy">
+    </a>
+    <a href="https://github.com/bel-caylor" target="_blank" rel="noreferrer noopener">
+        <img src="/img/logos/github-favicon.svg" alt="GitHub" width="24" height="24" loading="lazy">
+    </a>
+</div>
+
+      </div>
+      <div class="site-footer__meta-copy text-center">
+        <p class="site-footer__brand-subtext !mb-0">Built with care and accessibility in mind.</p>
+        <p class="site-footer__copyright text-xs">
+          &copy; 2026 BC Web Studio.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    window.__SITE_BASE = "/";
+  </script>
+  <script src="/js/main.js"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+</body>
+
+</html>
