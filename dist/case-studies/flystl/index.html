@@ -7,15 +7,6 @@
   <title>St. Louis Lambert Case Study</title>
   <link rel="icon" type="image/svg+xml" href="/img/logos/favicon.svg">
   <link href="/style.css" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GXWM0Q8N2S"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-GXWM0Q8N2S');
-  </script>
 </head>
 
 <body class="min-h-screen flex flex-col">
@@ -400,8 +391,75 @@
   <script>
     window.__SITE_BASE = "/";
   </script>
+  <div id="consent-banner" class="fixed bottom-4 left-4 right-4 z-50 hidden max-w-3xl rounded-2xl border border-slate-200 bg-white p-5 shadow-xl md:left-6 md:right-auto md:p-6">
+    <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div class="text-sm text-slate-700">
+        <p class="font-semibold text-slate-900">Privacy-aware analytics</p>
+        <p>We use Google Analytics to understand site usage. Accept to enable analytics cookies.</p>
+      </div>
+      <div class="flex gap-3">
+        <button id="consent-deny" class="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:border-slate-400">No thanks</button>
+        <button id="consent-accept" class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">Accept</button>
+      </div>
+    </div>
+  </div>
   <script src="/js/main.js"></script>
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script>
+    (function () {
+      var consentKey = "ga_consent";
+      var consentValue = localStorage.getItem(consentKey);
+      var banner = document.getElementById("consent-banner");
+      var acceptButton = document.getElementById("consent-accept");
+      var denyButton = document.getElementById("consent-deny");
+
+      function loadGoogleAnalytics() {
+        if (window.__gaLoaded) {
+          return;
+        }
+        window.__gaLoaded = true;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag("js", new Date());
+        window.gtag("config", "G-GXWM0Q8N2S");
+
+        var script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-GXWM0Q8N2S";
+        document.head.appendChild(script);
+      }
+
+      function hideBanner() {
+        if (banner) {
+          banner.classList.add("hidden");
+        }
+      }
+
+      if (consentValue === "granted") {
+        loadGoogleAnalytics();
+        hideBanner();
+      } else if (consentValue === "denied") {
+        hideBanner();
+      } else if (banner) {
+        banner.classList.remove("hidden");
+      }
+
+      if (acceptButton) {
+        acceptButton.addEventListener("click", function () {
+          localStorage.setItem(consentKey, "granted");
+          loadGoogleAnalytics();
+          hideBanner();
+        });
+      }
+
+      if (denyButton) {
+        denyButton.addEventListener("click", function () {
+          localStorage.setItem(consentKey, "denied");
+          hideBanner();
+        });
+      }
+    })();
+  </script>
 
 </body>
 
